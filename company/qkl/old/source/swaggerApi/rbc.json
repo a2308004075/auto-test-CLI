@@ -1,0 +1,2852 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "swagger-bootstrap-ui",
+    "version": "1.0",
+    "title": "swagger-bootstrap-ui RESTful APIs",
+    "termsOfService": "http://localhost:8862/"
+  },
+  "host": "10.100.6.38",
+  "basePath": "/rbc",
+  "tags": [
+    {
+      "name": "battery-exchange-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "certification-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "preparation-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "station-control-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "ws-message-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "特殊值守模式",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "辅助测试接口",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/rbc/api/supportTest/pullBatteryLabels": {
+      "get": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "拉取电池标签",
+        "operationId": "pullBatteryLabelsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "snCodeList",
+            "in": "query",
+            "description": "电池SN列表",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi",
+            "allowEmptyValue": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "1"
+      }
+    },
+    "/rbc/api/supportTest/sendBrodLED2": {
+      "post": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "sendBrodLED2",
+        "operationId": "sendBrodLED2UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "event",
+            "in": "query",
+            "description": "event",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/api/supportTest/sendBrodLED3": {
+      "post": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "sendBrodLED3",
+        "operationId": "sendBrodLED3UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LED播报声音和区域显示内容实体",
+              "originalRef": "LED播报声音和区域显示内容实体"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/batteryTakePhoto": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "电池底部拍照测试",
+        "operationId": "batteryTakePhotoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatterTakePhotoTestRequestDTO",
+              "originalRef": "BatterTakePhotoTestRequestDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/conncbmucommand": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "车机换电信号确认",
+        "operationId": "connCbmuCommandUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConCbmuCommandDto",
+              "originalRef": "ConCbmuCommandDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/requestForOssTokenTest": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "电池底部拍照测试获取token",
+        "operationId": "requestForOssTokenTestUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetOssTokenRequestDTO",
+              "originalRef": "GetOssTokenRequestDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/sendgetewaycommand": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "PLC向站控传递信号",
+        "operationId": "sendGetewayCommandUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GatewayCommandDto",
+              "originalRef": "GatewayCommandDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/setsbmumac": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "RFID模拟信号",
+        "operationId": "setSbmuMacUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SbmuMacDto",
+              "originalRef": "SbmuMacDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/swapallow": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "有感换电确认信号",
+        "operationId": "swapAllowUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SwapAllowDto",
+              "originalRef": "SwapAllowDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/swapallownofeel": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "无感换电确认信号",
+        "operationId": "swapAllowNoFeelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SwapAllowNoFeelDto",
+              "originalRef": "SwapAllowNoFeelDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/swapoffline": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "离线一键换电",
+        "operationId": "swapOfflineUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NotifyVinCmdDto",
+              "originalRef": "NotifyVinCmdDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/testSwapallow": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "启动换电测试",
+        "operationId": "testSwapallowUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/testswap": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "测试",
+        "operationId": "testSwapUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TestSwapDto",
+              "originalRef": "TestSwapDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/batteryexchange/testswap2": {
+      "post": {
+        "tags": [
+          "battery-exchange-controller"
+        ],
+        "summary": "测试2",
+        "operationId": "testSwap2UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TestToSwapDto",
+              "originalRef": "TestToSwapDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/certification/carchangepowertypecmd": {
+      "post": {
+        "tags": [
+          "certification-controller"
+        ],
+        "summary": "换电方式",
+        "operationId": "carChangePowerTypeCmdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CarChangePowerTypeCmdDto",
+              "originalRef": "CarChangePowerTypeCmdDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/certification/inpasscarinfo": {
+      "post": {
+        "tags": [
+          "certification-controller"
+        ],
+        "summary": "车牌校验",
+        "operationId": "inPassCarInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/InPassCarInfoDTO",
+              "originalRef": "InPassCarInfoDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/certification/notifyVinCmdOffline": {
+      "post": {
+        "tags": [
+          "certification-controller"
+        ],
+        "summary": "离线换电车辆vin码校验",
+        "operationId": "notifyVinCmdOfflineUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NotifyVinCmdDto",
+              "originalRef": "NotifyVinCmdDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/certification/notifyvincmd": {
+      "post": {
+        "tags": [
+          "certification-controller"
+        ],
+        "summary": "云端换电结果下发",
+        "operationId": "notifyVinCmdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NotifyVinCmdDto",
+              "originalRef": "NotifyVinCmdDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/acceptcabin": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "电池仓位信息",
+        "operationId": "acceptCabinUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BatteryExchangeModelDto",
+                "originalRef": "BatteryExchangeModelDto"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/batterydetect": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "电池在役信息",
+        "operationId": "batteryDetectUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryDetectModel",
+              "originalRef": "BatteryDetectModel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/checkcarnobyvehicle": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "车辆信息获取",
+        "operationId": "checkCarNoByVehicleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckCarNoByVehicleDto",
+              "originalRef": "CheckCarNoByVehicleDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/isvehicleplace": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "车身自由度状态",
+        "operationId": "isVehiclePlaceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VehiclePlaceDto",
+              "originalRef": "VehiclePlaceDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/putvehicleinplace": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "车辆到位信号",
+        "operationId": "putVehicleInPlaceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PutVehicleInPlaceDto",
+              "originalRef": "PutVehicleInPlaceDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/putvgrooveinplace": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "V槽到位信号",
+        "operationId": "putVGrooveInPlaceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PutVGrooveInPlaceDto",
+              "originalRef": "PutVGrooveInPlaceDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/sendstationstatus": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "车机交互",
+        "operationId": "sendStationStatusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GatewayCommandDto",
+              "originalRef": "GatewayCommandDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/preparation/updateBatteryByVehicle": {
+      "post": {
+        "tags": [
+          "preparation-controller"
+        ],
+        "summary": "更新车辆电池信息",
+        "operationId": "updateBatteryByVehicleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckCarNoByVehicleDto",
+              "originalRef": "CheckCarNoByVehicleDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "获取特殊值守模式",
+        "operationId": "getSpecialSwapModeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO«string»",
+              "originalRef": "ResultVO«string»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/failProcessPath": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "获取异常处理的接口路径",
+        "operationId": "getFailProcessPathUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO«string»",
+              "originalRef": "ResultVO«string»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/passVehicleFreeTask": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "跳过自由度检测任务",
+        "operationId": "passVehicleFreeTaskUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/reconnectMbmu": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "重连mbmu",
+        "operationId": "reconnectMbmuUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "mbmuMac",
+            "in": "query",
+            "description": "mbmuMac",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/restartCarMachineTask": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "车辆下高压重试",
+        "operationId": "restartCarMachineTaskUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/restartCheckBmsSwapTask": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "BMS换电准备重试",
+        "operationId": "restartCheckBmsSwapTaskUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/restartSelfCheckTask": {
+      "get": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "重新开启BMS自检任务",
+        "operationId": "restartSelfCheckTaskUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/specialSwapMode/{mode}": {
+      "post": {
+        "tags": [
+          "特殊值守模式"
+        ],
+        "summary": "特殊值守模式切换",
+        "operationId": "specialSwapModeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "mode",
+            "in": "path",
+            "description": "是否开启特殊值守模式：1-开启，0-不开启",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/batteryTakeStrategy": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "查询取电策略（车包匹配取电策略）",
+        "operationId": "BatteryTakeStrategyUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO«BatteryTakeStrategyDTO»",
+              "originalRef": "ResultVO«BatteryTakeStrategyDTO»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      },
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "更新取电策略（车包匹配取电策略）",
+        "operationId": "updateBatteryTakeStrategyUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryTakeStrategyDTO",
+              "originalRef": "BatteryTakeStrategyDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/faulthandling": {
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "故障处理",
+        "operationId": "faultHandlingUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "description": "request",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/getstationinfobystatus": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "站点服务",
+        "operationId": "getStationInfoByStatusUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/getswaptimeout": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "获取线程超时信息",
+        "operationId": "getSwapTimeOutUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/getunloadbattery": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "获取卸载电池信息",
+        "operationId": "getUnloadBatteryUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "batteryNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "chargeNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "existenceCheckTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "m1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "m2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "m3",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "t14",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "t208",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/openSwapStation": {
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "歇业/营业站点",
+        "operationId": "openSwapStationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "description": "request",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/repOrder": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "手动上报订单",
+        "operationId": "repOrderUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/selectPackDetailLockTimer": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "查询机械锁状态上报周期",
+        "operationId": "selectPackDetailLockTimerUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult«PackDetailLockDto»",
+              "originalRef": "RbcRespResult«PackDetailLockDto»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/selectstationdevice": {
+      "get": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "查询站点设备信息",
+        "operationId": "selectStationDeviceUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult«StationDeviceDto»",
+              "originalRef": "RbcRespResult«StationDeviceDto»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/setPackDetailLockTimer": {
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "设置机械锁状态上报周期",
+        "operationId": "setPackDetailLockTimerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PackDetailLockDto",
+              "originalRef": "PackDetailLockDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/setstationdevice": {
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "设置站点设备信息",
+        "operationId": "setStationDeviceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StationDeviceDto",
+              "originalRef": "StationDeviceDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/setswaptimeout": {
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "配置线程超时信息",
+        "operationId": "setSwapTimeOutUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimerTimeOutConfigVO",
+              "originalRef": "TimerTimeOutConfigVO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/stationcontrol/swapreset": {
+      "post": {
+        "tags": [
+          "station-control-controller"
+        ],
+        "summary": "换电系统复位",
+        "operationId": "swapResetUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SwapResetDto",
+              "originalRef": "SwapResetDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RbcRespResult",
+              "originalRef": "RbcRespResult"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/rbc/wsMessage/swapProgress": {
+      "post": {
+        "tags": [
+          "ws-message-controller"
+        ],
+        "summary": "发送换电进程消息",
+        "operationId": "sendUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "changePowerProgressData",
+            "description": "changePowerProgressData",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChangePowerProgressData",
+              "originalRef": "ChangePowerProgressData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BatterTakePhotoTestRequestDTO": {
+      "type": "object",
+      "properties": {
+        "savePath": {
+          "type": "string"
+        }
+      },
+      "title": "BatterTakePhotoTestRequestDTO"
+    },
+    "Battery": {
+      "type": "object",
+      "properties": {
+        "batteryMileage": {
+          "type": "number",
+          "format": "float"
+        },
+        "batteryNo": {
+          "type": "string"
+        },
+        "batteryPower": {
+          "type": "number",
+          "format": "float"
+        },
+        "cumulativeTotalCharge": {
+          "type": "number",
+          "format": "float"
+        },
+        "cumulativeTotalDischargePower": {
+          "type": "number",
+          "format": "float"
+        },
+        "displaySoc": {
+          "type": "number",
+          "format": "float"
+        },
+        "displaySoh": {
+          "type": "number",
+          "format": "float"
+        },
+        "fluteType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mostSeriouFaultCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "notCredibleFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packPollId": {
+          "type": "string"
+        },
+        "singleOutputEnergy": {
+          "type": "number",
+          "format": "float"
+        },
+        "snCode": {
+          "type": "string"
+        },
+        "soe": {
+          "type": "number",
+          "format": "float"
+        },
+        "subChaEnergyOutside": {
+          "type": "number",
+          "format": "float"
+        },
+        "subOffDischargeEnergy": {
+          "type": "number",
+          "format": "float"
+        },
+        "subReEnergyOutside": {
+          "type": "number",
+          "format": "float"
+        },
+        "subtotalMileage": {
+          "type": "number",
+          "format": "float"
+        },
+        "tripOutChargeEnergy": {
+          "type": "number",
+          "format": "float"
+        },
+        "useableSoc": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "Battery"
+    },
+    "BatteryDetectModel": {
+      "type": "object",
+      "properties": {
+        "batteryVerifyResult": {
+          "type": "boolean"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "title": "BatteryDetectModel"
+    },
+    "BatteryExchangeModelDto": {
+      "type": "object",
+      "properties": {
+        "AccessSpace": {
+          "type": "string"
+        },
+        "SelectSpace": {
+          "type": "string"
+        },
+        "accessChargeNo": {
+          "type": "string"
+        },
+        "batteryInfo": {
+          "$ref": "#/definitions/BatteryStatusInfoDto",
+          "originalRef": "BatteryStatusInfoDto"
+        },
+        "batteryMileage": {
+          "type": "number",
+          "format": "float"
+        },
+        "batteryPower": {
+          "type": "number",
+          "format": "float"
+        },
+        "chargeNo": {
+          "type": "string"
+        },
+        "cumulativeTotalCharge": {
+          "type": "number",
+          "format": "float"
+        },
+        "cumulativeTotalDischargePower": {
+          "type": "number",
+          "format": "float"
+        },
+        "cutStatus": {
+          "type": "boolean"
+        },
+        "displaySoc": {
+          "type": "number",
+          "format": "float"
+        },
+        "displaySoh": {
+          "type": "number",
+          "format": "float"
+        },
+        "isReally": {
+          "type": "boolean"
+        },
+        "notCredibleFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuRealSoc": {
+          "type": "number",
+          "format": "float"
+        },
+        "selectSpaceMac": {
+          "type": "string"
+        },
+        "snCode": {
+          "type": "string"
+        }
+      },
+      "title": "BatteryExchangeModelDto"
+    },
+    "BatteryStatusInfoDto": {
+      "type": "object",
+      "properties": {
+        "batteryNo": {
+          "type": "string"
+        },
+        "chargeNo": {
+          "type": "string"
+        },
+        "soc": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "BatteryStatusInfoDto"
+    },
+    "BatteryTakeStrategyDTO": {
+      "type": "object",
+      "properties": {
+        "allowCirculationRate": {
+          "type": "number",
+          "format": "double",
+          "description": "配对条件 允许环流倍率"
+        },
+        "batteryMaxSocDiff": {
+          "type": "number",
+          "format": "float",
+          "description": "海选条件 电池内SOC最大差值（%）"
+        },
+        "batteryMaxTemp": {
+          "type": "integer",
+          "format": "int32",
+          "description": "海选条件 电池最高温度（℃）"
+        },
+        "batteryMinChargeCompletedTime": {
+          "type": "integer",
+          "format": "int32",
+          "description": "海选条件 电池最低充电完成时间（min)"
+        },
+        "cloudUpdateTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "cloudUpdateUser": {
+          "type": "string"
+        },
+        "enableCarAndPackMatch": {
+          "type": "boolean",
+          "description": "是否开启车包匹配"
+        },
+        "matchCycleDod": {
+          "type": "integer",
+          "format": "int32",
+          "description": "配对条件 累计Cycle数"
+        },
+        "matchMaxSocDiff": {
+          "type": "number",
+          "format": "float",
+          "description": "配对条件 最大soc差值（%）"
+        },
+        "matchMaxSohDiff": {
+          "type": "number",
+          "format": "float",
+          "description": "配对条件 最大soh差值（%）"
+        },
+        "matchMaxVoltageDiff": {
+          "type": "integer",
+          "format": "int32",
+          "description": "配对条件 最大电压差值 (V)"
+        },
+        "matchTempDiff": {
+          "type": "integer",
+          "format": "int32",
+          "description": "配对条件 最大温差 (℃)"
+        },
+        "minSoc": {
+          "type": "number",
+          "format": "double",
+          "description": "电池最低soc（开启和不开启车包匹配共用字段）"
+        }
+      },
+      "title": "BatteryTakeStrategyDTO"
+    },
+    "CarChangePowerTypeCmdDto": {
+      "type": "object",
+      "properties": {
+        "changePowerType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderId": {
+          "type": "string"
+        },
+        "vin": {
+          "type": "string"
+        }
+      },
+      "title": "CarChangePowerTypeCmdDto"
+    },
+    "CarFreeStatus": {
+      "type": "object",
+      "properties": {
+        "bmcp": {
+          "type": "boolean"
+        },
+        "doorSts": {
+          "type": "boolean"
+        },
+        "epbStatus": {
+          "type": "boolean"
+        },
+        "gear": {
+          "type": "boolean"
+        },
+        "saav": {
+          "type": "boolean"
+        },
+        "shutDown": {
+          "type": "boolean"
+        },
+        "vehHVState": {
+          "type": "boolean"
+        }
+      },
+      "title": "CarFreeStatus"
+    },
+    "CarLabelInfoDto": {
+      "type": "object",
+      "properties": {
+        "afterChangeHabit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "换电后行为习惯：1-换电后持续用车，2-换电后休息"
+        },
+        "city": {
+          "type": "string",
+          "description": "车辆所属城市"
+        },
+        "dataDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "数据日期"
+        },
+        "drivingPeriod": {
+          "type": "integer",
+          "format": "int32",
+          "description": "习惯用车时段：1-凌晨，2-日间，3-夜间"
+        },
+        "energyConsumeType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆能耗类型：1-高，2-中，3-低"
+        },
+        "energySupplyType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "补能习惯：1-习惯换电，2-无明显倾向，3-习惯充电"
+        },
+        "operationType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆运营情况：1-优，2-良，3-一般，4-差"
+        },
+        "parameterConf": {
+          "type": "string",
+          "description": "参数列表"
+        },
+        "tempLifeEqlType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车上电池包等效温度情况：1-高，2-中，3-低"
+        }
+      },
+      "title": "CarLabelInfoDto"
+    },
+    "ChangePowerProgressData": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "freeStatus": {
+          "$ref": "#/definitions/CarFreeStatus",
+          "originalRef": "CarFreeStatus"
+        },
+        "inPlace": {
+          "type": "boolean"
+        },
+        "msgMap": {
+          "type": "object"
+        },
+        "qrCodeMsg": {
+          "type": "string"
+        },
+        "read": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stop": {
+          "type": "boolean"
+        },
+        "timeOut": {
+          "type": "string"
+        },
+        "tips": {
+          "type": "string"
+        },
+        "tipsText": {
+          "type": "string"
+        },
+        "voiceCode": {
+          "type": "string"
+        },
+        "voicePath": {
+          "type": "string"
+        }
+      },
+      "title": "ChangePowerProgressData"
+    },
+    "CheckCarNoByVehicleDto": {
+      "type": "object",
+      "properties": {
+        "batteries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Battery",
+            "originalRef": "Battery"
+          }
+        },
+        "batteryCapacityTotalOutput": {
+          "type": "number",
+          "format": "float"
+        },
+        "batterySwapFailReason": {
+          "type": "string"
+        },
+        "batterySwapSelfCheckFailReason": {
+          "type": "string"
+        },
+        "bmsBatteryCapacityTotalInput": {
+          "type": "number",
+          "format": "float"
+        },
+        "bmsFlagBit": {
+          "type": "string"
+        },
+        "bmsOffStationChargingCapacity": {
+          "type": "number",
+          "format": "float"
+        },
+        "carNo": {
+          "type": "string"
+        },
+        "carUploadVin": {
+          "type": "string"
+        },
+        "cloudDownVin": {
+          "type": "string"
+        },
+        "hisAccumChrgTimes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mbmuMac": {
+          "type": "string"
+        },
+        "packNo1": {
+          "type": "string"
+        },
+        "packNo2": {
+          "type": "string"
+        },
+        "sbmu1Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmu2Code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "subTotalChargeTimeOutStation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tbmuMbmuCommSignalStrength": {
+          "type": "string"
+        },
+        "tripMilKm": {
+          "type": "number",
+          "format": "float"
+        },
+        "vehicleMileage": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "CheckCarNoByVehicleDto"
+    },
+    "ConCbmuCommandDto": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ConCbmuCommandDto"
+    },
+    "DeviceBaseDto": {
+      "type": "object",
+      "properties": {
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceName": {
+          "type": "string"
+        },
+        "existFlag": {
+          "type": "string"
+        },
+        "stationProcessWayDtoList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StationDeviceDetailDto",
+            "originalRef": "StationDeviceDetailDto"
+          }
+        }
+      },
+      "title": "DeviceBaseDto"
+    },
+    "GatewayCommandDto": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "GatewayCommandDto"
+    },
+    "GetOssTokenRequestDTO": {
+      "type": "object",
+      "properties": {
+        "upType": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "GetOssTokenRequestDTO"
+    },
+    "InPassCarInfoDTO": {
+      "type": "object",
+      "properties": {
+        "plateNo": {
+          "type": "string",
+          "description": "车牌号"
+        }
+      },
+      "title": "InPassCarInfoDTO"
+    },
+    "LED播报声音和区域显示内容实体": {
+      "type": "object",
+      "properties": {
+        "ledAreaContent1": {
+          "type": "string",
+          "description": "LED显示屏区域1显示内容"
+        },
+        "ledAreaContent2": {
+          "type": "string",
+          "description": "LED显示屏区域2显示内容"
+        },
+        "ledAreaContent3": {
+          "type": "string",
+          "description": "LED显示屏区域3显示内容"
+        },
+        "ledAreaContent4": {
+          "type": "string",
+          "description": "LED显示屏区域4显示内容"
+        },
+        "ledVoiceContent": {
+          "type": "string",
+          "description": "LED播报语音内容"
+        }
+      },
+      "title": "LED播报声音和区域显示内容实体",
+      "description": "LED播报声音和区域显示内容实体"
+    },
+    "NotifyVinCmdDto": {
+      "type": "object",
+      "required": [
+        "ableToChange",
+        "batteryNum",
+        "carLabelInfo",
+        "carModel",
+        "carNo",
+        "changeType",
+        "cloudDownVin",
+        "mbmuMac",
+        "msg",
+        "sbmuInfo"
+      ],
+      "properties": {
+        "ableToChange": {
+          "type": "boolean",
+          "description": "是否可换电"
+        },
+        "batteryNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "真包数量"
+        },
+        "carLabelInfo": {
+          "description": "车辆标签",
+          "$ref": "#/definitions/CarLabelInfoDto",
+          "originalRef": "CarLabelInfoDto"
+        },
+        "carModel": {
+          "type": "string",
+          "description": "站端车型编码(与系统内编码一一对应)"
+        },
+        "carNo": {
+          "type": "string",
+          "description": "车牌"
+        },
+        "changeType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "换电方式: 2-有感（默认）, 1-无感"
+        },
+        "cloudDownVin": {
+          "type": "string",
+          "description": "车辆vin码"
+        },
+        "mbmuMac": {
+          "type": "string",
+          "description": "Mbmu蓝牙mac地址"
+        },
+        "msg": {
+          "type": "string",
+          "description": "校验结果消息"
+        },
+        "offline": {
+          "type": "boolean"
+        },
+        "sbmuInfo": {
+          "type": "array",
+          "description": "上次拆卸电池数据",
+          "items": {
+            "$ref": "#/definitions/SbmuInfo",
+            "originalRef": "SbmuInfo"
+          }
+        }
+      },
+      "title": "NotifyVinCmdDto"
+    },
+    "PackDetailLockDto": {
+      "type": "object",
+      "properties": {
+        "exportTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "机械锁状态上报周期 ms"
+        }
+      },
+      "title": "PackDetailLockDto"
+    },
+    "PutVGrooveInPlaceDto": {
+      "type": "object",
+      "properties": {
+        "cloudDownPack1Type": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "inPlace": {
+          "type": "boolean"
+        },
+        "inPlaceCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mbmuMac": {
+          "type": "string"
+        }
+      },
+      "title": "PutVGrooveInPlaceDto"
+    },
+    "PutVehicleInPlaceDto": {
+      "type": "object",
+      "properties": {
+        "inPlace": {
+          "type": "boolean"
+        },
+        "inPlaceCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PutVehicleInPlaceDto"
+    },
+    "RbcRespResult": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "message": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "title": "RbcRespResult"
+    },
+    "RbcRespResult«PackDetailLockDto»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/PackDetailLockDto",
+          "originalRef": "PackDetailLockDto"
+        },
+        "message": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "title": "RbcRespResult«PackDetailLockDto»"
+    },
+    "RbcRespResult«StationDeviceDto»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/StationDeviceDto",
+          "originalRef": "StationDeviceDto"
+        },
+        "message": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "title": "RbcRespResult«StationDeviceDto»"
+    },
+    "ResultVO": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "example": 200,
+          "description": "结果码"
+        },
+        "data": {
+          "type": "object",
+          "description": "返回数据"
+        },
+        "message": {
+          "type": "string",
+          "example": "成功",
+          "description": "提示信息"
+        }
+      },
+      "title": "ResultVO"
+    },
+    "ResultVO«BatteryTakeStrategyDTO»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "example": 200,
+          "description": "结果码"
+        },
+        "data": {
+          "description": "返回数据",
+          "$ref": "#/definitions/BatteryTakeStrategyDTO",
+          "originalRef": "BatteryTakeStrategyDTO"
+        },
+        "message": {
+          "type": "string",
+          "example": "成功",
+          "description": "提示信息"
+        }
+      },
+      "title": "ResultVO«BatteryTakeStrategyDTO»"
+    },
+    "ResultVO«string»": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "example": 200,
+          "description": "结果码"
+        },
+        "data": {
+          "type": "string",
+          "description": "返回数据"
+        },
+        "message": {
+          "type": "string",
+          "example": "成功",
+          "description": "提示信息"
+        }
+      },
+      "title": "ResultVO«string»"
+    },
+    "SbmuInfo": {
+      "type": "object",
+      "properties": {
+        "installAddress": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packSN": {
+          "type": "string"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuMac": {
+          "type": "string"
+        }
+      },
+      "title": "SbmuInfo"
+    },
+    "SbmuMacDto": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mac": {
+          "type": "string"
+        }
+      },
+      "title": "SbmuMacDto"
+    },
+    "StationDeviceDetailDto": {
+      "type": "object",
+      "properties": {
+        "businessDetail": {
+          "type": "string"
+        },
+        "businessDetailNo": {
+          "type": "string"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "existTriggerFlag": {
+          "type": "string"
+        },
+        "timeOut": {
+          "type": "string"
+        },
+        "triggerFlag": {
+          "type": "string"
+        }
+      },
+      "title": "StationDeviceDetailDto"
+    },
+    "StationDeviceDto": {
+      "type": "object",
+      "properties": {
+        "deviceBaseDtoList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeviceBaseDto",
+            "originalRef": "DeviceBaseDto"
+          }
+        },
+        "stationId": {
+          "type": "string"
+        },
+        "stationType": {
+          "type": "string"
+        }
+      },
+      "title": "StationDeviceDto"
+    },
+    "SwapAllowDto": {
+      "type": "object",
+      "properties": {
+        "batteryNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "swapAllow": {
+          "type": "boolean"
+        }
+      },
+      "title": "SwapAllowDto"
+    },
+    "SwapAllowNoFeelDto": {
+      "type": "object",
+      "properties": {
+        "batteryNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "swapAllow": {
+          "type": "boolean"
+        }
+      },
+      "title": "SwapAllowNoFeelDto"
+    },
+    "SwapResetDto": {
+      "type": "object",
+      "properties": {
+        "swapReset": {
+          "type": "boolean"
+        }
+      },
+      "title": "SwapResetDto"
+    },
+    "TestSwapDto": {
+      "type": "object",
+      "properties": {
+        "plateNo": {
+          "type": "string"
+        }
+      },
+      "title": "TestSwapDto"
+    },
+    "TestToSwapDto": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "TestToSwapDto"
+    },
+    "TimerTimeOutConfigVO": {
+      "type": "object",
+      "properties": {
+        "autoModelSelect": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "autoModelSelectVoice": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bluetoothBreak": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "carMachSignal": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "checkCarMach": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "checkCarNoVehicle": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "cloudCanLetCarEnter": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "connCarMachine": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "macAddrCheck": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "manageBatteryModel": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "plcSignal": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "putVehicleInPlace": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "putVehicleInPlaceVoice": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "rbcModelSelect": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "swapCarMachine": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "swapPauseCloseDoor": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userSwapAllowRequest": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userSwapAllowRequestVoice": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "vehicleFreeStatus": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "vehicleFreeStatusVoice": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "vgrooveInPlace": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "TimerTimeOutConfigVO"
+    },
+    "VehiclePlaceDto": {
+      "type": "object",
+      "properties": {
+        "autoHold": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmcp": {
+          "type": "number",
+          "format": "double"
+        },
+        "bmcpMax": {
+          "type": "number",
+          "format": "float"
+        },
+        "bmcpMin": {
+          "type": "number",
+          "format": "float"
+        },
+        "doorSts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "epbStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "gear": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pgearLock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "saav": {
+          "type": "number",
+          "format": "double"
+        },
+        "saavMax": {
+          "type": "number",
+          "format": "float"
+        },
+        "saavMin": {
+          "type": "number",
+          "format": "float"
+        },
+        "shutDown": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "vehHVState": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "VehiclePlaceDto"
+    }
+  }
+}

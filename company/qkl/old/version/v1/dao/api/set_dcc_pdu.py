@@ -1,0 +1,1 @@
+from common.handlerKw.kwDecorator import KwDecoratorfrom company.qkl.old.common.api.api_dcc_pdu import ApiDccPduclass SetDccPdu:    pass

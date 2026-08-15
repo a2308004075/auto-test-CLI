@@ -1,0 +1,363 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "pdd-station-supercharge-test01.catles.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "plc点位模拟",
+      "description": "Plc Mock Controller"
+    }
+  ],
+  "paths": {
+    "/plcMock/changeStatus": {
+      "post": {
+        "tags": [
+          "plc点位模拟"
+        ],
+        "summary": "plc模式和状态修改",
+        "operationId": "changeStatusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "statusChangeDTO",
+            "description": "statusChangeDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StatusChangeDTO",
+              "originalRef": "StatusChangeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/plcMock/getRegisters": {
+      "post": {
+        "tags": [
+          "plc点位模拟"
+        ],
+        "summary": "获取寄存器值",
+        "operationId": "getRegistersUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«RegisterAddressDTO»»",
+              "originalRef": "R«List«RegisterAddressDTO»»"
+            }
+          }
+        }
+      }
+    },
+    "/plcMock/updateBarrierGateStatus": {
+      "post": {
+        "tags": [
+          "plc点位模拟"
+        ],
+        "summary": "修改道闸开启状态",
+        "operationId": "updateBarrierGateStatusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateBarrierGateStatusDTO",
+            "description": "updateBarrierGateStatusDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateBarrierGateStatusDTO",
+              "originalRef": "UpdateBarrierGateStatusDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/plcMock/updateCampInStatus": {
+      "post": {
+        "tags": [
+          "plc点位模拟"
+        ],
+        "summary": "修改仓位状态",
+        "operationId": "updateCampInStatusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateCampInStatusDTO",
+            "description": "updateCampInStatusDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateCampInStatusDTO",
+              "originalRef": "UpdateCampInStatusDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/plcMock/updateRegisters": {
+      "post": {
+        "tags": [
+          "plc点位模拟"
+        ],
+        "summary": "更新寄存器值",
+        "operationId": "updateBatteryDetailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "registerAddressDTOS",
+            "description": "registerAddressDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RegisterAddressDTO",
+                "originalRef": "RegisterAddressDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CampInStatusItemDTO": {
+      "type": "object",
+      "properties": {
+        "inPlace": {
+          "type": "integer",
+          "format": "int32",
+          "description": "在位状态"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位"
+        }
+      },
+      "title": "CampInStatusItemDTO"
+    },
+    "RegisterAddressDTO": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "地址"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "description": "值"
+        }
+      },
+      "title": "RegisterAddressDTO"
+    },
+    "R«List«RegisterAddressDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegisterAddressDTO",
+            "originalRef": "RegisterAddressDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«RegisterAddressDTO»»"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "StatusChangeDTO": {
+      "type": "object",
+      "properties": {
+        "autoMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40001PLC自动模式"
+        },
+        "carHasLeft": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40004车已完全离开"
+        },
+        "carInVGroove": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40004车停好在V槽"
+        },
+        "localMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40001PLC本地模式"
+        },
+        "manualMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40001PLC手动模式"
+        },
+        "remoteMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40001PLC远程模式"
+        },
+        "swapDeviceStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40011点位换电设备运行状态"
+        },
+        "swapProcessStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40006点位（换电流程状态）"
+        },
+        "taskStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "40002点位任务状态"
+        }
+      },
+      "title": "StatusChangeDTO"
+    },
+    "UpdateBarrierGateStatusDTO": {
+      "type": "object",
+      "properties": {
+        "backGateCloseStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "出口道闸关闭状态"
+        },
+        "backGateOpenStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "出口道闸开启状态"
+        },
+        "frontGateCloseStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "入口道闸关闭状态"
+        },
+        "frontGateOpenStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "入口道闸开启状态"
+        }
+      },
+      "title": "UpdateBarrierGateStatusDTO"
+    },
+    "UpdateCampInStatusDTO": {
+      "type": "object",
+      "properties": {
+        "itemDTOList": {
+          "type": "array",
+          "description": "仓位在位状态列表 40020-40022（R1-48仓电池在位）",
+          "items": {
+            "$ref": "#/definitions/CampInStatusItemDTO",
+            "originalRef": "CampInStatusItemDTO"
+          }
+        }
+      },
+      "title": "UpdateCampInStatusDTO"
+    }
+  }
+}

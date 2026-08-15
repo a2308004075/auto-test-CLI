@@ -1,0 +1,2071 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "swagger-bootstrap-ui",
+    "version": "1.0",
+    "title": "swagger-bootstrap-ui RESTful APIs",
+    "termsOfService": "http://localhost:8862/"
+  },
+  "host": "pdd-station-supercharge-test01.catles.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "cbmu信号模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "tbmu信号模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "定时任务",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "换电信号模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "离线换电换模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "辅助测试接口",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/cbmuMock/batteryCodeInfo": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池mac和sn信息",
+        "operationId": "mockBatteryCodeInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包编码类信息",
+              "originalRef": "电池包编码类信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "6"
+      }
+    },
+    "/api/cbmuMock/batteryDataInfo1": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池数据信息-能量、容量、soc、soh、soe",
+        "operationId": "mockBatteryInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息1",
+              "originalRef": "电池包数据信息1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "1"
+      }
+    },
+    "/api/cbmuMock/batteryDataInfo2": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池数据信息-电压、电流、电阻",
+        "operationId": "mockBatteryInfo2UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息2",
+              "originalRef": "电池包数据信息2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2"
+      }
+    },
+    "/api/cbmuMock/batteryDataInfo3": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池数据信息-温度、次数统计、位置",
+        "operationId": "mockBatteryInfo3UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息3",
+              "originalRef": "电池包数据信息3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "3"
+      }
+    },
+    "/api/cbmuMock/batteryDataInfo4": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池数据信息-累计静置时间、无线通讯信号强度",
+        "operationId": "mockBatteryInfo4UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息4",
+              "originalRef": "电池包数据信息4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "4"
+      }
+    },
+    "/api/cbmuMock/batterySignOrStateInfo": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池标志和状态信息",
+        "operationId": "mockBatterySignOrStateInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包标志和状态信息",
+              "originalRef": "电池包标志和状态信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "5"
+      }
+    },
+    "/api/cbmuMock/swapInteractionInfo": {
+      "post": {
+        "tags": [
+          "cbmu信号模拟"
+        ],
+        "summary": "电池换电交互信息",
+        "operationId": "mockSwapInteractionInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/换电交互信息",
+              "originalRef": "换电交互信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "7"
+      }
+    },
+    "/api/scheduleTask/getAllAlive": {
+      "get": {
+        "tags": [
+          "定时任务"
+        ],
+        "summary": "获取所有存活任务",
+        "operationId": "getAllAliveUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/api/scheduleTask/getMessageCache": {
+      "get": {
+        "tags": [
+          "定时任务"
+        ],
+        "summary": "按任务key获取消息缓存数据",
+        "operationId": "getMessageCacheUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskKey",
+            "in": "query",
+            "description": "taskKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/api/scheduleTask/stopAllAlive": {
+      "get": {
+        "tags": [
+          "定时任务"
+        ],
+        "summary": "停止所有存活任务",
+        "operationId": "stopAllAliveUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/api/scheduleTask/stopTask": {
+      "get": {
+        "tags": [
+          "定时任务"
+        ],
+        "summary": "按任务key停止任务",
+        "operationId": "stopTaskUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "taskKey",
+            "in": "query",
+            "description": "taskKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/api/supportTest/batteryInfoList": {
+      "get": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "仓位电池信息",
+        "operationId": "getBatteryInfoListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "positionList",
+            "in": "query",
+            "description": "positionList",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "3"
+      }
+    },
+    "/api/supportTest/matchRuleDetails": {
+      "get": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "车包匹配规则明细",
+        "operationId": "matchRuleDetailsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2"
+      }
+    },
+    "/api/supportTest/pullBatteryLabels": {
+      "get": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "拉取电池标签",
+        "operationId": "pullBatteryLabelsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "snCodeList",
+            "in": "query",
+            "description": "电池SN列表",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi",
+            "allowEmptyValue": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "1"
+      }
+    },
+    "/api/supportTest/resetBatteryTakeStrategy": {
+      "get": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "重置取电规则",
+        "operationId": "resetBatteryTakeStrategyUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "4"
+      }
+    },
+    "/api/supportTest/setOutPackDisconnectBTResult": {
+      "get": {
+        "tags": [
+          "辅助测试接口"
+        ],
+        "summary": "设置出仓电池断蓝牙结果",
+        "operationId": "setDisconnectResultUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "disconnectBTResult",
+            "in": "query",
+            "description": "设置出仓电池断蓝牙结果：1-断蓝牙成功",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "allowEmptyValue": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "5"
+      }
+    },
+    "/api/swapSignalMock/captureCarPlate": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "1.抓拍车牌",
+        "operationId": "captureCarPlateUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "plateNo",
+            "in": "query",
+            "description": "plateNo",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "1"
+      }
+    },
+    "/api/swapSignalMock/carConnect": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "3.车辆连接",
+        "operationId": "carConnectUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "3"
+      }
+    },
+    "/api/swapSignalMock/carGetIn": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "2.车辆进站",
+        "operationId": "sendCarVinUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2"
+      }
+    },
+    "/api/swapSignalMock/getSwapMode": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "测试接口",
+        "operationId": "getSwapModeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/api/swapSignalMock/offline/noticeStartOfflineSwap": {
+      "get": {
+        "tags": [
+          "离线换电换模拟"
+        ],
+        "summary": "启动离线换电前参数设置",
+        "operationId": "noticeStartOfflineSwapUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "1"
+      }
+    },
+    "/api/swapSignalMock/sendChangePowerType": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "5.换电方式下发",
+        "operationId": "sendChangePowerTypeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "5"
+      }
+    },
+    "/api/swapSignalMock/swapConfirm": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "6.启动换电",
+        "operationId": "swapConfirmUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "6"
+      }
+    },
+    "/api/swapSignalMock/swapFinished": {
+      "get": {
+        "tags": [
+          "换电信号模拟"
+        ],
+        "summary": "8.换电结束",
+        "operationId": "swapFinishedUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "8"
+      }
+    },
+    "/api/tbmuMock/batteryCodeInfo": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "电池mac和sn信息",
+        "operationId": "mockBatteryCodeInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包编码类信息_1",
+              "originalRef": "电池包编码类信息_1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "3"
+      }
+    },
+    "/api/tbmuMock/batteryDataInfo": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "电池数据信息",
+        "operationId": "mockBatteryInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息",
+              "originalRef": "电池包数据信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "1"
+      }
+    },
+    "/api/tbmuMock/batterySignOrStateInfo": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "电池状态和标志信息",
+        "operationId": "mockBatteryStateInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包标志和状态信息_1",
+              "originalRef": "电池包标志和状态信息_1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2"
+      }
+    },
+    "/api/tbmuMock/carFreedomInfo": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "车辆自由度信息",
+        "operationId": "mockCarFreedomInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/车辆自由度信息",
+              "originalRef": "车辆自由度信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "4"
+      }
+    },
+    "/api/tbmuMock/mockLock": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "机械锁",
+        "operationId": "mockLockUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PackLockDTO",
+              "originalRef": "PackLockDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "7"
+      }
+    },
+    "/api/tbmuMock/mockLockVolt": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "机械锁电压",
+        "operationId": "mockLockVoltUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PackLockVoltDTO",
+              "originalRef": "PackLockVoltDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "6"
+      }
+    },
+    "/api/tbmuMock/swapInteractionInfo": {
+      "post": {
+        "tags": [
+          "tbmu信号模拟"
+        ],
+        "summary": "换电交互信息",
+        "operationId": "mockSwapInteractionInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/换电交互信息_1",
+              "originalRef": "换电交互信息_1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "5"
+      }
+    }
+  },
+  "definitions": {
+    "BatteryCodeInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sn": {
+          "type": "string",
+          "description": "电池包sn(407)"
+        },
+        "mac": {
+          "type": "string",
+          "description": "电池包mac(408)"
+        }
+      },
+      "title": "BatteryCodeInfo"
+    },
+    "BatterySignOrState": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s2C_BMSChrgAllowFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "允许充电标志： 0-不允许，1-允许(401)"
+        },
+        "hvIL1State": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压互锁状态：0-Close，1-Open(401)"
+        },
+        "soCUnavailableFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SOC不可信标志(404)"
+        },
+        "sbMU_FullChrgOneWeekRqstFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "满充一周维护一次请求标志位(406)"
+        },
+        "sbMU_ChargeSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU充电状态(410)"
+        },
+        "sbMU_ThermalSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU热管理状态(410)"
+        }
+      },
+      "title": "BatterySignOrState"
+    },
+    "BatterySignOrState_1": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "m2S_WLDSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "蓝牙状态信息：0:未连接，1:连接，2:异常(204)"
+        },
+        "battSts6_MainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包主负继电器状态(206)"
+        },
+        "battSts6_MainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包主正继电器状态(206)"
+        },
+        "soCUnavailableFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SOC不可信标志(206)"
+        },
+        "battSts6_FaultNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最严重故障码(206)"
+        },
+        "mostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高故障等级(206)"
+        }
+      },
+      "title": "BatterySignOrState_1"
+    },
+    "CapacityInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_TotalChargeCap": {
+          "type": "number",
+          "description": "累计充电容量(40B)"
+        },
+        "sbMU_TotalDisChargeCap": {
+          "type": "number",
+          "description": "累计放电容量(40B)"
+        },
+        "sbMU_RatedCapacity": {
+          "type": "number",
+          "description": "标称容量(40D)"
+        },
+        "sysChrgCapCurrentAh": {
+          "type": "number",
+          "description": "本次充电容量(412)"
+        }
+      },
+      "title": "CapacityInfo"
+    },
+    "CountInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "subTotalChrgTimeOutstation": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小计站外充电次数(40A)"
+        },
+        "sbMU_MainPosCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器断开次数(40D)"
+        },
+        "sbMU_MainNegCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器断开次数(40D)"
+        },
+        "hisAccumDisChargeCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计放电总Cycle(414)"
+        },
+        "hisAccumChargeCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计充电总Cycle(414)"
+        }
+      },
+      "title": "CountInfo"
+    },
+    "CurrentInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "chargerCurrenr_Output": {
+          "type": "number",
+          "description": "ACDC输出电流(405)"
+        },
+        "sbMU_BattCurr": {
+          "type": "number",
+          "description": "SBMU母线电流(410)"
+        },
+        "sbMU_BattChrgReqCurr": {
+          "type": "number",
+          "description": "SBMU充电请求电流(410)"
+        }
+      },
+      "title": "CurrentInfo"
+    },
+    "EnergyInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "subTotalChrgEnergyInstation": {
+          "type": "number",
+          "description": "小计站内充电电量(40A)"
+        },
+        "subTotalChrgEnergyOutstation": {
+          "type": "number",
+          "description": "小计站外充电电量(40A)"
+        },
+        "hisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "电池包累计放电总能量(411)"
+        },
+        "hisAccumChrgEngy": {
+          "type": "number",
+          "description": "电池包累计充电总能量(411)"
+        },
+        "thisTimeInDCEngyWh": {
+          "type": "integer",
+          "format": "int64",
+          "description": "本次小计换电站内充电能量(412)"
+        },
+        "thisTimeInstationDischrgEngyWh": {
+          "type": "integer",
+          "format": "int32",
+          "description": "本次小计换电站内充电能量(412)"
+        },
+        "instationHisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "累计换电站内放电能量(413)"
+        },
+        "instationHisAccumChrgEngy": {
+          "type": "number",
+          "description": "累计换电站内充电能量(413)"
+        }
+      },
+      "title": "EnergyInfo"
+    },
+    "EnergyInfo_1": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "hisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "电池包累计放电总能量(20D)"
+        },
+        "hisAccumChrgEngy": {
+          "type": "number",
+          "description": "电池包累计充电总能量(20D)"
+        },
+        "outStationChargingEnergy": {
+          "type": "number",
+          "description": "两次换电间电池包小计站外插枪充电电量(20E)"
+        },
+        "energyTotalOutput": {
+          "type": "number",
+          "description": "两次换电间电池包小计站外放电电量(20E)"
+        },
+        "hisStaOutReChrgEngyWh": {
+          "type": "number",
+          "description": "两次换电间电池包小计站外回充能量(20F)"
+        },
+        "hisStaOutDisChrgEngy": {
+          "type": "number",
+          "description": "累计换电站外放电能量(20F)"
+        },
+        "sbMU_RemainEnergyBeforeExc": {
+          "type": "number",
+          "description": "进站时电池剩余能量(SOE)(204)"
+        },
+        "sbMU_RemainEnergyLastExc": {
+          "type": "number",
+          "description": "上次出站时电池剩余能量(204)"
+        }
+      },
+      "title": "EnergyInfo_1"
+    },
+    "MileageInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "toatlMilKm": {
+          "type": "number",
+          "description": "电池包总里程信息(20C)"
+        },
+        "tripMilKm": {
+          "type": "number",
+          "description": "电池包小计换电里程信息(20C)"
+        }
+      },
+      "title": "MileageInfo"
+    },
+    "OtherInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_TotalStaticTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计静置时间(40C)"
+        },
+        "wirelessSignalStrength": {
+          "type": "integer",
+          "format": "int32",
+          "description": "无线通讯信号强度(401)"
+        },
+        "chargerStopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电停止原因(405)"
+        },
+        "sbMU_MostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高故障等级(406)"
+        },
+        "sbMU_FullChrgDeltaSOCError": {
+          "type": "integer",
+          "format": "int32",
+          "description": "满充SOC差异过大故障(406)"
+        },
+        "sbmuLive": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU生命帧（0~15之间跳动）"
+        },
+        "cbmuLive": {
+          "type": "integer",
+          "format": "int32",
+          "description": "CBMU生命帧（0~15之间跳动）"
+        }
+      },
+      "title": "OtherInfo"
+    },
+    "PackLockDTO": {
+      "type": "object",
+      "properties": {
+        "pack1Lock": {
+          "description": "pack1机械锁",
+          "$ref": "#/definitions/PackLockDTOItem",
+          "originalRef": "PackLockDTOItem"
+        },
+        "pack2Lock": {
+          "description": "pack2机械锁",
+          "$ref": "#/definitions/PackLockDTOItem",
+          "originalRef": "PackLockDTOItem"
+        }
+      },
+      "title": "PackLockDTO"
+    },
+    "PackLockDTOItem": {
+      "type": "object",
+      "properties": {
+        "packLock_Pack1lock": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁"
+        },
+        "packLock_Pack1lock1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁1"
+        },
+        "packLock_Pack1lock2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁2"
+        },
+        "packLock_Pack1lock3": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁3"
+        },
+        "packLock_Pack1lock4": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁4"
+        }
+      },
+      "title": "PackLockDTOItem"
+    },
+    "PackLockVoltDTO": {
+      "type": "object",
+      "properties": {
+        "pack1LockVolt": {
+          "description": "pack1机械锁电压",
+          "$ref": "#/definitions/PackLockVoltDTOItem",
+          "originalRef": "PackLockVoltDTOItem"
+        },
+        "pack2LockVolt": {
+          "description": "pack2机械锁电压",
+          "$ref": "#/definitions/PackLockVoltDTOItem",
+          "originalRef": "PackLockVoltDTOItem"
+        }
+      },
+      "title": "PackLockVoltDTO"
+    },
+    "PackLockVoltDTOItem": {
+      "type": "object",
+      "properties": {
+        "packLockVolt_Pack1lock1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁电压1"
+        },
+        "packLockVolt_Pack1lock2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁电压2"
+        },
+        "packLockVolt_Pack1lock3": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁电压3"
+        },
+        "packLockVolt_Pack1lock4": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK机械锁电压4"
+        }
+      },
+      "title": "PackLockVoltDTOItem"
+    },
+    "PositionInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_MaxCellVoltPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU最大电芯电压位置(402)"
+        },
+        "sbMU_MinCellVoltPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU最大电芯温度位置(402)"
+        },
+        "maxModuleTempPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最高模组温度位置(403)"
+        },
+        "minModuleTempPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最低模组温度位置(403)"
+        }
+      },
+      "title": "PositionInfo"
+    },
+    "ResistanceInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_IsoMeasPosResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "正极对地绝缘阻值(40E)"
+        },
+        "sbMU_IsoMeasNegResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "负极对地绝缘阻值(40E)"
+        },
+        "sbMU_PackDCR": {
+          "type": "number",
+          "description": "电池包DCR(406)"
+        }
+      },
+      "title": "ResistanceInfo"
+    },
+    "ResultVO": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "example": 200,
+          "description": "结果码"
+        },
+        "data": {
+          "type": "object",
+          "description": "返回数据"
+        },
+        "message": {
+          "type": "string",
+          "example": "成功",
+          "description": "提示信息"
+        }
+      },
+      "title": "ResultVO"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "SocSohInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "sbMU_DisplaySOCLastExc": {
+          "type": "number",
+          "description": "上次出站时显示SOC(204)"
+        },
+        "sbMU_RealSOCCLastExc": {
+          "type": "number",
+          "description": "上次出站时真实SOC(204)"
+        },
+        "battSts6_DisplaySOH": {
+          "type": "number",
+          "description": "显示SOH(206)"
+        },
+        "displaySOC": {
+          "type": "number",
+          "description": "显示SOC(206)"
+        },
+        "realSOC": {
+          "type": "number",
+          "description": "真实SOC(206)"
+        }
+      },
+      "title": "SocSohInfo"
+    },
+    "SocSohSoeInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_LCMSOCMax": {
+          "type": "number",
+          "description": "LCM SOC上限(40C)"
+        },
+        "sbMU_LCMSOCMin": {
+          "type": "number",
+          "description": "LCM SOC下限(40C)"
+        },
+        "sbMU_DisplaySOC": {
+          "type": "number",
+          "description": "SBMU 显示SOC(404)"
+        },
+        "sbMU_SOCMax": {
+          "type": "number",
+          "description": "SBMU 最大SOC(404)"
+        },
+        "sbMU_SOCMin": {
+          "type": "number",
+          "description": "SBMU 最小SOC(404)"
+        },
+        "sbMU_SOH": {
+          "type": "number",
+          "description": "SBMU SOH(404)"
+        },
+        "sbMU_RealSOC": {
+          "type": "number",
+          "description": "SBMU 真实SOC(404)"
+        },
+        "sbMU_RemainEnergy": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU SOE(406)"
+        }
+      },
+      "title": "SocSohSoeInfo"
+    },
+    "SwapInteractionInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "c2S_WLDSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "蓝牙状态信息： 0-断开， 1-连接(401)"
+        },
+        "sbMU_SumCellVolt": {
+          "type": "number",
+          "description": "电芯电压累加和(403)"
+        },
+        "sbMU_RealSOC": {
+          "type": "number",
+          "description": "SBMU 真实SOC(404)"
+        },
+        "charge_WorkingMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机运行状态：0-空闲 1-参数配置中 2-充电中 3-停止充电 4-故障(405)"
+        },
+        "sbMU_MostCriticalFltID": {
+          "type": "integer",
+          "format": "int32",
+          "description": "bms最严重故障码(406)"
+        },
+        "sbMU_MainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器状态(406)"
+        },
+        "sbMU_MainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器状态(406)"
+        }
+      },
+      "title": "SwapInteractionInfo"
+    },
+    "TemperatureInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_ModTmp_Max": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组最高温度(403)"
+        },
+        "sbMU_ModTmp_Min": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组最低温度(403)"
+        },
+        "sbMU_BatTmp_Avg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组平均温度(403)"
+        }
+      },
+      "title": "TemperatureInfo"
+    },
+    "VoltageInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_CellVolt_Max": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU 最大电芯电压(402)"
+        },
+        "sbMU_CellVolt_Min": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU 最小电芯电压(402)"
+        },
+        "sbMU_CellVolt_Avg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU 平均电芯电压(402)"
+        },
+        "chargerVoltage_Output": {
+          "type": "number",
+          "description": "ACDC输出电压(405)"
+        },
+        "sbMU_BattChrgReqVolt": {
+          "type": "number",
+          "description": "SBMU充电请求电压(410)"
+        }
+      },
+      "title": "VoltageInfo"
+    },
+    "换电交互信息": {
+      "type": "object",
+      "properties": {
+        "swapInteractionInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SwapInteractionInfo",
+            "originalRef": "SwapInteractionInfo"
+          }
+        }
+      },
+      "title": "换电交互信息"
+    },
+    "换电交互信息_1": {
+      "type": "object",
+      "properties": {
+        "vin": {
+          "type": "string",
+          "description": "车辆vin(214)"
+        },
+        "vehHVState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压连接状态：0-下高压，1-未下高压(201)"
+        },
+        "packExcSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "换电状态：0-未换电，1-换电准备，2-换电中(201)"
+        },
+        "blueDisconnectFailFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0-默认，1-请求蓝牙断开失败(201)"
+        },
+        "allPackPwrDnSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "所有pack下高压状态： 0-默认，1-下高压成功，2-下高压失败(201)"
+        },
+        "vhlAllowBatSwapFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车端换电允许标志位： 0-不允许，1-允许换电(201)"
+        },
+        "pack1InstallSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包1安装状态：0-未安装包；1-安装真包；2-安装假包；3-默认值"
+        },
+        "pack2InstallSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包2安装状态：0-未安装包；1-安装真包；2-安装假包；3-默认值"
+        },
+        "m2T_WLDSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "MBMU和TBMU蓝牙配对状态：0-未连接，1-连接，2-异常(203)"
+        },
+        "excPackCheckFailFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自检失败标志位：0-正常，1-失败(203)"
+        },
+        "packExcFailFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上高压失败标志位：0-正常，1-失败(203)"
+        },
+        "waitBatterySwapMaxTimeOutFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "换电超时请求退出换电标志位：0-正常，1-失败(203)"
+        },
+        "vehTotalOdometer": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆总里程信息(203)"
+        },
+        "hisAccumChrgTimes": {
+          "type": "integer",
+          "format": "int32",
+          "description": "累计站外充电次数(207)"
+        },
+        "subTotalChargeTimeOutStation": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小计站外充电次数(207)"
+        }
+      },
+      "title": "换电交互信息_1"
+    },
+    "电池包数据信息": {
+      "type": "object",
+      "properties": {
+        "mileageInfo": {
+          "type": "array",
+          "description": "电池包里程信息",
+          "items": {
+            "$ref": "#/definitions/MileageInfo",
+            "originalRef": "MileageInfo"
+          }
+        },
+        "energyInfo": {
+          "type": "array",
+          "description": "电池包能量信息",
+          "items": {
+            "$ref": "#/definitions/EnergyInfo_1",
+            "originalRef": "EnergyInfo_1"
+          }
+        },
+        "socSohInfo": {
+          "type": "array",
+          "description": "电池包Soc和Soh信息",
+          "items": {
+            "$ref": "#/definitions/SocSohInfo",
+            "originalRef": "SocSohInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息"
+    },
+    "电池包数据信息1": {
+      "type": "object",
+      "properties": {
+        "energyInfo": {
+          "type": "array",
+          "description": "电池包能量信息",
+          "items": {
+            "$ref": "#/definitions/EnergyInfo",
+            "originalRef": "EnergyInfo"
+          }
+        },
+        "capacityInfo": {
+          "type": "array",
+          "description": "电池包容量信息",
+          "items": {
+            "$ref": "#/definitions/CapacityInfo",
+            "originalRef": "CapacityInfo"
+          }
+        },
+        "socSohSoeInfo": {
+          "type": "array",
+          "description": "电池包SocSohSoe信息",
+          "items": {
+            "$ref": "#/definitions/SocSohSoeInfo",
+            "originalRef": "SocSohSoeInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息1"
+    },
+    "电池包数据信息2": {
+      "type": "object",
+      "properties": {
+        "voltageInfo": {
+          "type": "array",
+          "description": "电池包电压信息",
+          "items": {
+            "$ref": "#/definitions/VoltageInfo",
+            "originalRef": "VoltageInfo"
+          }
+        },
+        "currentInfo": {
+          "type": "array",
+          "description": "电池包电流信息",
+          "items": {
+            "$ref": "#/definitions/CurrentInfo",
+            "originalRef": "CurrentInfo"
+          }
+        },
+        "resistanceInfo": {
+          "type": "array",
+          "description": "电池包电阻信息",
+          "items": {
+            "$ref": "#/definitions/ResistanceInfo",
+            "originalRef": "ResistanceInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息2"
+    },
+    "电池包数据信息3": {
+      "type": "object",
+      "properties": {
+        "temperatureInfo": {
+          "type": "array",
+          "description": "电池包温度信息",
+          "items": {
+            "$ref": "#/definitions/TemperatureInfo",
+            "originalRef": "TemperatureInfo"
+          }
+        },
+        "countInfo": {
+          "type": "array",
+          "description": "电池包次数统计信息",
+          "items": {
+            "$ref": "#/definitions/CountInfo",
+            "originalRef": "CountInfo"
+          }
+        },
+        "positionInfo": {
+          "type": "array",
+          "description": "电池包位置信息",
+          "items": {
+            "$ref": "#/definitions/PositionInfo",
+            "originalRef": "PositionInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息3"
+    },
+    "电池包数据信息4": {
+      "type": "object",
+      "properties": {
+        "otherInfo": {
+          "type": "array",
+          "description": "电池包其他信息",
+          "items": {
+            "$ref": "#/definitions/OtherInfo",
+            "originalRef": "OtherInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息4"
+    },
+    "电池包标志和状态信息": {
+      "type": "object",
+      "properties": {
+        "batterySignOrStateInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatterySignOrState",
+            "originalRef": "BatterySignOrState"
+          }
+        }
+      },
+      "title": "电池包标志和状态信息"
+    },
+    "电池包标志和状态信息_1": {
+      "type": "object",
+      "properties": {
+        "batterySignOrStateInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatterySignOrState_1",
+            "originalRef": "BatterySignOrState_1"
+          }
+        }
+      },
+      "title": "电池包标志和状态信息_1"
+    },
+    "电池包编码类信息": {
+      "type": "object",
+      "properties": {
+        "batteryCodeInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryCodeInfo",
+            "originalRef": "BatteryCodeInfo"
+          }
+        }
+      },
+      "title": "电池包编码类信息"
+    },
+    "电池包编码类信息_1": {
+      "type": "object",
+      "properties": {
+        "macOfPackage1": {
+          "type": "string",
+          "description": "电池包1的mac(209)"
+        },
+        "macOfPackage2": {
+          "type": "string",
+          "description": "电池包2的mac(209)"
+        },
+        "snOfPackage1": {
+          "type": "string",
+          "description": "电池包1的sn(211)"
+        },
+        "snOfPackage2": {
+          "type": "string",
+          "description": "电池包2的sn(212)"
+        },
+        "macOfMBMU": {
+          "type": "string",
+          "description": "mubmu的mac(209)"
+        }
+      },
+      "title": "电池包编码类信息_1"
+    },
+    "车辆自由度信息": {
+      "type": "object",
+      "properties": {
+        "gearSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "挡位状态，0：其它；1:N档，站控识别为为1时可以换电(201)"
+        },
+        "vehPowerMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆钥匙状态 0：熄火；1：Ready，站控识别为0时可以换电(201)"
+        },
+        "epBWorkingSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "驻车制动状态，0：松开；1:制动，站控识别为0时可以换电(201)"
+        },
+        "brakeSwitchSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "制动器状态，0：松开；1:制动，站控识别为为0时可以换电(201)"
+        },
+        "doorSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车门开关状态，0：全部车门关闭；1:未关闭全部车门，站控识别为为0时可以换电(201)"
+        },
+        "steeringWheelAngle": {
+          "type": "number",
+          "description": "方向盘转向角角度，站控识别为≤30°时可以换电(201)"
+        },
+        "vehHVState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压连接状态，0：下高压；1:未下高压"
+        }
+      },
+      "title": "车辆自由度信息"
+    }
+  }
+}

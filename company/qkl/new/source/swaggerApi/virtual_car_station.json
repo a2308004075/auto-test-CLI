@@ -1,0 +1,2787 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "一代车站信息模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "三代下控命令模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "三代车站信息模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "二代下控命令模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "二代车站信息模拟",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/virtualCarStation/feign/carStationInfo/blueToothInfo": {
+      "post": {
+        "tags": [
+          "二代车站信息模拟"
+        ],
+        "summary": "发送蓝牙连接信息",
+        "operationId": "blueToothInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "BlueToothInfoReqDTO",
+              "$ref": "#/definitions/BlueToothInfoReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/carStationInfo/carFreedomStatusInfo": {
+      "post": {
+        "tags": [
+          "二代车站信息模拟"
+        ],
+        "summary": "发送车辆自由度信息",
+        "operationId": "carFreedomStatusInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CarFreedomStatusReqDto",
+              "$ref": "#/definitions/CarFreedomStatusReqDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/carStationInfo/carInfo": {
+      "post": {
+        "tags": [
+          "二代车站信息模拟"
+        ],
+        "summary": "发送车辆信息",
+        "operationId": "carInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "ConnectedCarInfoReqDTO",
+              "$ref": "#/definitions/ConnectedCarInfoReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/carStationInfo/fastChangeLockStatus": {
+      "post": {
+        "tags": [
+          "二代车站信息模拟"
+        ],
+        "summary": "发送1号电池包和2号电池包的快换锁状态",
+        "operationId": "fastChangeLockStatusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "FastChangeLockStatusReqDto",
+              "$ref": "#/definitions/FastChangeLockStatusReqDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/carStationInfo/scanBlueToothInfo": {
+      "post": {
+        "tags": [
+          "二代车站信息模拟"
+        ],
+        "summary": "发送蓝牙扫描信息",
+        "operationId": "scanBlueToothInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTOS",
+            "description": "reqDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "BlueToothScanReqDTO",
+                "$ref": "#/definitions/BlueToothScanReqDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/allAliveTask": {
+      "get": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "所有存活的任务",
+        "operationId": "allAliveTaskUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«Set«string»»",
+              "$ref": "#/definitions/R«Set«string»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/cancelAll": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "取消所有模拟命令",
+        "operationId": "cancelAllUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/clearSubtotalOfBS": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送清除电池系统小计信息结果",
+        "operationId": "clearSubtotalOfBSUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/clientLogin": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "客户端请求通信登录",
+        "operationId": "clientLoginUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "ClientLoginReqDTO",
+              "$ref": "#/definitions/ClientLoginReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/closeAndDisableHVContactorResult": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送下高压执行结果",
+        "operationId": "closeAndDisableHVContactorResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/closeLVContactorResult": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送下低压执行结果",
+        "operationId": "closeLVContactorResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/connectCarMbmu": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送蓝牙连接执行结果",
+        "operationId": "connectCarMbmuResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/disConnectCarMbmuResult": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送蓝牙断开执行结果",
+        "operationId": "disConnectCarMbmuResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/scanBlueToothInfoResult": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送蓝牙扫描执行结果",
+        "operationId": "scanBlueToothInfoResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/selfCheckResult": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "发送自检执行结果",
+        "operationId": "selfCheckResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/startBeatCount": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "启动SBLE心跳",
+        "operationId": "startBeatCountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/controlCommand/stopBeatCount": {
+      "post": {
+        "tags": [
+          "二代下控命令模拟"
+        ],
+        "summary": "停止SBLE心跳",
+        "operationId": "stopBeatCountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/batteryCodeInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "电池mac和sn信息",
+        "operationId": "mockBatteryCodeInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "originalRef": "电池包编码类信息",
+              "$ref": "#/definitions/电池包编码类信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "3"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/batteryDataInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "电池数据信息",
+        "operationId": "mockBatteryInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "originalRef": "电池包数据信息",
+              "$ref": "#/definitions/电池包数据信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "1"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/batterySignOrStateInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "电池状态和标志信息",
+        "operationId": "mockBatteryStateInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "originalRef": "电池包标志和状态信息",
+              "$ref": "#/definitions/电池包标志和状态信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/carFreedomInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "车辆自由度信息",
+        "operationId": "mockCarFreedomInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "originalRef": "车辆自由度信息",
+              "$ref": "#/definitions/车辆自由度信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "6"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/swapAndSelfCheckInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "电池换电失败原因、电池自我检测换电失败原因",
+        "operationId": "swapAndSelfCheckInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "swapAndSelfCheckReqDTO",
+            "description": "swapAndSelfCheckReqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "电池换电失败原因、电池自我检测换电失败原因",
+              "$ref": "#/definitions/电池换电失败原因、电池自我检测换电失败原因"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "5"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/swapInteractionInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "换电交互信息",
+        "operationId": "mockSwapInteractionInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "originalRef": "车机换电交互信息",
+              "$ref": "#/definitions/车机换电交互信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "7"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/tbmuMbmuVersionInfo": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "Tbmu Mbmu版本信息",
+        "operationId": "mockTbmuMbmuVersionInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "tbmuMbmuVersionInfoDTO",
+            "description": "tbmuMbmuVersionInfoDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "TbmuMbmu版本数据信息",
+              "$ref": "#/definitions/TbmuMbmu版本数据信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "4"
+      }
+    },
+    "/api/virtualCarStation/feign/v1/carStationInfo/virtualCarStationInit": {
+      "post": {
+        "tags": [
+          "一代车站信息模拟"
+        ],
+        "summary": "换电开始初始化模拟器",
+        "operationId": "virtualCarStationInitUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "8"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/closeAndDisableHVContactorResult": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "发送下高压执行结果",
+        "operationId": "closeAndDisableHVContactorResultUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/closeLVContactorResult": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "发送下低压执行结果",
+        "operationId": "closeLVContactorResultUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/connectCarMbmuResult": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "发送蓝牙连接执行结果",
+        "operationId": "connectCarMbmuResultUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "ProtoMsg505ReqDTO",
+              "$ref": "#/definitions/ProtoMsg505ReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/disConnectCarMbmuResult": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "发送蓝牙断开执行结果",
+        "operationId": "disConnectCarMbmuResultUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/scanBlueToothInfoResult": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "发送蓝牙扫描执行结果",
+        "operationId": "scanBlueToothInfoResultUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CommandResultReqDTO",
+              "$ref": "#/definitions/CommandResultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/set0X129": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "0X129",
+        "operationId": "set0X129UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "ProtoMsg129ReqDTO",
+              "$ref": "#/definitions/ProtoMsg129ReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/set0X12F": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "0X12F",
+        "operationId": "set0X12FUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "ProtoMsg12FReqDTO",
+              "$ref": "#/definitions/ProtoMsg12FReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/controlCommand/stopJob": {
+      "post": {
+        "tags": [
+          "三代下控命令模拟"
+        ],
+        "summary": "停止定时任务",
+        "operationId": "stopJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stopJobDTO",
+            "description": "stopJobDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "StopJobDTO",
+              "$ref": "#/definitions/StopJobDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/info/blueToothInfo": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "发送蓝牙连接信息",
+        "operationId": "blueToothInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "BlueToothInfoReqDTO",
+              "$ref": "#/definitions/BlueToothInfoReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/info/carFreedomStatusInfo": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "发送车辆自由度信息",
+        "operationId": "carFreedomStatusInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CarFreedomStatusReqDto",
+              "$ref": "#/definitions/CarFreedomStatusReqDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/info/carInfo": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "发送车辆信息",
+        "operationId": "carInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "ConnectedCarInfoReqDTO",
+              "$ref": "#/definitions/ConnectedCarInfoReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualCarStation/feign/v3/info/scanBlueToothInfo": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "发送蓝牙扫描信息",
+        "operationId": "scanBlueToothInfoUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTOS",
+            "description": "reqDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "BlueToothScanReqDTO",
+                "$ref": "#/definitions/BlueToothScanReqDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "R«boolean»",
+              "$ref": "#/definitions/R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BatterySignOrState": {
+      "type": "object",
+      "properties": {
+        "battSts6_FaultNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最严重故障码(206)"
+        },
+        "battSts6_MainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包主负继电器状态(206)"
+        },
+        "battSts6_MainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包主正继电器状态(206)"
+        },
+        "m2S_WLDSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "蓝牙状态信息：0:未连接，1:连接，2:异常(204)"
+        },
+        "mostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高故障等级(206)"
+        },
+        "pollId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "soCUnavailableFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SOC不可信标志(206)"
+        }
+      },
+      "title": "BatterySignOrState"
+    },
+    "BlueToothInfoReqDTO": {
+      "type": "object",
+      "properties": {
+        "bluetoothScanStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "蓝牙扫描状态 空闲：0   Rap连接扫描中：1   Rap重连扫描中:2   搜索扫描中:3"
+        },
+        "connectedStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBLE和VBLE蓝牙连接状态：0-未连接，1-已连接"
+        },
+        "signalStrengthOfS2V": {
+          "type": "integer",
+          "format": "int32",
+          "description": "未连接：0.0dbm 已连接：-128dbm ~ -1dbm"
+        },
+        "signalStrengthOfV2S": {
+          "type": "integer",
+          "format": "int32",
+          "description": "未连接：0.0dbm 已连接：-128dbm ~ -1dbm"
+        }
+      },
+      "title": "BlueToothInfoReqDTO"
+    },
+    "BlueToothScanReqDTO": {
+      "type": "object",
+      "properties": {
+        "sbleMac": {
+          "type": "string",
+          "description": "扫描蓝牙MAC"
+        },
+        "signalStrengthOfV2S": {
+          "type": "integer",
+          "format": "int32",
+          "description": "未连接：0.0dbm 已连接：-128dbm ~ -1dbm"
+        }
+      },
+      "title": "BlueToothScanReqDTO"
+    },
+    "CarFreedomStatusReqDto": {
+      "type": "object",
+      "properties": {
+        "carDoorStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆车门状态：1-车门全部关闭，2-车门未全部关闭"
+        },
+        "footBrakeStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆刹车踏板状态：1-未制动，2-制动"
+        },
+        "gearStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆档位状态:1-N档，2-非N档"
+        },
+        "handBrakeStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆手刹/电子手刹状态：1-未制动，2-制动"
+        },
+        "highVoltageStatusOf1BP": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包高压状态：0-高压断开，7、18-高压闭合"
+        },
+        "highVoltageStatusOf2BP": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包高压状态：0-高压断开，7、18-高压闭合"
+        },
+        "highVoltageStatusOfBS": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池系统高压状态：0-高压断开，1-高压闭合"
+        },
+        "lowVoltageOfBS": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池系统低压输入电压 (KL30)：0~65534"
+        },
+        "m2VAutoholdSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自动驻车状态"
+        },
+        "m2VBonnetSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "引擎盖状态"
+        },
+        "m2VDoorSignal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "判断门的区分（兼容）"
+        },
+        "m2VDoorStsFL": {
+          "type": "integer",
+          "format": "int32",
+          "description": "左前门状态"
+        },
+        "m2VDoorStsFR": {
+          "type": "integer",
+          "format": "int32",
+          "description": "右前门状态"
+        },
+        "m2VDoorStsRL": {
+          "type": "integer",
+          "format": "int32",
+          "description": "左后门状态"
+        },
+        "m2VDoorStsRR": {
+          "type": "integer",
+          "format": "int32",
+          "description": "右后门状态"
+        },
+        "m2VMBMUPowerVoltage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "KL30电压"
+        },
+        "m2VTrunkSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "后备箱状态"
+        },
+        "steeringTurnAngle": {
+          "type": "number",
+          "description": "车辆方向盘转向角角度：0.0~6553.4"
+        }
+      },
+      "title": "CarFreedomStatusReqDto"
+    },
+    "ClientLoginReqDTO": {
+      "type": "object",
+      "properties": {
+        "requestCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "默认值：全F 未请求登录：0 请求登录：1"
+        }
+      },
+      "title": "ClientLoginReqDTO"
+    },
+    "CommandResultReqDTO": {
+      "type": "object",
+      "properties": {
+        "errorCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "默认值：全F 无故障/无法识别故障：0 故障码：1~254"
+        },
+        "resultCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "默认值：全F 执行失败：1 执行成功：2"
+        }
+      },
+      "title": "CommandResultReqDTO"
+    },
+    "ConnectedCarInfoReqDTO": {
+      "type": "object",
+      "properties": {
+        "accellRatedCapacityAh": {
+          "type": "number"
+        },
+        "accellRatedCapacityAhOfPackage1": {
+          "type": "number"
+        },
+        "actualSocOfPackage1": {
+          "type": "number",
+          "description": "1号电池可用荷电状态（真实）"
+        },
+        "actualSocOfPackage2": {
+          "type": "number",
+          "description": "2号电池可用荷电状态（真实）"
+        },
+        "bmstotalMilKm": {
+          "type": "number"
+        },
+        "cellTypeOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号位电池包额定容量类别"
+        },
+        "cellTypeOfPackage2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号位电池包额定容量类别"
+        },
+        "displayingSocOfPackage1": {
+          "type": "number",
+          "description": "1号电池可用荷电状态（表显）"
+        },
+        "displayingSocOfPackage2": {
+          "type": "number",
+          "description": "2号电池可用荷电状态（表显）"
+        },
+        "errorCodeOfBattSysList": {
+          "type": "array",
+          "description": "电池系统故障码",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "errorCodeOfPackage1List": {
+          "type": "array",
+          "description": "1号电池包故障码",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "errorCodeOfPackage2List": {
+          "type": "array",
+          "description": "2号电池包故障码",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "hardVersionOfPackage1": {
+          "type": "string",
+          "description": "1号电池SBMU硬件版本号"
+        },
+        "hardVersionOfPackage2": {
+          "type": "string",
+          "description": "2号电池SBMU硬件版本号"
+        },
+        "hisStaOutAccumChrgerEngyOfPackage1": {
+          "type": "number",
+          "description": "1号累计站外插枪充电能量"
+        },
+        "hisStaOutDisChrgEngyOfPackage1": {
+          "type": "number",
+          "description": "1号累计站外放电能量"
+        },
+        "hisStaOutReChrgEngy": {
+          "type": "number",
+          "description": "电池包累计站外回充能量 kwh"
+        },
+        "hvnegInterfaceTempOfPackage1": {
+          "type": "number"
+        },
+        "hvposInterfaceTempOfPackage1": {
+          "type": "number"
+        },
+        "mainCnctrCtrlStateOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号位电池包内主回路高压状态"
+        },
+        "mbmuHardVersion": {
+          "type": "string",
+          "description": "车MBMU硬件版本号"
+        },
+        "mbmuSoftVersion": {
+          "type": "string",
+          "description": "车MBMU软件版本号"
+        },
+        "packTypeOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号位电池包类型识别码"
+        },
+        "ratedPackVOLTOfPackage1": {
+          "type": "number",
+          "description": "1号电池额定电压"
+        },
+        "sbleHardVersion": {
+          "type": "string",
+          "description": "站端通讯模块蓝牙硬件版本号"
+        },
+        "sbleMac": {
+          "type": "string",
+          "description": "站端蓝牙通讯模块MAC"
+        },
+        "sbleSoftVersion": {
+          "type": "string",
+          "description": "站端通讯模块蓝牙软件版本号"
+        },
+        "signalStrengthOfV2S": {
+          "type": "integer",
+          "format": "int32",
+          "description": "未连接：0.0dbm 已连接：-128dbm ~ -1dbm"
+        },
+        "snOfPackage1": {
+          "type": "string",
+          "description": "1号电池Sn码"
+        },
+        "snOfPackage2": {
+          "type": "string",
+          "description": "2号电池Sn码"
+        },
+        "socUnreliableFlagOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包SOC不可信标志位"
+        },
+        "socUnreliableFlagOfPackage2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包SOC不可信标志位"
+        },
+        "soeOfPackage1": {
+          "type": "number",
+          "description": "1号电池电量"
+        },
+        "soeOfPackage2": {
+          "type": "number",
+          "description": "2号电池电量"
+        },
+        "softVersionOfPackage1": {
+          "type": "string",
+          "description": "1号电池SBMU软件版本号"
+        },
+        "softVersionOfPackage2": {
+          "type": "string",
+          "description": "2号电池SBMU软件版本号"
+        },
+        "sohOfPackage1": {
+          "type": "number",
+          "description": "1号电池健康度"
+        },
+        "sohOfPackage2": {
+          "type": "number",
+          "description": "2号电池健康度"
+        },
+        "statusOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "BMS识别的1号电池包的状态"
+        },
+        "statusOfPackage2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "BMS识别的2号电池包的状态"
+        },
+        "subtotalMileageOfPackage1": {
+          "type": "number",
+          "description": "1号电池小计里程"
+        },
+        "subtotalMileageOfPackage2": {
+          "type": "number",
+          "description": "2号电池小计里程"
+        },
+        "subtotalOutsideChargingTimes": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池系统小计站外充电次数"
+        },
+        "subtotalOutsideDischargingEnergyOfPackage1": {
+          "type": "number",
+          "description": "1号电池包小计站外放电能量"
+        },
+        "subtotalOutsideDischargingEnergyOfPackage2": {
+          "type": "number",
+          "description": "2号电池包小计站外放电能量"
+        },
+        "subtotalOutsideGunChargingEnergyOfPackage1": {
+          "type": "number",
+          "description": "1号电池包小计站外插枪充电能量"
+        },
+        "subtotalOutsideGunChargingEnergyOfPackage2": {
+          "type": "number",
+          "description": "2号电池包小计站外插枪充电能量"
+        },
+        "subtotalOutsideRechargingEnergyOfPackage1": {
+          "type": "number",
+          "description": "1号电池包小计站外回充能量"
+        },
+        "subtotalOutsideRechargingEnergyOfPackage2": {
+          "type": "number",
+          "description": "2号电池包小计站外回充能量"
+        },
+        "supremeErrorCodeOfBattSys": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池系统最高故障等级故障码"
+        },
+        "supremeErrorCodeOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包最高故障等级故障码"
+        },
+        "supremeErrorCodeOfPackage2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包最高故障等级故障码"
+        },
+        "supremeErrorLevelOfBattSys": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池系统最高故障等级"
+        },
+        "supremeErrorLevelOfPackage1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包最高故障等级"
+        },
+        "supremeErrorLevelOfPackage2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包最高故障等级"
+        },
+        "tirePRSsignal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "项目报警是用胎压值还是用报警信号"
+        },
+        "tirePrsAlarm_FL": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压报警信号 左前轮"
+        },
+        "tirePrsAlarm_FR": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压报警信号 右前轮"
+        },
+        "tirePrsAlarm_RL": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压报警信号 左后轮"
+        },
+        "tirePrsAlarm_RR": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压报警信号 右后轮"
+        },
+        "tirePrs_FL": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压值 左前轮"
+        },
+        "tirePrs_FR": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压值 右前轮"
+        },
+        "tirePrs_RL": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压值 左后轮"
+        },
+        "tirePrs_RR": {
+          "type": "integer",
+          "format": "int32",
+          "description": "胎压值 右后轮"
+        },
+        "totalChargingEnergyOfPackage1": {
+          "type": "number",
+          "description": "1号电池包累计充电能量"
+        },
+        "totalChargingEnergyOfPackage2": {
+          "type": "number",
+          "description": "2号电池包累计充电能量"
+        },
+        "totalDischargingEnergyOfPackage1": {
+          "type": "number",
+          "description": "1号电池包累计放电能量"
+        },
+        "totalDischargingEnergyOfPackage2": {
+          "type": "number",
+          "description": "2号电池包累计放电能量"
+        },
+        "totalMile": {
+          "type": "number",
+          "description": "车总里程数"
+        },
+        "totalMileageOfPackage1": {
+          "type": "number",
+          "description": "1号电池总里程"
+        },
+        "totalMileageOfPackage2": {
+          "type": "number",
+          "description": "2号电池总里程"
+        },
+        "totalOutsideGunChargingTimes": {
+          "type": "integer",
+          "format": "int64",
+          "description": "电池系统累计站外插枪充电次数"
+        },
+        "vbleHardVersion": {
+          "type": "string",
+          "description": "车蓝牙通讯模块硬件版本号"
+        },
+        "vbleMac": {
+          "type": "string",
+          "description": "车蓝牙通讯模块MAC"
+        },
+        "vbleSoftVersion": {
+          "type": "string",
+          "description": "车蓝牙通讯模块软件版本号"
+        },
+        "vehSpeed": {
+          "type": "number",
+          "description": "车速"
+        },
+        "vin": {
+          "type": "string",
+          "description": "车辆vin码"
+        }
+      },
+      "title": "ConnectedCarInfoReqDTO"
+    },
+    "EnergyInfo": {
+      "type": "object",
+      "properties": {
+        "energyTotalOutput": {
+          "type": "number",
+          "description": "两次换电间电池包小计站外放电电量(20E)"
+        },
+        "hisAccumChrgEngy": {
+          "type": "number",
+          "description": "电池包累计充电总能量(20D)"
+        },
+        "hisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "电池包累计放电总能量(20D)"
+        },
+        "hisStaOutAccumChrgerEngy": {
+          "type": "number",
+          "description": "累计换电站外插枪充电能量(210)"
+        },
+        "hisStaOutDisChrgEngy": {
+          "type": "number",
+          "description": "累计换电站外放电能量(20F)"
+        },
+        "hisStaOutReChrgEngy": {
+          "type": "number",
+          "description": "累计换电站外回充能量(210)"
+        },
+        "hisStaOutReChrgEngyWh": {
+          "type": "number",
+          "description": "两次换电间电池包小计站外回充能量(20F)"
+        },
+        "outStationChargingEnergy": {
+          "type": "number",
+          "description": "两次换电间电池包小计站外插枪充电电量(20E)"
+        },
+        "pollId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "sbMU_RemainEnergyBeforeExc": {
+          "type": "number",
+          "description": "进站时电池剩余能量(SOE)(204)"
+        },
+        "sbMU_RemainEnergyLastExc": {
+          "type": "number",
+          "description": "上次出站时电池剩余能量(204)"
+        }
+      },
+      "title": "EnergyInfo"
+    },
+    "FastChangeLockStatusReqDto": {
+      "type": "object",
+      "properties": {
+        "num1_Package1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包1号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num1_Package2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包1号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num2_Package1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包2号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num2_Package2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包2号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num3_Package1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包3号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num3_Package2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包3号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num4_Package1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1号电池包4号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        },
+        "num4_Package2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "2号电池包4号快换锁状态:0-无效状态,1-锁止状态,2-解锁状态,3-异常状态"
+        }
+      },
+      "title": "FastChangeLockStatusReqDto"
+    },
+    "MbmuVersionInfo": {
+      "type": "object",
+      "properties": {
+        "mbmuAppVersion": {
+          "type": "string",
+          "description": "mbmu app版本号"
+        },
+        "mbmuBleBootVersion": {
+          "type": "string",
+          "description": "mbmu 蓝牙 boot版本号"
+        },
+        "mbmuBleSoftVersion": {
+          "type": "string",
+          "description": "mbmu 蓝牙软件版本号"
+        },
+        "mbmuBootVersion": {
+          "type": "string",
+          "description": "mbmu boot版本号"
+        },
+        "mbmuHardwareVersion": {
+          "type": "string",
+          "description": "mbmu 硬件版本号"
+        }
+      },
+      "title": "MbmuVersionInfo"
+    },
+    "MileageInfo": {
+      "type": "object",
+      "properties": {
+        "pollId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "toatlMilKm": {
+          "type": "number",
+          "description": "电池包总里程信息(20C)"
+        },
+        "tripMilKm": {
+          "type": "number",
+          "description": "电池包小计换电里程信息(20C)"
+        }
+      },
+      "title": "MileageInfo"
+    },
+    "ProtoMsg129ReqDTO": {
+      "type": "object",
+      "properties": {
+        "cnctrPwrSplyVolt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cnctrPwrSplyVoltVldBySafety": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hvil1State": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kl30Volt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kl30VoltVldBySafety": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "voltInfo_CRC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "voltInfo_SBMU_AlIV": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "wakeUpSourceState": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ProtoMsg129ReqDTO"
+    },
+    "ProtoMsg12FReqDTO": {
+      "type": "object",
+      "properties": {
+        "allMainCnctrOpenedFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "所有主回路的继电器断开标志"
+        },
+        "bmsfaultDisposeSignal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmsinitStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmsmostCriticalFltID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmsmostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cellOverVoltALvl4Flt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "功能安全单体极限过压"
+        },
+        "cellUnderVoltALvl4Flt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "功能安全单体极限欠压"
+        },
+        "cellVoltSamplingLineOpenWireFlt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组温度采样线开路故障"
+        },
+        "faultCat": {
+          "type": "integer",
+          "format": "int32",
+          "description": "未锁存故障等级"
+        },
+        "fltInfo2_CRC": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PACK信息3报文的CRC"
+        },
+        "fltInfo2_SBMU_AlIV": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU生命信号,0~15循环"
+        },
+        "mainNegCnctrCtrlHighSideCmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器高边控制命令"
+        },
+        "mainNegCnctrCtrlLowSideCmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器低边控制命令"
+        },
+        "mainPosCnctrCtrlHighSideCmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器低边控制命令"
+        },
+        "mainPosCnctrCtrlLowSideCmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器高边控制命令"
+        },
+        "moduleOTALvl4Flt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "功能安全过温四级故障标志位"
+        },
+        "powerOnCmdFeedBack": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU反馈收到MBMU/VCU的上高压指令"
+        },
+        "preCnctrCtrlHighSideCmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预充继电器高边控制命令"
+        },
+        "preCnctrCtrlLowSideCmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预充继电器低边控制命令"
+        },
+        "tempSamplingLineOpenWireFlt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tempSensorSeriousFlt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "温度传感器严重故障标志"
+        }
+      },
+      "title": "ProtoMsg12FReqDTO"
+    },
+    "ProtoMsg505ReqDTO": {
+      "type": "object",
+      "properties": {
+        "errorCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "默认值：全F 无故障/无法识别故障：0 故障码：1~254"
+        },
+        "resultCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "默认值：全F 执行失败：1 执行成功：2"
+        },
+        "rpa": {
+          "type": "string",
+          "description": "rpa"
+        }
+      },
+      "title": "ProtoMsg505ReqDTO"
+    },
+    "R«Set«string»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«Set«string»»"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "SocSohInfo": {
+      "type": "object",
+      "properties": {
+        "battSts6_DisplaySOH": {
+          "type": "number",
+          "description": "显示SOH(206)"
+        },
+        "displaySOC": {
+          "type": "number",
+          "description": "显示SOC(206)"
+        },
+        "pollId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "realSOC": {
+          "type": "number",
+          "description": "真实SOC(206)"
+        },
+        "sbMU_DisplaySOCLastExc": {
+          "type": "number",
+          "description": "上次出站时显示SOC(204)"
+        },
+        "sbMU_RealSOCCLastExc": {
+          "type": "number",
+          "description": "上次出站时真实SOC(204)"
+        }
+      },
+      "title": "SocSohInfo"
+    },
+    "StopJobDTO": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "停止任务:v3_244_command-sn任务,v3_123_command-真实soc"
+        }
+      },
+      "title": "StopJobDTO"
+    },
+    "TbmuMbmu版本数据信息": {
+      "type": "object",
+      "properties": {
+        "mbmuVersionInfo": {
+          "description": "Mbmu版本数据信息",
+          "originalRef": "MbmuVersionInfo",
+          "$ref": "#/definitions/MbmuVersionInfo"
+        },
+        "tbmuVersionInfo": {
+          "description": "Tbmu版本数据信息",
+          "originalRef": "TbmuVersionInfo",
+          "$ref": "#/definitions/TbmuVersionInfo"
+        }
+      },
+      "title": "TbmuMbmu版本数据信息"
+    },
+    "TbmuVersionInfo": {
+      "type": "object",
+      "properties": {
+        "tbmuAppVersion": {
+          "type": "string",
+          "description": "tbmu app版本号"
+        },
+        "tbmuBleBootVersion": {
+          "type": "string",
+          "description": "tbmu 蓝牙 boot版本号"
+        },
+        "tbmuBleSoftVersion": {
+          "type": "string",
+          "description": "tbmu 蓝牙软件版本号"
+        },
+        "tbmuBootVersion": {
+          "type": "string",
+          "description": "tbmu boot版本号"
+        },
+        "tbmuHardwareVersion": {
+          "type": "string",
+          "description": "tbmu 硬件版本号"
+        }
+      },
+      "title": "TbmuVersionInfo"
+    },
+    "batteryLockInfo": {
+      "type": "object",
+      "properties": {
+        "batterySwapSelfCheckFailReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU3换电失败原因"
+        },
+        "packDetailLock1Sts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包内第1个机械锁的状态"
+        },
+        "packDetailLock2Sts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包内第2个机械锁的状态"
+        },
+        "packDetailLock3Sts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包内第3个机械锁的状态"
+        },
+        "packDetailLock4Sts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包内第4个机械锁的状态"
+        },
+        "packLockSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包机械锁状态（0：无效，1：lock，2：unlock，3：abnormal)"
+        },
+        "packPollID": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "pollId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包序号"
+        },
+        "wirelessSignalStrength": {
+          "type": "integer",
+          "format": "int32",
+          "description": "TMU与MBMU的无线通讯信号强度"
+        }
+      },
+      "title": "batteryLockInfo"
+    },
+    "电池包数据信息": {
+      "type": "object",
+      "properties": {
+        "batteryLockInfoList": {
+          "type": "array",
+          "description": "电池包lock信息",
+          "items": {
+            "originalRef": "batteryLockInfo",
+            "$ref": "#/definitions/batteryLockInfo"
+          }
+        },
+        "energyInfo": {
+          "type": "array",
+          "description": "电池包能量信息",
+          "items": {
+            "originalRef": "EnergyInfo",
+            "$ref": "#/definitions/EnergyInfo"
+          }
+        },
+        "mileageInfo": {
+          "type": "array",
+          "description": "电池包里程信息",
+          "items": {
+            "originalRef": "MileageInfo",
+            "$ref": "#/definitions/MileageInfo"
+          }
+        },
+        "socSohInfo": {
+          "type": "array",
+          "description": "电池包Soc和Soh信息",
+          "items": {
+            "originalRef": "SocSohInfo",
+            "$ref": "#/definitions/SocSohInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息"
+    },
+    "电池包标志和状态信息": {
+      "type": "object",
+      "properties": {
+        "batterySignOrStateInfo": {
+          "type": "array",
+          "items": {
+            "originalRef": "BatterySignOrState",
+            "$ref": "#/definitions/BatterySignOrState"
+          }
+        }
+      },
+      "title": "电池包标志和状态信息"
+    },
+    "电池包编码类信息": {
+      "type": "object",
+      "properties": {
+        "macOfPackage0": {
+          "type": "string",
+          "description": "车机的mac(209)"
+        },
+        "macOfPackage1": {
+          "type": "string",
+          "description": "电池包1的mac(209)"
+        },
+        "macOfPackage2": {
+          "type": "string",
+          "description": "电池包2的mac(209)"
+        },
+        "snOfPackage1": {
+          "type": "string",
+          "description": "电池包1的sn(211)"
+        },
+        "snOfPackage2": {
+          "type": "string",
+          "description": "电池包2的sn(211)"
+        }
+      },
+      "title": "电池包编码类信息"
+    },
+    "电池换电失败原因、电池自我检测换电失败原因": {
+      "type": "object",
+      "properties": {
+        "bmsFalutCodeBit0": {
+          "type": "integer",
+          "format": "int32",
+          "description": "MBMU未发送SBMU2上高压指令"
+        },
+        "bmsFalutCodeBit1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2蓝牙通信故障无法上高压"
+        },
+        "bmsFalutCodeBit11": {
+          "type": "integer",
+          "format": "int32",
+          "description": "MBMU未发送SBMU1上高压指令"
+        },
+        "bmsFalutCodeBit12": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1蓝牙通信故障无法上高压"
+        },
+        "bmsFalutCodeBit13": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1未收到MBMU上高压指令"
+        },
+        "bmsFalutCodeBit14": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1未响应上高压指令"
+        },
+        "bmsFalutCodeBit15": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1接触器开路故障"
+        },
+        "bmsFalutCodeBit16": {
+          "type": "integer",
+          "format": "int32",
+          "description": "进入换电后10min内未收到\"换电指令\"跳转"
+        },
+        "bmsFalutCodeBit17": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自检失败后处理超时"
+        },
+        "bmsFalutCodeBit18": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站控发送SBMU1的MAC地址为0"
+        },
+        "bmsFalutCodeBit19": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站控发送SBMU2的MAC地址为0"
+        },
+        "bmsFalutCodeBit2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2未收到MBMU上高压指令"
+        },
+        "bmsFalutCodeBit20": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1的蓝牙连接失败"
+        },
+        "bmsFalutCodeBit21": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2的蓝牙连接失败"
+        },
+        "bmsFalutCodeBit22": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自检失败"
+        },
+        "bmsFalutCodeBit24": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1未收到下高压指令"
+        },
+        "bmsFalutCodeBit25": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2未收到下高压指令"
+        },
+        "bmsFalutCodeBit26": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1收到下高压指令但未反馈下高压完成"
+        },
+        "bmsFalutCodeBit27": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2收到下高压指令但未反馈下高压完成"
+        },
+        "bmsFalutCodeBit28": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1接触器粘连故障"
+        },
+        "bmsFalutCodeBit29": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2接触器粘连故障"
+        },
+        "bmsFalutCodeBit3": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2未响应上高压指令"
+        },
+        "bmsFalutCodeBit30": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1蓝牙断不开"
+        },
+        "bmsFalutCodeBit31": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2蓝牙断不开"
+        },
+        "bmsFalutCodeBit4": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2接触器开路故障"
+        },
+        "bmsFalutCodeBit41": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2的累加和电压无效"
+        },
+        "bmsFalutCodeBit42": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2有禁止继电器闭合故障"
+        },
+        "bmsFalutCodeBit43": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2有继电器延迟断开故障"
+        },
+        "bmsFalutCodeBit44": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU2有继电器强制断开故障"
+        },
+        "bmsFalutCodeBit5": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上高压失败后处理超时"
+        },
+        "bmsFalutCodeBit56": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自检失败触发存储"
+        },
+        "bmsFalutCodeBit57": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包压差过大"
+        },
+        "bmsFalutCodeBit58": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1的累加和电压无效"
+        },
+        "bmsFalutCodeBit59": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1有禁止继电器闭合故障"
+        },
+        "bmsFalutCodeBit6": {
+          "type": "integer",
+          "format": "int32",
+          "description": "所有蓝牙都连不上"
+        },
+        "bmsFalutCodeBit60": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1有继电器延迟断开故障"
+        },
+        "bmsFalutCodeBit61": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU1有继电器强制断开故障"
+        },
+        "bmsFalutCodeBit9": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘禁止上高压"
+        },
+        "sbmu1FaultCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "sbmu1故障码"
+        },
+        "sbmu2FaultCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "sbmu2故障码"
+        }
+      },
+      "title": "电池换电失败原因、电池自我检测换电失败原因"
+    },
+    "车机换电交互信息": {
+      "type": "object",
+      "properties": {
+        "allPackPwrDnSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "所有pack下高压状态： 0-默认，1-下高压成功，2-下高压失败(201)"
+        },
+        "blueDisconnectFailFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0-默认，1-请求蓝牙断开失败(201)"
+        },
+        "excPackCheckFailFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自检失败标志位：0-正常，1-失败(203)"
+        },
+        "hisAccumChrgTimes": {
+          "type": "integer",
+          "format": "int32",
+          "description": "累计站外充电次数(207)"
+        },
+        "m2T_WLDSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "MBMU和TBMU蓝牙配对状态：0-未连接，1-连接，2-异常(203)"
+        },
+        "packExcFailFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上高压失败标志位：0-正常，1-失败(203)"
+        },
+        "packExcSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "换电状态：0-未换电，1-换电准备，2-换电中(201)"
+        },
+        "subTotalChargeTimeOutStation": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小计站外充电次数(207)"
+        },
+        "vehSubTotalOdometer": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆小计换电里程信息(203)"
+        },
+        "vehTotalOdometer": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆总里程信息(203)"
+        },
+        "vhlAllowBatSwapFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车端换电允许标志位： 0-不允许，1-允许换电(201)"
+        },
+        "vin": {
+          "type": "string",
+          "description": "车辆vin(214)"
+        },
+        "waitBatterySwapMaxTimeOutFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "换电超时请求退出换电标志位：0-正常，1-失败(203)"
+        }
+      },
+      "title": "车机换电交互信息"
+    },
+    "车辆自由度信息": {
+      "type": "object",
+      "properties": {
+        "brakeSwitchSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "制动器状态，0：松开；1:制动，站控识别为为0时可以换电(201)"
+        },
+        "doorSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车门开关状态，0：全部车门关闭；1:未关闭全部车门，站控识别为为0时可以换电(201)"
+        },
+        "epBWorkingSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "驻车制动状态，0：松开；1:制动，站控识别为0时可以换电(201)"
+        },
+        "gearSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "挡位状态，0：其它；1:N档，站控识别为为1时可以换电(201)"
+        },
+        "steeringWheelAngle": {
+          "type": "number",
+          "description": "方向盘转向角角度，站控识别为≤30°时可以换电(201)"
+        },
+        "vehHVState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压连接状态(页面上展示为熄火)，0：下高压；1:未下高压(201)"
+        },
+        "vehPowerMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆钥匙状态(没有用) 0：熄火；1：Ready，站控识别为0时可以换电(201)"
+        }
+      },
+      "title": "车辆自由度信息"
+    }
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "pdd-station-supercharge-test01.catles.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "modbus模拟",
+      "description": "Modbus Virtual Controller"
+    }
+  ],
+  "paths": {
+    "/modbusVirtual/getCoinsData": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "查询线圈数据",
+        "operationId": "getCoinsDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getSlaveDataDTO",
+            "description": "getSlaveDataDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetSlaveDataDTO",
+              "originalRef": "GetSlaveDataDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/getHoldingRegistersData": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "查询保持寄存器值数据",
+        "operationId": "getHoldingRegistersDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getSlaveDataDTO",
+            "description": "getSlaveDataDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetSlaveDataDTO",
+              "originalRef": "GetSlaveDataDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/getInputRegistersData": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "查询输入寄存器值数据",
+        "operationId": "getInputRegistersDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getSlaveDataDTO",
+            "description": "getSlaveDataDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetSlaveDataDTO",
+              "originalRef": "GetSlaveDataDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/getReadDiscreteInputsData": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "查询离散量值数据",
+        "operationId": "getReadDiscreteInputsDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getSlaveDataDTO",
+            "description": "getSlaveDataDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetSlaveDataDTO",
+              "originalRef": "GetSlaveDataDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/initReadHoldingRegisters": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "初始化保持寄存器值(PLC)",
+        "operationId": "initReadHoldingRegistersUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/updateReadCoils": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "更新线圈值",
+        "operationId": "updateReadCoilsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateCoilsDTOs",
+            "description": "updateCoilsDTOs",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateCoilsAddressDTO",
+                "originalRef": "UpdateCoilsAddressDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/updateReadDiscreteInputs": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "更新离散量值",
+        "operationId": "updateReadDiscreteInputsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateDiscreteInputsDTOS",
+            "description": "updateDiscreteInputsDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateDiscreteInputsDTO",
+                "originalRef": "UpdateDiscreteInputsDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/updateReadHoldingRegisters": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "更新保持寄存器值",
+        "operationId": "updateReadHoldingRegistersUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateHoldingRegistersDTOS",
+            "description": "updateHoldingRegistersDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateHoldingRegistersDTO",
+                "originalRef": "UpdateHoldingRegistersDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    },
+    "/modbusVirtual/updateReadInputRegisters": {
+      "post": {
+        "tags": [
+          "modbus模拟"
+        ],
+        "summary": "更新输入寄存器值",
+        "operationId": "updateReadInputRegistersUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateInputRegistersDTOS",
+            "description": "updateInputRegistersDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UpdateInputRegistersDTO",
+                "originalRef": "UpdateInputRegistersDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GetSlaveDataDTO": {
+      "type": "object",
+      "properties": {
+        "slaveId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "从机id"
+        }
+      },
+      "title": "GetSlaveDataDTO"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "UpdateCoilsAddressDTO": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "地址",
+          "refType": null
+        },
+        "slaveId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "从机id",
+          "refType": null
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "description": "值",
+          "refType": null
+        }
+      },
+      "title": "UpdateCoilsAddressDTO"
+    },
+    "UpdateDiscreteInputsDTO": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "地址"
+        },
+        "slaveId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "从机id"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "description": "值"
+        }
+      },
+      "title": "UpdateDiscreteInputsDTO"
+    },
+    "UpdateHoldingRegistersDTO": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "地址"
+        },
+        "slaveId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "从机id"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "description": "值"
+        }
+      },
+      "title": "UpdateHoldingRegistersDTO"
+    },
+    "UpdateInputRegistersDTO": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "地址"
+        },
+        "slaveId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "从机id"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "description": "值"
+        }
+      },
+      "title": "UpdateInputRegistersDTO"
+    }
+  }
+}

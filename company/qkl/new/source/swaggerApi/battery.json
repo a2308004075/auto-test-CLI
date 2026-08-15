@@ -1,0 +1,4720 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "data-expire-time-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "一代电池信息查询",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "一代逻辑mac管理",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "下控命令",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "充电机下控命令",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "电池信息查询V2",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "电池信息查询接口",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "电池服务统计",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "电池设备管理",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/battery/feign/v1/batteryInfoQuery/getAllBatteryInfoList": {
+      "post": {
+        "tags": [
+          "一代电池信息查询"
+        ],
+        "summary": "获取所有电池数接口",
+        "operationId": "getAllBatteryInfoListUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "allPositionList",
+            "description": "allPositionList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryDetailInfoV1DTO»»",
+              "originalRef": "R«List«BatteryDetailInfoV1DTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/battery/feign/v1/batteryInfoQuery/getAvailableBatteryAmountBySoc": {
+      "post": {
+        "tags": [
+          "一代电池信息查询"
+        ],
+        "summary": "返回当前可用的电池数量",
+        "operationId": "getAvailableBatteryAmountBySocUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetAvailableBatteryAmountBySocReqDTO",
+              "originalRef": "GetAvailableBatteryAmountBySocReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/battery/feign/v1/batteryInfoQuery/getCbmuAndSbmuBlueSts": {
+      "post": {
+        "tags": [
+          "一代电池信息查询"
+        ],
+        "summary": "获取CBMU和SBMU蓝牙连接情况",
+        "operationId": "getCbmuAndSbmuBlueStsUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "qeuryDisconnectBMSDTO",
+            "description": "qeuryDisconnectBMSDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QeuryDisconnectBMSDTO",
+              "originalRef": "QeuryDisconnectBMSDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«CbmuAndSbmuBlueStsRespDTO»»",
+              "originalRef": "R«List«CbmuAndSbmuBlueStsRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/battery/feign/v1/logicMacService/deleteLogicMac": {
+      "post": {
+        "tags": [
+          "一代逻辑mac管理"
+        ],
+        "summary": "删除逻辑mac",
+        "operationId": "deleteLogicMacUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "logicMacQueryDTO",
+            "description": "logicMacQueryDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LogicMacQueryDTO",
+              "originalRef": "LogicMacQueryDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/battery/feign/v1/logicMacService/getLogicMac": {
+      "post": {
+        "tags": [
+          "一代逻辑mac管理"
+        ],
+        "summary": "查询逻辑mac",
+        "operationId": "getLogicMacUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "logicMacQueryDTO",
+            "description": "logicMacQueryDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LogicMacQueryDTO",
+              "originalRef": "LogicMacQueryDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«LogicMacDTO»»",
+              "originalRef": "R«List«LogicMacDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/battery/feign/v1/logicMacService/getLogicMacList": {
+      "post": {
+        "tags": [
+          "一代逻辑mac管理"
+        ],
+        "summary": "获取所有逻辑mac",
+        "operationId": "getLogicMacListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«LogicMacDTO»»",
+              "originalRef": "R«List«LogicMacDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/battery/feign/v1/logicMacService/updateLogicMac": {
+      "post": {
+        "tags": [
+          "一代逻辑mac管理"
+        ],
+        "summary": "更新逻辑mac",
+        "operationId": "updateLogicMacUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "logicMacUpdateDTOList",
+            "description": "logicMacUpdateDTOList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LogicMacUpdateDTO",
+                "originalRef": "LogicMacUpdateDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/batteryOut": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "请求电池出仓",
+        "operationId": "batteryOutUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommandReqDTO",
+              "originalRef": "CommandReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/chargeControl": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "充电控制",
+        "operationId": "chargeControlUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "chargeControlDTO",
+            "description": "chargeControlDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChargeControlDTO",
+              "originalRef": "ChargeControlDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/clearBbsFault": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "清除站控自检故障",
+        "operationId": "clearBbsFaultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "faultReqDTO",
+            "description": "faultReqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryFaultReqDTO",
+              "originalRef": "BatteryFaultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/clearCache": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "清除缓存",
+        "operationId": "clearCacheUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clearCacheDTO",
+            "description": "clearCacheDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClearCacheDTO",
+              "originalRef": "ClearCacheDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/clearFault": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "请求清除故障",
+        "operationId": "clearFaultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClearFaultReqDTO",
+              "originalRef": "ClearFaultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/clearInStationSubtotal": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "请求清除站内小计",
+        "operationId": "clearInStationSubtotalUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommandReqDTO",
+              "originalRef": "CommandReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/clearOutStationSubtotal": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "请求清除站外小计",
+        "operationId": "clearOutStationSubtotalUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommandReqDTO",
+              "originalRef": "CommandReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/closeHVContactor": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "电池包下高压控制",
+        "operationId": "closeHVContactorUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommandReqDTO",
+              "originalRef": "CommandReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/creatClient": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "建立充电连接",
+        "operationId": "creatClientUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "connectBMSDTO",
+            "description": "connectBMSDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConnectBMSV1DTO",
+              "originalRef": "ConnectBMSV1DTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/disconnectBMSConnect": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "下控断仓内电池蓝牙",
+        "operationId": "disconnectBMSConnectUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "qeuryDisconnectBMSDTO",
+            "description": "qeuryDisconnectBMSDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QeuryDisconnectBMSDTO",
+              "originalRef": "QeuryDisconnectBMSDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/faultClearAll": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "清除电池故障",
+        "operationId": "faultClearAllUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clearFaultDTO",
+            "description": "clearFaultDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClearFaultAllDTO",
+              "originalRef": "ClearFaultAllDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/hot": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "加热控制",
+        "operationId": "hotUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HotReqDTO",
+              "originalRef": "HotReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/hotNotCommond": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "加热控制(无命令)",
+        "operationId": "hotNotCommondUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HotReqDTO",
+              "originalRef": "HotReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/sendOutBound": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "发送出站命令",
+        "operationId": "sendOutBoundUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "outBoundDTO",
+            "description": "outBoundDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OutBoundDTO",
+              "originalRef": "OutBoundDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/setCC2Flg": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "设置CC2标志",
+        "operationId": "setCC2FlgUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cc2FlgSetReqDTO",
+            "description": "cc2FlgSetReqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommandReqDTO",
+              "originalRef": "CommandReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/swapFlowReset": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "换电初始化",
+        "operationId": "swapFlowResetUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "swapFlowResetDTO",
+            "description": "swapFlowResetDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SwapFlowResetDTO",
+              "originalRef": "SwapFlowResetDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryControl/triggerQuery": {
+      "post": {
+        "tags": [
+          "下控命令"
+        ],
+        "summary": "触发查询",
+        "operationId": "triggerQueryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "triggerQueryDTO",
+            "description": "triggerQueryDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryTriggerQueryDTO",
+              "originalRef": "BatteryTriggerQueryDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/batchQueryBatteryChargeState": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "批量查询电池充电状态",
+        "operationId": "batchQueryBatteryChargeStateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "positionList",
+            "description": "positionList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryChargeStateRespDTO»»",
+              "originalRef": "R«List«BatteryChargeStateRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getAllBatteryInfoList": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "获取所有电池信息列表",
+        "operationId": "getAllBatteryInfoListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryDetailInfoDTO»»",
+              "originalRef": "R«List«BatteryDetailInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getAllSbmuFaultCodeInfoList": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "获取所有SBMU故障码信息",
+        "operationId": "getAllSbmuFaultCodeInfoListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«SbmuFaultCodeDTO»»",
+              "originalRef": "R«List«SbmuFaultCodeDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getAvailableBatteryAmountBySoc": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "根据SOC获取可用电池数量",
+        "operationId": "getAvailableBatteryAmountBySocUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetAvailableBatteryAmountBySocReqDTO",
+              "originalRef": "GetAvailableBatteryAmountBySocReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getBatteryStatusDTOInfoList": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "获取电池状态信息列表",
+        "operationId": "getBatteryStatusDTOInfoListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryStatusInfoRespDTO»»",
+              "originalRef": "R«List«BatteryStatusInfoRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getCbmuAndSbmuBlueSts": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "获取CBMU和SBMU蓝牙状态",
+        "operationId": "getCbmuAndSbmuBlueStsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "qeuryDisconnectBMSDTO",
+            "description": "qeuryDisconnectBMSDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QeuryDisconnectBMSDTO",
+              "originalRef": "QeuryDisconnectBMSDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«CbmuAndSbmuBlueStsRespDTO»»",
+              "originalRef": "R«List«CbmuAndSbmuBlueStsRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getCurrentFaultInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "获取当前故障信息",
+        "operationId": "getCurrentFaultInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "faultReqDTO",
+            "description": "faultReqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryFaultReqDTO",
+              "originalRef": "BatteryFaultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/getPackBasicInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "获取电池包基本信息",
+        "operationId": "getPackBasicInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "positionList",
+            "description": "positionList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«PackBasicInfoDTO»»",
+              "originalRef": "R«List«PackBasicInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/packInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "电池包信息查询",
+        "operationId": "packInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PackInfoReqDTO",
+              "originalRef": "PackInfoReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryDetailInfoDTO»»",
+              "originalRef": "R«List«BatteryDetailInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/packPortInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "电池包端口信息",
+        "operationId": "packPortInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«DataCloudPackPortRespDTO»»",
+              "originalRef": "R«List«DataCloudPackPortRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/queryBatteryBasicInfoList": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "查询电池基本信息列表",
+        "operationId": "queryBatteryBasicInfoListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryQueryReqDTO",
+              "originalRef": "BatteryQueryReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryInfoDTO»»",
+              "originalRef": "R«List«BatteryInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/queryBatteryCheckInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "查询电池检测信息",
+        "operationId": "queryBatteryCheckInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryCheckQueryReqDTO",
+              "originalRef": "BatteryCheckQueryReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryCheckInfoDTO»»",
+              "originalRef": "R«List«BatteryCheckInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryInfoQuery/queryBatteryInfoList": {
+      "post": {
+        "tags": [
+          "电池信息查询V2"
+        ],
+        "summary": "查询电池信息列表",
+        "operationId": "queryBatteryInfoListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QueryBatteryInfoListReqDTO",
+              "originalRef": "QueryBatteryInfoListReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryDetailInfoDTO»»",
+              "originalRef": "R«List«BatteryDetailInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryServerStatistics/countSwitch": {
+      "post": {
+        "tags": [
+          "电池服务统计"
+        ],
+        "summary": "计数开关控制",
+        "operationId": "countSwitchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "description": "count",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryServerStatistics/getQpsAll": {
+      "post": {
+        "tags": [
+          "电池服务统计"
+        ],
+        "summary": "获取所有QPS统计",
+        "operationId": "getQpsAllUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryMetricDTO»»",
+              "originalRef": "R«List«BatteryMetricDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/bmsChargerControl/controlChargeUpgrade": {
+      "post": {
+        "tags": [
+          "充电机下控命令"
+        ],
+        "summary": "充电机升级请求",
+        "operationId": "controlChargeUpgradeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BmsChargeUpgradeReqDTO",
+              "originalRef": "BmsChargeUpgradeReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/bmsChargerControl/sendBmsSeedSecretKey": {
+      "post": {
+        "tags": [
+          "充电机下控命令"
+        ],
+        "summary": "下发充电机解析后秘钥",
+        "operationId": "sendBmsSeedSecretKeyUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BmsChargeSeedSecretKeyReqDTO",
+              "originalRef": "BmsChargeSeedSecretKeyReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/dataExpireTime/v3DataTimeoutMap": {
+      "post": {
+        "tags": [
+          "data-expire-time-controller"
+        ],
+        "summary": "获取V3数据超时配置",
+        "operationId": "v3DataTimeoutMapUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«object»",
+              "originalRef": "R«object»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/equipment/status": {
+      "post": {
+        "tags": [
+          "电池设备管理"
+        ],
+        "summary": "获取电池设备状态",
+        "operationId": "statusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryStatusRespDTO»»",
+              "originalRef": "R«List«BatteryStatusRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/packInfo/getHighVoltStateMap": {
+      "post": {
+        "tags": [
+          "电池信息查询接口"
+        ],
+        "summary": "获取电池高压状态Map",
+        "operationId": "getHighVoltStateMapUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "campNos",
+            "description": "campNos",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«Map«int,int»»",
+              "originalRef": "R«Map«int,int»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/packInfo/getPackDynamicData": {
+      "post": {
+        "tags": [
+          "电池信息查询接口"
+        ],
+        "summary": "获取动态电芯数据",
+        "operationId": "getPackDynamicDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "campNos",
+            "description": "campNos",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«PackDynamicData»»",
+              "originalRef": "R«List«PackDynamicData»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/packInfo/getPackVersionInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询接口"
+        ],
+        "summary": "获取电池版本信息",
+        "operationId": "getPackVersionInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "campNos",
+            "description": "campNos",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«PackVersionInfo»»",
+              "originalRef": "R«List«PackVersionInfo»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/packInfo/getPickPackInfo": {
+      "post": {
+        "tags": [
+          "电池信息查询接口"
+        ],
+        "summary": "获取选包电池信息",
+        "operationId": "getPickPackInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«PickPackInfo»»",
+              "originalRef": "R«List«PickPackInfo»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/packInfo/queryRelayState": {
+      "post": {
+        "tags": [
+          "电池信息查询接口"
+        ],
+        "summary": "查询继电器状态信息",
+        "operationId": "queryRelayStateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PackRelayStateQueryDTO",
+              "originalRef": "PackRelayStateQueryDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«PackRelayStateInfoDTO»»",
+              "originalRef": "R«List«PackRelayStateInfoDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BatteryBasicDTO": {
+      "type": "object",
+      "properties": {
+        "appBootVersion": {
+          "type": "string"
+        },
+        "bleSoftwareVersion": {
+          "type": "string"
+        },
+        "bmsConnectStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cellRatedCapacityAh": {
+          "type": "number",
+          "description": "额定容量（1C的容量）"
+        },
+        "cellType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "logicPackMac": {
+          "type": "string"
+        },
+        "numOfAllModulesTemp": {
+          "type": "integer",
+          "format": "int32",
+          "description": "温度检测点数量"
+        },
+        "numOfCellParalleling": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池并联数"
+        },
+        "numOfCellSeriesConnection": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池串联数"
+        },
+        "packMac": {
+          "type": "string"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ratedCapacity": {
+          "type": "number"
+        },
+        "sbmuBootVersion": {
+          "type": "string"
+        },
+        "sbmuCommunicationProtocolVersion": {
+          "type": "string"
+        },
+        "sbmuHardwareVersion": {
+          "type": "string"
+        },
+        "sbmuSoftwareVersion": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string"
+        }
+      },
+      "title": "BatteryBasicDTO"
+    },
+    "BatteryCellTotalBalCapDTO": {
+      "type": "object",
+      "properties": {
+        "cellTotalBalCap": {
+          "type": "number"
+        },
+        "pollingId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "BatteryCellTotalBalCapDTO"
+    },
+    "BatteryChargeStateRespDTO": {
+      "type": "object",
+      "properties": {
+        "chargeState": {
+          "type": "string",
+          "description": "电池充电状态",
+          "enum": [
+            "CHARGING",
+            "UN_CHARGING"
+          ]
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        }
+      },
+      "title": "BatteryChargeStateRespDTO"
+    },
+    "BatteryCheckInfoDTO": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "maxModuleTemp": {
+          "type": "number"
+        },
+        "minModuleTemp": {
+          "type": "number"
+        },
+        "mostSeriouFaultCode": {
+          "type": "string"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "realSoc": {
+          "type": "number"
+        },
+        "scalibrationCap": {
+          "type": "number"
+        },
+        "sn": {
+          "type": "string"
+        },
+        "sratedPackVOLT": {
+          "type": "number"
+        }
+      },
+      "title": "BatteryCheckInfoDTO"
+    },
+    "BatteryCheckQueryReqDTO": {
+      "type": "object",
+      "properties": {
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "BatteryCheckQueryReqDTO"
+    },
+    "BatteryDetailInfoDTO": {
+      "type": "object",
+      "properties": {
+        "basic": {
+          "$ref": "#/definitions/BatteryBasicDTO",
+          "originalRef": "BatteryBasicDTO"
+        },
+        "historicalSafety": {
+          "$ref": "#/definitions/BatteryHistoricalSafetyDTO",
+          "originalRef": "BatteryHistoricalSafetyDTO"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "statistic": {
+          "$ref": "#/definitions/BatteryStatisticDTO",
+          "originalRef": "BatteryStatisticDTO"
+        },
+        "status": {
+          "$ref": "#/definitions/BatteryStatusDTO",
+          "originalRef": "BatteryStatusDTO"
+        }
+      },
+      "title": "BatteryDetailInfoDTO"
+    },
+    "BatteryDetailInfoV1DTO": {
+      "type": "object",
+      "properties": {
+        "appBootVersion": {
+          "type": "string",
+          "description": "APP Boot版本"
+        },
+        "appSoftwareVersion": {
+          "type": "string",
+          "description": "App软件版本"
+        },
+        "avgCellVot": {
+          "type": "number",
+          "description": "SBMU 平均电芯电压 -- SBMU_CellVolt_Avg"
+        },
+        "avgModuleTemp": {
+          "type": "number",
+          "description": "模组平均温度 -- SBMU_BatTmp_Avg 40偏移量 °C"
+        },
+        "bleSoftwareVersion": {
+          "type": "string",
+          "description": "Ble软件版本"
+        },
+        "bmsConnectStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "CBMU与SBMU连接状态 -- C2S_WLDSts 0未连接，1连接，2连接异常"
+        },
+        "cbmuLive": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeAllowFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "允许充电标志 -- S2C_BMSChrgAllowFlg 1允许  0不允许"
+        },
+        "chargerCurrenrOutput": {
+          "type": "number",
+          "description": "ACDC输出电流 -- PCS_Charger_Currenr_Output"
+        },
+        "chargerVoltageOutput": {
+          "type": "number",
+          "description": "ACDC输出电压 -- PCS_Charger_Voltage_Output"
+        },
+        "displaySoc": {
+          "type": "number",
+          "description": "SBMU 显示SOC -- SBMU_DisplaySOC"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "description": "电池包故障码集合",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hardwareVersion": {
+          "type": "string",
+          "description": "硬件版本号"
+        },
+        "hisAccumChargeCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计充电总Cycle"
+        },
+        "hisAccumChrgEngy": {
+          "type": "number",
+          "description": "电池包累计充电总能量"
+        },
+        "hisAccumDisChargeCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计放电总Cycle"
+        },
+        "hisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "电池包累计放电总能量"
+        },
+        "hvIL1State": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压互锁状态"
+        },
+        "instationHisAccumChrgEngy": {
+          "type": "number",
+          "description": "累计换电站内充电能量"
+        },
+        "instationHisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "累计换电站内放电能量"
+        },
+        "logicPackMac": {
+          "type": "string",
+          "description": "电池包逻辑MAC"
+        },
+        "maxCellVolt": {
+          "type": "number",
+          "description": "SBMU 最大电芯电压 -- SBMU_CellVolt_Max"
+        },
+        "maxModuleTemp": {
+          "type": "number",
+          "description": "模组最高温度 -- SBMU_ModTmp_Max 40偏移量 °C"
+        },
+        "maxModuleTempPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最高模组温度位置"
+        },
+        "maxRealSoc": {
+          "type": "number",
+          "description": "SBMU 最大SOC -- SBMU_SOCMax"
+        },
+        "minCellVolt": {
+          "type": "number",
+          "description": "SBMU 最小电芯电压 -- SBMU_CellVolt_Min"
+        },
+        "minModuleTemp": {
+          "type": "number",
+          "description": "模组最低温度 -- SBMU_ModTmp_Min 40偏移量 °C"
+        },
+        "minModuleTempPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最低模组温度位置"
+        },
+        "minRealSoc": {
+          "type": "number",
+          "description": "SBMU 最小SOC -- SBMU_SOCMin"
+        },
+        "mostSeriouFaultCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最严重故障码"
+        },
+        "packMac": {
+          "type": "string",
+          "description": "电池包MAC"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包所在仓位号"
+        },
+        "realSoc": {
+          "type": "number",
+          "description": "SBMU 真实SOC -- SBMU_RealSOC"
+        },
+        "sbmuBattChrgReqCurr": {
+          "type": "number",
+          "description": "SBMU充电请求电流"
+        },
+        "sbmuBattChrgReqVolt": {
+          "type": "number",
+          "description": "SBMU充电请求电压"
+        },
+        "sbmuBattCurr": {
+          "type": "number",
+          "description": "SBMU母线电流"
+        },
+        "sbmuChargeSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU充电状态"
+        },
+        "sbmuIsoMeasNegResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "负极对地绝缘阻值"
+        },
+        "sbmuIsoMeasPosResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "正极对地绝缘阻值"
+        },
+        "sbmuLCMSOCMax": {
+          "type": "number",
+          "description": "LCM SOC上限"
+        },
+        "sbmuLCMSOCMin": {
+          "type": "number",
+          "description": "LCM SOC下限"
+        },
+        "sbmuLive": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuMainNegCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器断开次数"
+        },
+        "sbmuMainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器状态"
+        },
+        "sbmuMainPosCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器断开次数"
+        },
+        "sbmuMainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器状态"
+        },
+        "sbmuMaxCellVoltPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU最大电芯电压位置"
+        },
+        "sbmuMinCellVoltPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU最大电芯温度位置"
+        },
+        "sbmuMostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最高故障等级"
+        },
+        "sbmuPackDCR": {
+          "type": "number",
+          "description": "电池包DCR"
+        },
+        "sbmuRatedCapacity": {
+          "type": "number",
+          "description": "标称容量"
+        },
+        "sbmuRemainEnergy": {
+          "type": "integer",
+          "format": "int32",
+          "description": "剩余能量SOE"
+        },
+        "sbmuSumCellVolt": {
+          "type": "number",
+          "description": "电芯电压累加和 -- SBMU_SumCellVolt"
+        },
+        "sbmuThermalSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU热管理状态"
+        },
+        "sbmuTotalChargeCap": {
+          "type": "number",
+          "description": "累计充电容量"
+        },
+        "sbmuTotalDisChargeCap": {
+          "type": "number",
+          "description": "累计放电容量"
+        },
+        "sbmuTotalStaticTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计静置时间"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "电池包SN"
+        },
+        "socUntrustedFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SOC不可信标志"
+        },
+        "soh": {
+          "type": "number",
+          "description": "SBMU SOH -- SBMU_SOH"
+        },
+        "subTotalChrgCapInstation": {
+          "type": "number",
+          "description": "小计站内充电容量"
+        },
+        "subTotalChrgEnergyInstation": {
+          "type": "number",
+          "description": "小计站内充电电量"
+        },
+        "subTotalChrgEnergyOutstation": {
+          "type": "number",
+          "description": "小计站外充电电量"
+        },
+        "subTotalChrgTimeOutstation": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小计站外充电次数"
+        },
+        "thisTimeInDCEngyWh": {
+          "type": "number",
+          "description": "本次小计换电站内充电能量"
+        },
+        "thisTimeInstationDischrgEngyWh": {
+          "type": "number",
+          "description": "本次小计换电站内放电能量"
+        },
+        "workingMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "运行状态 -- PCS_Working_Mode 0空闲 1参数配置中 2充电中 3停止充电 4故障"
+        }
+      },
+      "title": "BatteryDetailInfoV1DTO"
+    },
+    "BatteryFaultReqDTO": {
+      "type": "object",
+      "properties": {
+        "deviceNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备ID"
+        },
+        "faultCode": {
+          "type": "string",
+          "description": "故障编码"
+        },
+        "faultTypeEnum": {
+          "type": "string",
+          "description": "故障上报设备类型",
+          "enum": [
+            "BSS_SBMU",
+            "SBMU"
+          ]
+        },
+        "originFaultCode": {
+          "type": "string",
+          "description": "原始故障编码"
+        }
+      },
+      "title": "BatteryFaultReqDTO"
+    },
+    "BatteryHistoricalSafetyDTO": {
+      "type": "object",
+      "properties": {
+        "lowerOfRetireSoc": {
+          "type": "number"
+        },
+        "upperOfRetireSoc": {
+          "type": "number"
+        }
+      },
+      "title": "BatteryHistoricalSafetyDTO"
+    },
+    "BatteryInfoDTO": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "displaySoc": {
+          "type": "number"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "highVoltState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isoMeasResVldBySafety": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxCellVolt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxModuleTemp": {
+          "type": "number"
+        },
+        "minCellVolt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minModuleTemp": {
+          "type": "number"
+        },
+        "mostCriticalFaultLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "realSoc": {
+          "type": "number"
+        },
+        "sbmuSoftwareVersion": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string"
+        },
+        "sfltInfo2SBMUAlIV": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "socUnavailableFlg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "soh": {
+          "type": "number"
+        }
+      },
+      "title": "BatteryInfoDTO"
+    },
+    "BatteryMetricBucketDTO": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "windowStart": {
+          "type": "string"
+        }
+      },
+      "title": "BatteryMetricBucketDTO"
+    },
+    "BatteryMetricDTO": {
+      "type": "object",
+      "properties": {
+        "bucketDTOList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryMetricBucketDTO",
+            "originalRef": "BatteryMetricBucketDTO"
+          }
+        },
+        "msgId": {
+          "type": "string"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "BatteryMetricDTO"
+    },
+    "BatteryModuleTempDTO": {
+      "type": "object",
+      "properties": {
+        "no": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "temp": {
+          "type": "number"
+        },
+        "vld": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "BatteryModuleTempDTO"
+    },
+    "BatteryQueryReqDTO": {
+      "type": "object",
+      "properties": {
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "retFields": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "BatteryQueryReqDTO"
+    },
+    "BatteryStatisticDTO": {
+      "type": "object",
+      "properties": {
+        "cellTotalBalCaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryCellTotalBalCapDTO",
+            "originalRef": "BatteryCellTotalBalCapDTO"
+          }
+        },
+        "cellVoltMap": {
+          "type": "object",
+          "description": "Pack详细电压信息 精度：1mv；",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "chargedCapacityThisTime": {
+          "type": "number"
+        },
+        "dcchargeTimesWrite": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hisStaOutAccumChrgerEngy": {
+          "type": "number",
+          "description": "累计换电站外插枪充电能量"
+        },
+        "hisStaOutReChrgEngy": {
+          "type": "number",
+          "description": "累计换电站外回充能量"
+        },
+        "hisStaOutReChrgEngyWh": {
+          "type": "number",
+          "description": "小计换电站外回充充电能量 kwh"
+        },
+        "hisThisTimDisChrgCap": {
+          "type": "number",
+          "description": "本次放电容量值"
+        },
+        "hisThisTimDisChrgEngyWh": {
+          "type": "number",
+          "description": "本次放电能量值，精度：0.1kwh"
+        },
+        "moduleTemps": {
+          "type": "array",
+          "description": "Pack详细温度信息 精度：1mv；",
+          "items": {
+            "$ref": "#/definitions/BatteryModuleTempDTO",
+            "originalRef": "BatteryModuleTempDTO"
+          }
+        },
+        "onboardACChrgTimesOnceBatSwap": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计换电站外慢充次数"
+        },
+        "sbmuLCMSOCMax": {
+          "type": "number"
+        },
+        "sbmuLCMSOCMin": {
+          "type": "number"
+        },
+        "sbmuMainNegCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuMainPosCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuTotalChargeCap": {
+          "type": "number"
+        },
+        "sbmuTotalDisChargeCap": {
+          "type": "number"
+        },
+        "sbmuTotalStaticTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "subTotalChrgEnergyOutstation": {
+          "type": "number"
+        },
+        "subTotalChrgTimeOutstation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "thisTimChrgEngyWh": {
+          "type": "number",
+          "description": "本次充电能量值"
+        },
+        "totalChargedCycle": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalChargedPower": {
+          "type": "number"
+        },
+        "totalChargedPowerInStation": {
+          "type": "number"
+        },
+        "totalChargedPowerOutStation": {
+          "type": "number"
+        },
+        "totalDischargedCycle": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalDischargedPower": {
+          "type": "number"
+        },
+        "totalDischargedPowerInStation": {
+          "type": "number"
+        },
+        "totalDischargedPowerOutStation": {
+          "type": "number"
+        },
+        "totalMilKm": {
+          "type": "number"
+        },
+        "tripChargedPowerInStation": {
+          "type": "number"
+        },
+        "tripDischargedPowerInStation": {
+          "type": "number"
+        },
+        "tripDischargedPowerOutStation": {
+          "type": "number"
+        },
+        "tripMilKm": {
+          "type": "number"
+        }
+      },
+      "title": "BatteryStatisticDTO"
+    },
+    "BatteryStatusDTO": {
+      "type": "object",
+      "properties": {
+        "avgCellVolt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电芯平均电压 mV"
+        },
+        "avgCellVot": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avgModuleTemp": {
+          "type": "number"
+        },
+        "batteryChrgDisChrgEngy": {
+          "type": "number",
+          "description": "充电机输出能量，精度：0.1 kWh"
+        },
+        "bmschrgStopErrReason": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmschrgStopFltReason": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmschrgStopReason": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmslvpowStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cellBalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "均衡状态0： =关闭， 1： =开启2： =故障，3： =不可用"
+        },
+        "chargeAllowFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeDCR": {
+          "type": "number"
+        },
+        "chargeState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargerCurrenrOutput": {
+          "type": "number",
+          "description": "ACDC输出电流 -- PCS_Charger_Currenr_Output"
+        },
+        "chargerVoltageOutput": {
+          "type": "number",
+          "description": "ACDC输出电压 -- PCS_Charger_Voltage_Output"
+        },
+        "chrgRemainTime": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "current": {
+          "type": "number"
+        },
+        "disChargeDCR": {
+          "type": "number"
+        },
+        "dischrgPwrLimContinueKw": {
+          "type": "number",
+          "description": "持续放电功率限值 Kw"
+        },
+        "dischrgPwrLimLongKw": {
+          "type": "number",
+          "description": "长时放电功率限值 Kw"
+        },
+        "dischrgPwrLimShortKw": {
+          "type": "number",
+          "description": "瞬时放电功率限值 Kw"
+        },
+        "displaySoc": {
+          "type": "number"
+        },
+        "fanState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱风扇状态0： =关闭，  1： =开启 2： =故障， 3： =不可用"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fltLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "报警级别：0： 正常 1： 1级报警 3： 3级报警， 5： 5级报警； 其余为保留"
+        },
+        "heatRelayExternalVolt": {
+          "type": "number",
+          "description": "加热膜继电器外侧对主负内侧"
+        },
+        "heatState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热状态0： =关闭 1： =开 2： =故障  3： =不可用"
+        },
+        "highVoltState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hotReq": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热请求"
+        },
+        "hvcnctrState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hvilState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "innerTotalVolt": {
+          "type": "number"
+        },
+        "isoMeasEnFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘检测标志"
+        },
+        "isoMeasResVldBySafety": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘阻值有效性"
+        },
+        "kl30Volt": {
+          "type": "number"
+        },
+        "labelUnavailableFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱内部主负高压继电器状态0：分开，1:闭合"
+        },
+        "mainNegativeConcatenateCircleState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱内部主正高压继电器状态0：分开，1:闭合"
+        },
+        "mainPositiveConcatenateCircleState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxCellVolt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxCellVoltPosition": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxConnectorPosTempDegC": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连接器最高总正极柱温度"
+        },
+        "maxConnectorPosTempPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连接器最高总正极柱温度编号"
+        },
+        "maxModuleTemp": {
+          "type": "number"
+        },
+        "maxModuleTempPosition": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxRealSoc": {
+          "type": "number"
+        },
+        "minCellVolt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minCellVoltPosition": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minConnectorNegTempDegC": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连接器最高总负极柱温度"
+        },
+        "minConnectorNegTempPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连接器最高总正极柱温度编号"
+        },
+        "minModuleTemp": {
+          "type": "number"
+        },
+        "minModuleTempPosition": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minRealSoc": {
+          "type": "number"
+        },
+        "mostCriticalFaultCode": {
+          "type": "string"
+        },
+        "mostCriticalFaultLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "negativeInsulationValue": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packAllwMaxChrgCurrent": {
+          "type": "number",
+          "description": "电池箱能承受最大反馈电流值"
+        },
+        "packAllwMaxDischrgCurrent": {
+          "type": "number",
+          "description": "电池箱能输出的最大电流值"
+        },
+        "packExternalVolt": {
+          "type": "number",
+          "description": "LINk电压"
+        },
+        "packInternalVolt": {
+          "type": "number",
+          "description": "Pack内测电压"
+        },
+        "packPlaceNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱所在位置编号"
+        },
+        "packWorkState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱工作模式状态0： =未定义；1： =监控模式；2： =充电模式； 3： =储能模式；4： =换电准备模式；<5～7>： =预留；"
+        },
+        "posExternalVolt": {
+          "type": "number",
+          "description": "主正外侧对主负内侧电压"
+        },
+        "positiveInsulationValue": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "preChgRelayState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预充继电器状态"
+        },
+        "preHotReq": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预加热请求"
+        },
+        "realSoc": {
+          "type": "number"
+        },
+        "sbmuBattChrgReqCurr": {
+          "type": "number",
+          "description": "SBMU充电请求电流"
+        },
+        "sbmuBattChrgReqVolt": {
+          "type": "number",
+          "description": "SBMU充电请求电压"
+        },
+        "sbmuChargeSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU充电状态"
+        },
+        "sbmuPackDCR": {
+          "type": "number",
+          "description": "电池包DCR"
+        },
+        "sbmuThermalSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU热管理状态"
+        },
+        "scalibrationCap": {
+          "type": "number"
+        },
+        "sfltInfo2SBMUAlIV": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sheatRelayState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "socUnavailableFlg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "soe": {
+          "type": "number"
+        },
+        "soh": {
+          "type": "number"
+        },
+        "sratedPackVOLT": {
+          "type": "number"
+        },
+        "synchroBatteryCurrentA": {
+          "type": "number",
+          "description": "与详细电压同步电流"
+        },
+        "synchroBatteryToG0Volt": {
+          "type": "number",
+          "description": "与详细电压同步电池包内侧电压"
+        },
+        "thermalRunawayFltReason": {
+          "type": "integer",
+          "format": "int64",
+          "description": "热失控故障原因"
+        },
+        "totalSumVoltV": {
+          "type": "number",
+          "description": "包内单体累加和电压 V"
+        }
+      },
+      "title": "BatteryStatusDTO"
+    },
+    "BatteryStatusInfoRespDTO": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电芯类型"
+        },
+        "highVoltState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包高压状态"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包类型识别码"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        }
+      },
+      "title": "BatteryStatusInfoRespDTO"
+    },
+    "BatteryStatusRespDTO": {
+      "type": "object",
+      "properties": {
+        "equipmentCode": {
+          "type": "string"
+        },
+        "no": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "BatteryStatusRespDTO"
+    },
+    "BatteryTriggerQueryDTO": {
+      "type": "object",
+      "required": [
+        "commandSubType"
+      ],
+      "properties": {
+        "b2sQueryEnum": {
+          "type": "string",
+          "enum": [
+            "QUERY_0XF401",
+            "QUERY_0XF402",
+            "QUERY_0XF403",
+            "QUERY_0XF404",
+            "QUERY_0XF405",
+            "QUERY_0XF408",
+            "QUERY_0XF409",
+            "QUERY_0XF40B",
+            "QUERY_0XF805",
+            "QUERY_0XF806",
+            "QUERY_0XF807",
+            "QUERY_0XF809",
+            "QUERY_0XF824",
+            "QUERY_0XF825",
+            "QUERY_0XF826",
+            "QUERY_0XF827"
+          ]
+        },
+        "commandSubType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "BatteryTriggerQueryDTO"
+    },
+    "BmsChargeSeedSecretKeyReqDTO": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "result": {
+          "type": "string",
+          "description": "结果",
+          "enum": [
+            "DOING",
+            "FAIL",
+            "SUCCESS",
+            "TIMEOUT"
+          ]
+        },
+        "secretKey": {
+          "type": "string",
+          "description": "秘钥"
+        }
+      },
+      "title": "BmsChargeSeedSecretKeyReqDTO"
+    },
+    "BmsChargeUpgradeReqDTO": {
+      "type": "object",
+      "properties": {
+        "controlBoardType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "控制板类型"
+        },
+        "fileSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "文件大小"
+        },
+        "fileSize2": {
+          "type": "integer",
+          "format": "int64",
+          "description": "文件2大小"
+        },
+        "fileUrl": {
+          "type": "string",
+          "description": "文件URL"
+        },
+        "fileUrl2": {
+          "type": "string",
+          "description": "文件2URL"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "subType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        }
+      },
+      "title": "BmsChargeUpgradeReqDTO"
+    },
+    "CbmuAndSbmuBlueStsRespDTO": {
+      "type": "object",
+      "properties": {
+        "bmsConnectStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "CBMU与SBMU连接状态 -- C2S_WLDSts 0未连接，1连接，2连接异常"
+        },
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包所在仓位号"
+        },
+        "packMac": {
+          "type": "string",
+          "description": "电池包MAC"
+        }
+      },
+      "title": "CbmuAndSbmuBlueStsRespDTO"
+    },
+    "ChargeControlDTO": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "cmd": {
+          "type": "integer",
+          "format": "int32",
+          "description": "手动停止充电指令和断蓝牙指令：0：默认值 1：停止充电 2：启动充电 3：断蓝牙+停止充电"
+        }
+      },
+      "title": "ChargeControlDTO"
+    },
+    "ClearCacheDTO": {
+      "type": "object",
+      "required": [
+        "position"
+      ],
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位"
+        }
+      },
+      "title": "ClearCacheDTO"
+    },
+    "ClearFaultAllDTO": {
+      "type": "object",
+      "properties": {
+        "campNos": {
+          "type": "array",
+          "description": "清除电池所有故障(一二代)",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "ClearFaultAllDTO"
+    },
+    "ClearFaultReqDTO": {
+      "type": "object",
+      "required": [
+        "commandSubType",
+        "positionList",
+        "requestEnum"
+      ],
+      "properties": {
+        "commandSubType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        },
+        "positionList": {
+          "type": "array",
+          "description": "仓位列表",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "requestEnum": {
+          "type": "string",
+          "description": "清除故障类型",
+          "enum": [
+            "ALL",
+            "DEFAULT",
+            "NOT_STORE_NVM"
+          ]
+        }
+      },
+      "title": "ClearFaultReqDTO"
+    },
+    "CommandReqDTO": {
+      "type": "object",
+      "required": [
+        "commandSubType",
+        "positionList"
+      ],
+      "properties": {
+        "commandSubType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        },
+        "positionList": {
+          "type": "array",
+          "description": "仓位列表",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "CommandReqDTO"
+    },
+    "ConnectBMSV1DTO": {
+      "type": "object",
+      "required": [
+        "commandSubType"
+      ],
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "commandSubType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        },
+        "macStr": {
+          "type": "string",
+          "description": "请求建立连接pack的蓝牙MAC地址"
+        }
+      },
+      "title": "ConnectBMSV1DTO"
+    },
+    "DataCloudPackPortRespDTO": {
+      "type": "object",
+      "properties": {
+        "packNo": {
+          "type": "string"
+        },
+        "packPort": {
+          "type": "string"
+        },
+        "packSn": {
+          "type": "string"
+        },
+        "totalChargedPower": {
+          "type": "number"
+        },
+        "totalDischargedPower": {
+          "type": "number"
+        }
+      },
+      "title": "DataCloudPackPortRespDTO"
+    },
+    "GetAvailableBatteryAmountBySocReqDTO": {
+      "type": "object",
+      "properties": {
+        "lowerOfSoc": {
+          "type": "string"
+        }
+      },
+      "title": "GetAvailableBatteryAmountBySocReqDTO"
+    },
+    "HotReqDTO": {
+      "type": "object",
+      "required": [
+        "commandSubType",
+        "hot",
+        "position",
+        "pre"
+      ],
+      "properties": {
+        "commandSubType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        },
+        "hot": {
+          "type": "string",
+          "description": "加热请求类型",
+          "enum": [
+            "DEFAULT",
+            "NO_REQUEST",
+            "REQUEST"
+          ]
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位"
+        },
+        "pre": {
+          "type": "string",
+          "description": "预加热请求",
+          "enum": [
+            "DEFAULT",
+            "NO_REQUEST",
+            "REQUEST"
+          ]
+        }
+      },
+      "title": "HotReqDTO"
+    },
+    "LogicMacDTO": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "logicMac": {
+          "type": "string",
+          "description": "逻辑mac"
+        }
+      },
+      "title": "LogicMacDTO"
+    },
+    "LogicMacQueryDTO": {
+      "type": "object",
+      "properties": {
+        "campNoList": {
+          "type": "array",
+          "description": "仓位号",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "LogicMacQueryDTO"
+    },
+    "LogicMacUpdateDTO": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "logicMac": {
+          "type": "string",
+          "description": "逻辑mac"
+        }
+      },
+      "title": "LogicMacUpdateDTO"
+    },
+    "OutBoundDTO": {
+      "type": "object",
+      "required": [
+        "posList"
+      ],
+      "properties": {
+        "posList": {
+          "type": "array",
+          "description": "仓位",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "OutBoundDTO"
+    },
+    "PackBasicInfoDTO": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电芯类型"
+        },
+        "highVoltState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池高高压状态"
+        },
+        "packChargeFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包是否充电标志 0-否 1-是"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包类型识别码"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        }
+      },
+      "title": "PackBasicInfoDTO"
+    },
+    "PackDynamicData": {
+      "type": "object",
+      "properties": {
+        "avgCellVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "电芯平均电压, 精度：0.1v"
+        },
+        "avgModuleTempDegC": {
+          "type": "string",
+          "description": "平均温度，℃"
+        },
+        "balanceInfoList": {
+          "type": "string",
+          "description": "电池包详细均衡列表，逗号隔开；累计均衡容量,0.1Ah"
+        },
+        "barcode": {
+          "type": "string",
+          "description": "packSN"
+        },
+        "batteryChrgDisChrgEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "充电机输出能量，精度：0.1 kWh"
+        },
+        "batteryToG0VoltRelTim": {
+          "type": "number",
+          "format": "float",
+          "description": "Pack电压,精度：0.1v"
+        },
+        "bmsChrgStopErrReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电错误原因, 第 1~2 位：电流过大0： =电流正常； 1： =电流超过需求值； 2： =不可信状态；第 3~4 位：电压异常0： =正常；1： =电压异常； 2： =不可信状态；"
+        },
+        "bmsChrgStopFltReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电故障原因, 第 1~2 位：绝缘故障0： =正常； 1： =故障；2： =不可信状态；第 3~4 位： 电池箱快插件过温故障0： =正常； 1： =故障； 2： =不可信状态；第 5~6 位： 电池箱内部线束或相关连接器过温0： =正常；1： =故障； 2： =不可信状态；第 7~8 位：充电耦合器连接故障0： =充电连接器正常； 1： =充电连接器故障； 2： =不可信状态；第 9~10 位：电池组温度过高故障0： =电池组温度正常；1： =电池组温度过高； 2： =不可信状态；第 11~12 位：高压继电器故障0： =正常； 1： =故障； 2： =不可信状态；第 13~14 位：检测点 2 电压检测故障0： =正常； 1： =故障； 2： =不可信状态；第 15~16 位：其他故障0： =正常； 1： =故障； 2： =不可信状态。"
+        },
+        "bmsChrgStopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电原因, 第 1~2 位：达到所需求的 SOC 目标值0： =未达到所需 SOC 目标值； 1： =达到所需 SOC 目标值；2： =不可信状态；第 3~4 位：达到总电压的设定值0： =未达到总电压设定值； 1： =达到总电压设定值；2： =不可信状态；第 5~6 位：达到单体电压的设定值0： =未达到单体电压设定值； 1： =达到单体电压设定值； 2： =不可信状态；第 7~8 位：充电机主动中止0： =正常； 1： =充电机中止(收到 CST 帧)； 2： =不可信状态。"
+        },
+        "bmsLvPowStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "BMS 辅电状态：0： =辅电正常；1： =下电准备；2： =辅电下电，3： =无效"
+        },
+        "bmsMostCriticalFltId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内最高故障等级ID"
+        },
+        "bmsMostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内最高故障等级, 0 'Normal' 1 'Level 1' 2 'Level 2' 3 'Level 3' 4 'Level 4' 5 'Level 5' 6 'Level 6' 7 'Level 7' 8 'Level 8'"
+        },
+        "bmsOffStationChargingEnergy": {
+          "type": "number",
+          "format": "float",
+          "description": "小计换电站外插枪充电输入能量，精度：0.1kwh"
+        },
+        "bmsStopChargingReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "bms停止充电原因"
+        },
+        "bmsTotalMilKm": {
+          "type": "number",
+          "format": "float",
+          "description": "电池包累计里程,精度：0.1km"
+        },
+        "bmsTripMilKm": {
+          "type": "number",
+          "format": "float",
+          "description": "电池箱小计里程，精度：0.1km：从电池箱换电起始点到电池箱换下的小计里程"
+        },
+        "cellBalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "均衡状态0： =关闭， 1： =开启，2： =故障，3： =不可用"
+        },
+        "cellTotalChargeCap": {
+          "type": "number",
+          "format": "float",
+          "description": "累计充电容量"
+        },
+        "cellVoltMvList": {
+          "type": "string",
+          "description": "电压列表, 逗号隔开，精度：1mv；"
+        },
+        "dcChargeTimesWrite": {
+          "type": "integer",
+          "format": "int32",
+          "description": "累计换电站外快充次数"
+        },
+        "dischrgCurrRelTim": {
+          "type": "string",
+          "description": "Pack电流，精度：0.01A"
+        },
+        "dischrgPwrLimContinueKw": {
+          "type": "number",
+          "format": "float",
+          "description": "持续放电功率限值，精度：0.1kw"
+        },
+        "dischrgPwrLimLongKw": {
+          "type": "number",
+          "format": "float",
+          "description": "长时放电功率限值，精度：0.1kw"
+        },
+        "dischrgPwrLimShortKw": {
+          "type": "number",
+          "format": "float",
+          "description": "瞬时放电功率限值，精度：0.1kw"
+        },
+        "displaySoh": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示SOH，精度：1%"
+        },
+        "extIsoMeasNegResKohm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "负对地绝缘阻值，精度：1kΩ"
+        },
+        "extIsoMeasPosResKohm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "正对地绝缘阻值，精度：1kΩ"
+        },
+        "fltLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "报警级别, 0： 正常 1： 1级报警3： 3级报警， 5： 5级报警；其余为保留"
+        },
+        "forSocUnavailableFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包真实SOC不可信标志位, 0 'No Alarm'1 'Alarm'"
+        },
+        "heatRelayExternalVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "加热膜继电器外侧对主负内侧电压, 精度：0.1v"
+        },
+        "heatRelayState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热继电器状态, 0'断开' 1'闭合' 2'粘连故' 3'开路故障'"
+        },
+        "heatState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热装置状态0： =关闭1： =开启2： =故障 3： =不可用"
+        },
+        "hisAccumChrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "累计充电电能量值，精度：0.1kwh"
+        },
+        "hisAccumChrgTimes": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池累计充电cycle"
+        },
+        "hisAccumDisChrgCap": {
+          "type": "number",
+          "format": "float",
+          "description": "累计放电容量值，精度：0.1kwh"
+        },
+        "hisAccumDisChrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "累计放电电能量值，精度：0.1kwh"
+        },
+        "hisStaOutAccumChrgerEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "累计换电站外插枪充电能量，精度：0.1kwh"
+        },
+        "hisStaOutChrgEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "电池包累计站外充电能量，精度：0.1kwh"
+        },
+        "hisStaOutDisChrgEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "累计换电站外放电能量，精度：0.1kwh"
+        },
+        "hisStaOutDisChrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "小计换电站外放电能量，精度：0.1kwh"
+        },
+        "hisStaOutReChrgEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "累计换电站外回充能量，精度：0.1kwh"
+        },
+        "hisStaOutReChrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "小计换电站外回充充电能量，精度：0.1kwh"
+        },
+        "hisTInstatHisAccumChrgEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "累计站内充电能量，精度：0.1kwh"
+        },
+        "hisTInstatHisAccumDisChrgEngy": {
+          "type": "number",
+          "format": "float",
+          "description": "累计站内放电能量，精度：0.1kwh"
+        },
+        "hisThisTimChrgCap": {
+          "type": "number",
+          "format": "float",
+          "description": "本次充电容量，精度：0.1 Ah"
+        },
+        "hisThisTimChrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "本次充电能量值，精度：0.1kwh"
+        },
+        "hisThisTimDisChrgCap": {
+          "type": "number",
+          "format": "float",
+          "description": "本次放电容量值"
+        },
+        "hisThisTimDisChrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "本次放电能量值，精度：0.1kwh"
+        },
+        "hvCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "内部高压继电器状态, 0： =分开， 1： =预充，2： =闭合，3： =不可用"
+        },
+        "hvil1State": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压互锁状态, 0 'Close' 1 'Open'"
+        },
+        "isoMeasResVldBySafety": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘阻值有效性，0 'invalid' 1 'Valid'"
+        },
+        "isoMeasStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘检测标志，0 '禁止' 1 '使能'"
+        },
+        "kl30Volt": {
+          "type": "number",
+          "format": "float",
+          "description": "KL30电压值, 精度：0.1v"
+        },
+        "mainCnctrCtrlState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内主回路高压状态，见; 3.3.三代电池包内主回路高压状态"
+        },
+        "mainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱内部主负高压继电器状态, 0：分开，1:闭合"
+        },
+        "mainNegCnctrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器状态, 0'断开' 1'闭合' 2'粘连故'3'开路故障'"
+        },
+        "mainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱内部主正高压继电器状态, 0：分开，1:闭合"
+        },
+        "mainPosCnctrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器状态, 0'断开' 1'闭合' 2'粘连故'3'开路故障'"
+        },
+        "maxCellVoltMv": {
+          "type": "number",
+          "format": "float",
+          "description": "单体蓄电池最高电压，精度：0.001V"
+        },
+        "maxCellVoltPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最高电压单体蓄电池编号"
+        },
+        "maxConnectorPosTempDegC": {
+          "type": "string",
+          "description": "连接器最高总正极柱温度，℃"
+        },
+        "maxConnectorPosTempPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连接器最高总正极柱温度编号(默认填写1)"
+        },
+        "maxModuleTempDegC": {
+          "type": "string",
+          "description": "最高温度，℃"
+        },
+        "maxModuleTempPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最高温度检测点编号"
+        },
+        "minCellVoltMv": {
+          "type": "number",
+          "format": "float",
+          "description": "单体蓄电池最低电压，精度：0.001V"
+        },
+        "minCellVoltPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最低电压单体蓄电池编号"
+        },
+        "minConnectorNegTempDegC": {
+          "type": "string",
+          "description": "连接器最高总负极柱温度，℃"
+        },
+        "minConnectorNegTempPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连接器最高总正极柱温度编号(默认填写1)"
+        },
+        "minModuleTempDegC": {
+          "type": "string",
+          "description": "最低温度，℃"
+        },
+        "minModuleTempPstn": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最低温度检测点编号"
+        },
+        "moduleTempDegCBranchList": {
+          "type": "string",
+          "description": "温度列表，逗号隔开，精度：0.1℃,"
+        },
+        "moduleTempVldBranchList": {
+          "type": "string",
+          "description": "温度有效列表，逗号隔开"
+        },
+        "onboardACChrgTimesOnceBatSwap": {
+          "type": "integer",
+          "format": "int32",
+          "description": "累计换电站外慢充次数"
+        },
+        "packAvailEngyKwh": {
+          "type": "number",
+          "format": "float",
+          "description": "SOE，精度：0.0001kwh"
+        },
+        "packExternalVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "LINk电压, 精度：0.1v,"
+        },
+        "packFaultIdList": {
+          "type": "string",
+          "description": "电池包故障列表集合字符串，逗号隔开，最多15个元素"
+        },
+        "packId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "packInternalVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "Pack内测电压，精度：0.1v"
+        },
+        "packRealSocPct": {
+          "type": "number",
+          "format": "float",
+          "description": "电池包真实SOC，精度：0.0001%"
+        },
+        "packReportedSocPct": {
+          "type": "number",
+          "format": "float",
+          "description": "显示SOC，精度：0.1%"
+        },
+        "packWorkState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱工作模式状态, 0： =未定义；1： =监控模式； 2： =充电模式； 3： =储能模式； 4： =换电准备模式；<5～7>： =预留；"
+        },
+        "posExternalVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "主正外侧对主负内侧电压, 精度：0.1v"
+        },
+        "preChgRelayState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预充继电器状态, 0'断开' 1'闭合' 2'粘连故' 3'开路故障'"
+        },
+        "reportTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "上报时间(时间戳)"
+        },
+        "synchroBatteryCurrentA": {
+          "type": "number",
+          "format": "float",
+          "description": "与详细电压同步电流,0.1A, 报文周期1.5s,0X18F20180电压列表在发送的1.5s内，需同步取与详细电压同步电流，不能错位"
+        },
+        "synchroBatteryToG0Volt": {
+          "type": "number",
+          "format": "float",
+          "description": "与详细电压同步电池包内侧电压，精度：0.1v,"
+        },
+        "sysMaxSocPct": {
+          "type": "number",
+          "format": "float",
+          "description": "电池包最大真实SOC，精度：0.0001%"
+        },
+        "sysMinSocPct": {
+          "type": "number",
+          "format": "float",
+          "description": "电池包最小真实SOC，精度：0.0001%"
+        },
+        "thermalRunawayFltReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "热失控故障原因"
+        },
+        "thisTimeInDCEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "小计站内充电输入能量，精度：0.1kwh"
+        },
+        "thisTimeInstatDischrgEngyWh": {
+          "type": "number",
+          "format": "float",
+          "description": "小计站内放电能量，精度：0.1kwh"
+        },
+        "totalSumVoltV": {
+          "type": "number",
+          "format": "float",
+          "description": "包内单体累加和电压, 精度：0.1v,"
+        }
+      },
+      "title": "PackDynamicData"
+    },
+    "PackInfoReqDTO": {
+      "type": "object",
+      "properties": {
+        "snList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "PackInfoReqDTO"
+    },
+    "PackRelayStateInfoDTO": {
+      "type": "object",
+      "properties": {
+        "heatRelayState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mainNegCnctrSts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mainPosCnctrSts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "preChgRelayState": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PackRelayStateInfoDTO"
+    },
+    "PackRelayStateQueryDTO": {
+      "type": "object",
+      "properties": {
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "PackRelayStateQueryDTO"
+    },
+    "PackVersionInfo": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbmuBootVersion": {
+          "type": "string",
+          "description": "SBMU的BOOT版本"
+        },
+        "sbmuHardwareVersion": {
+          "type": "string",
+          "description": "SBMU硬件版本号"
+        },
+        "sbmuSoftwareVersion": {
+          "type": "string",
+          "description": "SBMU软件版本号"
+        }
+      },
+      "title": "PackVersionInfo"
+    },
+    "PickPackInfo": {
+      "type": "object",
+      "properties": {
+        "avgCellVot": {
+          "type": "number"
+        },
+        "campNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cellType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "csConnectedFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "displaySoc": {
+          "type": "number"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "highVoltState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hisAccumChrgEngy": {
+          "type": "number"
+        },
+        "hisAccumDisChrgEngy": {
+          "type": "number"
+        },
+        "hisStaOutReChrgEngyWh": {
+          "type": "number",
+          "description": "小计换电站外回充充电能量 kwh"
+        },
+        "innerTotalVolt": {
+          "type": "number"
+        },
+        "maxCellVolt": {
+          "type": "number"
+        },
+        "maxModuleTemp": {
+          "type": "number"
+        },
+        "maxRealSoc": {
+          "type": "number"
+        },
+        "minCellVolt": {
+          "type": "number"
+        },
+        "minModuleTemp": {
+          "type": "number"
+        },
+        "minRealSoc": {
+          "type": "number"
+        },
+        "mostSeriouFaultCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packChargeFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packMac": {
+          "type": "string"
+        },
+        "packPosition": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packTypeEnum": {
+          "type": "string",
+          "enum": [
+            "BMS_DATA_ERROR",
+            "C1N_53_264",
+            "C1N_70_274",
+            "FAKE_PACK",
+            "LFP_20_01_L",
+            "LFP_25_01_L",
+            "LFP_25_03_L",
+            "LFP_35_01_L",
+            "NM_25_01_L",
+            "NO_PACK_INSTALL_OR_NO_CONNECT"
+          ]
+        },
+        "rackCode": {
+          "type": "string"
+        },
+        "realSoc": {
+          "type": "number"
+        },
+        "sbmuChargeSts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuHardwareVersion": {
+          "type": "string"
+        },
+        "sbmuMainNegCnctrState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuMainPosCnctrState": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuMostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuRemainEnergy": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sbmuSoftwareVersion": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string"
+        },
+        "socUntrustedFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "soh": {
+          "type": "number"
+        },
+        "subTotalChrgCapInstation": {
+          "type": "number"
+        },
+        "subTotalChrgEnergyOutstation": {
+          "type": "number"
+        },
+        "thisTimeInstationChrgEngyWh": {
+          "type": "number"
+        },
+        "thisTimeInstationDischrgEngyWh": {
+          "type": "number"
+        },
+        "tripDischargedPowerOutStation": {
+          "type": "number"
+        },
+        "workingMode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PickPackInfo"
+    },
+    "QeuryDisconnectBMSDTO": {
+      "type": "object",
+      "required": [
+        "commandSubType"
+      ],
+      "properties": {
+        "campNoList": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "commandSubType": {
+          "type": "string",
+          "description": "下控子类型",
+          "enum": [
+            "AUTO",
+            "CAMP_CHANGE",
+            "CAMP_EXECUTE",
+            "CHARGER",
+            "CLOUD_CONTROL",
+            "IN_OUT_POSITION_PROCESS",
+            "MANUAL",
+            "MANUAL_SWAP_FLOW"
+          ]
+        }
+      },
+      "title": "QeuryDisconnectBMSDTO"
+    },
+    "QueryBatteryInfoListReqDTO": {
+      "type": "object",
+      "properties": {
+        "positionList": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "QueryBatteryInfoListReqDTO"
+    },
+    "R«List«BatteryChargeStateRespDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryChargeStateRespDTO",
+            "originalRef": "BatteryChargeStateRespDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryChargeStateRespDTO»»"
+    },
+    "R«List«BatteryCheckInfoDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryCheckInfoDTO",
+            "originalRef": "BatteryCheckInfoDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryCheckInfoDTO»»"
+    },
+    "R«List«BatteryDetailInfoDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryDetailInfoDTO",
+            "originalRef": "BatteryDetailInfoDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryDetailInfoDTO»»"
+    },
+    "R«List«BatteryDetailInfoV1DTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryDetailInfoV1DTO",
+            "originalRef": "BatteryDetailInfoV1DTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryDetailInfoV1DTO»»"
+    },
+    "R«List«BatteryInfoDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryInfoDTO",
+            "originalRef": "BatteryInfoDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryInfoDTO»»"
+    },
+    "R«List«BatteryMetricDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryMetricDTO",
+            "originalRef": "BatteryMetricDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryMetricDTO»»"
+    },
+    "R«List«BatteryStatusInfoRespDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryStatusInfoRespDTO",
+            "originalRef": "BatteryStatusInfoRespDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryStatusInfoRespDTO»»"
+    },
+    "R«List«BatteryStatusRespDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryStatusRespDTO",
+            "originalRef": "BatteryStatusRespDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryStatusRespDTO»»"
+    },
+    "R«List«CbmuAndSbmuBlueStsRespDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CbmuAndSbmuBlueStsRespDTO",
+            "originalRef": "CbmuAndSbmuBlueStsRespDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«CbmuAndSbmuBlueStsRespDTO»»"
+    },
+    "R«List«DataCloudPackPortRespDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataCloudPackPortRespDTO",
+            "originalRef": "DataCloudPackPortRespDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«DataCloudPackPortRespDTO»»"
+    },
+    "R«List«LogicMacDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LogicMacDTO",
+            "originalRef": "LogicMacDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«LogicMacDTO»»"
+    },
+    "R«List«PackBasicInfoDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackBasicInfoDTO",
+            "originalRef": "PackBasicInfoDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«PackBasicInfoDTO»»"
+    },
+    "R«List«PackDynamicData»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackDynamicData",
+            "originalRef": "PackDynamicData"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«PackDynamicData»»"
+    },
+    "R«List«PackRelayStateInfoDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackRelayStateInfoDTO",
+            "originalRef": "PackRelayStateInfoDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«PackRelayStateInfoDTO»»"
+    },
+    "R«List«PackVersionInfo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackVersionInfo",
+            "originalRef": "PackVersionInfo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«PackVersionInfo»»"
+    },
+    "R«List«PickPackInfo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PickPackInfo",
+            "originalRef": "PickPackInfo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«PickPackInfo»»"
+    },
+    "R«List«SbmuFaultCodeDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SbmuFaultCodeDTO",
+            "originalRef": "SbmuFaultCodeDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«SbmuFaultCodeDTO»»"
+    },
+    "R«Map«int,int»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«Map«int,int»»"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "R«int»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«int»"
+    },
+    "R«object»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«object»"
+    },
+    "SbmuFaultCodeDTO": {
+      "type": "object",
+      "properties": {
+        "originalCodeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "serialNum": {
+          "type": "string"
+        }
+      },
+      "title": "SbmuFaultCodeDTO"
+    },
+    "SwapFlowResetDTO": {
+      "type": "object",
+      "properties": {
+        "campNos": {
+          "type": "array",
+          "description": "仓位号",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "SwapFlowResetDTO"
+    }
+  }
+}

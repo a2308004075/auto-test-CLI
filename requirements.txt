@@ -1,0 +1,7 @@
+#setuptools==67.6.1
+loguru
+pytest
+pytz
+requests
+websockets
+

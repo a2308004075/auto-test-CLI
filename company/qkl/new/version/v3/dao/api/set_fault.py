@@ -1,0 +1,1 @@
+from common.handlerKw.kwDecorator import KwDecoratorfrom company.qkl.new.common.api.api_fault import ApiFaultclass SetFault:    pass

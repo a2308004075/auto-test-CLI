@@ -1,0 +1,2979 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "disable-record-feign-impl",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "disable-record-log-feign-impl",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "fault-matrix-feign-impl",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "snapshot-fault-record-feign-impl",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "仓位或电池的禁用及解禁",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "故障信息",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "故障处理",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "故障导入导出",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/disableRecord/add": {
+      "post": {
+        "tags": [
+          "disable-record-feign-impl"
+        ],
+        "summary": "add",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordAddReqDTO",
+              "originalRef": "DisableRecordAddReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/disableRecord/batchAdd": {
+      "post": {
+        "tags": [
+          "disable-record-feign-impl"
+        ],
+        "summary": "batchAdd",
+        "operationId": "batchAddUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTOS",
+            "description": "reqDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DisableRecordEachReqDTO",
+                "originalRef": "DisableRecordEachReqDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/disableRecord/del": {
+      "post": {
+        "tags": [
+          "disable-record-feign-impl"
+        ],
+        "summary": "del",
+        "operationId": "delUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordDelReqDTO",
+              "originalRef": "DisableRecordDelReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/disableRecord/list": {
+      "post": {
+        "tags": [
+          "disable-record-feign-impl"
+        ],
+        "summary": "list",
+        "operationId": "listUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordListReqDTO",
+              "originalRef": "DisableRecordListReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«仓位或电池禁用记录»»",
+              "originalRef": "R«List«仓位或电池禁用记录»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/disableRecordLog/cleanup": {
+      "post": {
+        "tags": [
+          "disable-record-log-feign-impl"
+        ],
+        "summary": "cleanup",
+        "operationId": "cleanupUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordLogCleanupReqDTO",
+              "originalRef": "DisableRecordLogCleanupReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/addDisableRecord": {
+      "post": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "新增禁用记录",
+        "operationId": "addDisableRecordUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordAddDTO",
+              "originalRef": "DisableRecordAddDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/addDisableRecordWithBusCode": {
+      "post": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "新增禁用记录-带业务唯一编号",
+        "operationId": "addDisableRecordWithBusCodeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordAddWithBusCodeReqDTO",
+              "originalRef": "DisableRecordAddWithBusCodeReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/batchAddDisableRecord": {
+      "post": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "批量新增禁用记录",
+        "operationId": "batchAddDisableRecordUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DisableRecordAddDTO",
+                "originalRef": "DisableRecordAddDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/batteryOpts": {
+      "get": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "仓位电池筛选列表",
+        "operationId": "getBatteryCampOptionsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«仓位电池筛选项»»",
+              "originalRef": "R«List«仓位电池筛选项»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/count": {
+      "post": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "禁用历史记录数量",
+        "operationId": "countUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordQueryReqDTO",
+              "originalRef": "DisableRecordQueryReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/deleteDisableRecord": {
+      "delete": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "删除禁用记录",
+        "operationId": "deleteDisableRecordUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordDeleteReqDTO",
+              "originalRef": "DisableRecordDeleteReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/deleteDisableRecordWithBusCode": {
+      "delete": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "删除禁用记录-带业务唯一编号",
+        "operationId": "deleteDisableRecordWithBusCodeUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordDeleteWithBusCodeDTO",
+              "originalRef": "DisableRecordDeleteWithBusCodeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/disableBatteryOpts": {
+      "get": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "禁用电池-仓位列表",
+        "operationId": "getDisableBatteryCampOptionsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«仓位电池筛选项»»",
+              "originalRef": "R«List«仓位电池筛选项»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/batteryCampOperation/getDetail": {
+      "post": {
+        "tags": [
+          "仓位或电池的禁用及解禁"
+        ],
+        "summary": "详情",
+        "operationId": "getDetailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DisableRecordQueryReqDTO",
+              "originalRef": "DisableRecordQueryReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«仓位或电池的禁用及解禁-详情»",
+              "originalRef": "R«仓位或电池的禁用及解禁-详情»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/excelOperation/faultCode/export": {
+      "post": {
+        "tags": [
+          "故障导入导出"
+        ],
+        "summary": "故障编码导出",
+        "operationId": "faultCodeExportUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«FaultCodeImportRecordDTO»",
+              "originalRef": "R«FaultCodeImportRecordDTO»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/excelOperation/faultCode/import": {
+      "post": {
+        "tags": [
+          "故障导入导出"
+        ],
+        "summary": "故障编码导入",
+        "operationId": "faultCodeImportUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaultImportReqDTO",
+              "originalRef": "FaultImportReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/handle/cleanup": {
+      "post": {
+        "tags": [
+          "故障处理"
+        ],
+        "summary": "定时删除历史故障记录",
+        "operationId": "cleanupUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaultHistoryCleanupReqDTO",
+              "originalRef": "FaultHistoryCleanupReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/handle/clear": {
+      "post": {
+        "tags": [
+          "故障处理"
+        ],
+        "summary": "手动清除故障",
+        "operationId": "manualClearFaultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaultManualClearReqDTO",
+              "originalRef": "FaultManualClearReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/handle/recover": {
+      "post": {
+        "tags": [
+          "故障处理"
+        ],
+        "summary": "故障恢复",
+        "operationId": "faultRecoverUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaultRecoverReqDTO",
+              "originalRef": "FaultRecoverReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/handle/report": {
+      "post": {
+        "tags": [
+          "故障处理"
+        ],
+        "summary": "故障上报",
+        "operationId": "faultReportUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaultReportReqDTO",
+              "originalRef": "FaultReportReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/code/page": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "故障编码-分页",
+        "operationId": "faultCodePageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PageFaultCodeReqDTO",
+              "originalRef": "PageFaultCodeReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«BasePageResp«故障编码»»",
+              "originalRef": "R«BasePageResp«故障编码»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/current/count": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "实时故障-总数",
+        "operationId": "currentFaultCountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/current/haveStationFaultBlackList": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "是否存在整站故障黑名单",
+        "operationId": "haveStationFaultBlackListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/current/list": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "实时故障-列表",
+        "operationId": "currentFaultListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CurrentFaultQueryReqDTO",
+              "originalRef": "CurrentFaultQueryReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«实时故障»»",
+              "originalRef": "R«List«实时故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/history/gatherPageQuery": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "历史故障-汇总分页",
+        "operationId": "gatherPageQueryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PageHistoryFaultReqDTO",
+              "originalRef": "PageHistoryFaultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«BasePageResp«汇总历史故障»»",
+              "originalRef": "R«BasePageResp«汇总历史故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/history/list": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "历史故障-列表",
+        "operationId": "historyFaultListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PageHistoryFaultReqDTO",
+              "originalRef": "PageHistoryFaultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«历史故障»»",
+              "originalRef": "R«List«历史故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/fault/feign/info/history/page": {
+      "post": {
+        "tags": [
+          "故障信息"
+        ],
+        "summary": "历史故障-分页",
+        "operationId": "historyFaultPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PageHistoryFaultReqDTO",
+              "originalRef": "PageHistoryFaultReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«BasePageResp«历史故障»»",
+              "originalRef": "R«BasePageResp«历史故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/faultMatrix/handle": {
+      "post": {
+        "tags": [
+          "fault-matrix-feign-impl"
+        ],
+        "summary": "handle",
+        "operationId": "handleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaultMatrixHandleReqDTO",
+              "originalRef": "FaultMatrixHandleReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/snapshotFaultRecord/triggerSave": {
+      "post": {
+        "tags": [
+          "snapshot-fault-record-feign-impl"
+        ],
+        "summary": "triggerSave",
+        "operationId": "triggerSaveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SnapshotFaultRecordTriggerSaveReqDTO",
+              "originalRef": "SnapshotFaultRecordTriggerSaveReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BasePageResp«仓位或电池的禁用和解禁操作日志»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/仓位或电池的禁用和解禁操作日志",
+            "originalRef": "仓位或电池的禁用和解禁操作日志"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "BasePageResp«仓位或电池的禁用和解禁操作日志»"
+    },
+    "BasePageResp«历史故障»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/历史故障",
+            "originalRef": "历史故障"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "BasePageResp«历史故障»"
+    },
+    "BasePageResp«故障编码»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/故障编码",
+            "originalRef": "故障编码"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "BasePageResp«故障编码»"
+    },
+    "BasePageResp«汇总历史故障»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/汇总历史故障",
+            "originalRef": "汇总历史故障"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "BasePageResp«汇总历史故障»"
+    },
+    "CurrentFaultQueryReqDTO": {
+      "type": "object",
+      "properties": {
+        "batteryCampNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池仓位号"
+        },
+        "campFaultCode": {
+          "type": "string",
+          "description": "仓位相关故障编码"
+        },
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "combinedFaultCode": {
+          "type": "string",
+          "description": "故障编码"
+        },
+        "createTimeEnd": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间-结束"
+        },
+        "createTimeStart": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间-开始"
+        },
+        "deviceCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "faultName": {
+          "type": "string",
+          "description": "故障名称"
+        },
+        "faultSource": {
+          "type": "string",
+          "description": "故障来源（数据字典：faultSource）"
+        },
+        "faultSources": {
+          "type": "array",
+          "description": "故障来源（数据字典：faultSource）",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "idList": {
+          "type": "array",
+          "description": "id列表，用于批量导出",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "localCombinedFaultCode": {
+          "type": "string",
+          "description": "本地故障编码"
+        },
+        "resultLimit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回结果条数限制"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "sn"
+        }
+      },
+      "title": "CurrentFaultQueryReqDTO"
+    },
+    "DisableRecordAddDTO": {
+      "type": "object",
+      "required": [
+        "disableReason",
+        "disableSource",
+        "disableTarget",
+        "disableType",
+        "targetNo"
+      ],
+      "properties": {
+        "disableReason": {
+          "type": "string",
+          "description": "禁用原因"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "操作类型",
+          "enum": [
+            "数据字典：仓位-campDisableType 电池-batteryDisableType"
+          ]
+        },
+        "targetNo": {
+          "type": "string",
+          "description": "操作编号：仓位号或电池SN，多个用英文,拼接"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作用户"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作用户名称"
+        }
+      },
+      "title": "DisableRecordAddDTO"
+    },
+    "DisableRecordAddReqDTO": {
+      "type": "object",
+      "required": [
+        "disableReason",
+        "disableSource",
+        "disableTarget",
+        "disableType",
+        "targetNos"
+      ],
+      "properties": {
+        "disableReason": {
+          "type": "string",
+          "description": "禁用原因"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "操作类型",
+          "enum": [
+            "数据字典：仓位-campDisableType 电池-batteryDisableType"
+          ]
+        },
+        "targetNos": {
+          "type": "array",
+          "description": "操作编号：仓位号或电池SN",
+          "items": {
+            "type": "string"
+          }
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作用户"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作用户名称"
+        }
+      },
+      "title": "DisableRecordAddReqDTO"
+    },
+    "DisableRecordAddWithBusCodeReqDTO": {
+      "type": "object",
+      "required": [
+        "busCode",
+        "disableReason",
+        "disableSource",
+        "disableTarget",
+        "disableType",
+        "targetNo"
+      ],
+      "properties": {
+        "busCode": {
+          "type": "string",
+          "description": "关联业务唯一编号"
+        },
+        "disableReason": {
+          "type": "string",
+          "description": "禁用原因"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "操作类型",
+          "enum": [
+            "数据字典：仓位-campDisableType 电池-batteryDisableType"
+          ]
+        },
+        "targetNo": {
+          "type": "string",
+          "description": "操作编号：仓位号或电池SN，多个用英文,拼接"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作用户"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作人"
+        }
+      },
+      "title": "DisableRecordAddWithBusCodeReqDTO"
+    },
+    "DisableRecordDelReqDTO": {
+      "type": "object",
+      "required": [
+        "disableReason",
+        "disableSource",
+        "disableTarget",
+        "disableType",
+        "targetNos"
+      ],
+      "properties": {
+        "busCode": {
+          "type": "string",
+          "description": "关联业务唯一编号"
+        },
+        "disableReason": {
+          "type": "string",
+          "description": "禁用原因"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "操作类型",
+          "enum": [
+            "数据字典：仓位-campDisableType 电池-batteryDisableType"
+          ]
+        },
+        "targetNos": {
+          "type": "array",
+          "description": "操作编号：仓位号或电池SN",
+          "items": {
+            "type": "string"
+          }
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作用户"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作用户名称"
+        }
+      },
+      "title": "DisableRecordDelReqDTO"
+    },
+    "DisableRecordDeleteReqDTO": {
+      "type": "object",
+      "required": [
+        "id",
+        "remark"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "业务主键"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作用户"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作用户名称"
+        }
+      },
+      "title": "DisableRecordDeleteReqDTO"
+    },
+    "DisableRecordDeleteWithBusCodeDTO": {
+      "type": "object",
+      "required": [
+        "busCode",
+        "disableSource",
+        "remark"
+      ],
+      "properties": {
+        "busCode": {
+          "type": "string",
+          "description": "关联业务唯一编号"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "禁用业务",
+          "enum": [
+            "AUTO_CHARGE",
+            "BATTERY_WANTED",
+            "CAMP_OPERATION",
+            "CCU_RESET",
+            "CHARGE_TEST",
+            "CLOUD_CONTROL",
+            "FAULT_REPORT",
+            "HOT",
+            "KEYON_RESTART",
+            "LOW_SOC_CHARGE",
+            "MANUAL_CHARGE",
+            "MANUAL_DISABLE",
+            "SOC_UNBELIEVE",
+            "STATION_BATTERY_LOW_VOLTAGE_CHARGE",
+            "SWAP_BATTERY_IN",
+            "SWAP_BATTERY_OUT",
+            "SWAP_PACK_IN_CAMP",
+            "SWAP_PICK_PACK",
+            "SWAP_SUCCESS_ENABLE_PACK_CHARGE_LIMITED",
+            "TCU_RESET",
+            "WARM"
+          ]
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作人"
+        }
+      },
+      "title": "DisableRecordDeleteWithBusCodeDTO"
+    },
+    "DisableRecordEachReqDTO": {
+      "type": "object",
+      "required": [
+        "disableReason",
+        "disableSource",
+        "disableTarget",
+        "disableType",
+        "targetNo"
+      ],
+      "properties": {
+        "busCode": {
+          "type": "string",
+          "description": "关联业务唯一编号"
+        },
+        "disableReason": {
+          "type": "string",
+          "description": "禁用原因"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "操作类型",
+          "enum": [
+            "数据字典：仓位-campDisableType 电池-batteryDisableType"
+          ]
+        },
+        "targetNo": {
+          "type": "string",
+          "description": "操作编号：仓位号或电池SN"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作用户"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作用户名称"
+        }
+      },
+      "title": "DisableRecordEachReqDTO"
+    },
+    "DisableRecordListReqDTO": {
+      "type": "object",
+      "required": [
+        "disableSource",
+        "disableTarget",
+        "disableTypes",
+        "targetNos"
+      ],
+      "properties": {
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableTypes": {
+          "type": "array",
+          "description": "操作类型",
+          "items": {
+            "type": "string"
+          }
+        },
+        "targetNos": {
+          "type": "array",
+          "description": "操作编号：仓位号或电池SN",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "DisableRecordListReqDTO"
+    },
+    "DisableRecordLogCleanupReqDTO": {
+      "type": "object",
+      "properties": {
+        "cleanupDayOffset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DisableRecordLogCleanupReqDTO"
+    },
+    "DisableRecordQueryReqDTO": {
+      "type": "object",
+      "required": [
+        "disableTarget",
+        "targetNos"
+      ],
+      "properties": {
+        "busCode": {
+          "type": "string",
+          "description": "操作编号: 关联业务唯一编号(自动充电使用)"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "disableSources": {
+          "type": "array",
+          "description": "禁用来源",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "操作目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "过滤结束时间"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "过滤开始时间"
+        },
+        "targetNos": {
+          "type": "array",
+          "description": "操作编号：仓位号或电池SN",
+          "items": {
+            "type": "string"
+          }
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "DisableRecordQueryReqDTO"
+    },
+    "FaultCodeDTO": {
+      "type": "object",
+      "properties": {
+        "accidentFanControlStrategy": {
+          "type": "string"
+        },
+        "airControlStrategy": {
+          "type": "string"
+        },
+        "alarmOrPromptStrategy": {
+          "type": "string"
+        },
+        "batteryChargeStrategy": {
+          "type": "string"
+        },
+        "batterySwapStrategy": {
+          "type": "string"
+        },
+        "chargerSafetyStatusStrategy": {
+          "type": "string"
+        },
+        "deviceCode": {
+          "type": "string"
+        },
+        "deviceCodeNew": {
+          "type": "string"
+        },
+        "deviceFaultCodeV1": {
+          "type": "string"
+        },
+        "deviceFaultCodeV2": {
+          "type": "string"
+        },
+        "deviceFaultCodeV3": {
+          "type": "string"
+        },
+        "deviceNo": {
+          "type": "string"
+        },
+        "fanControlStrategy": {
+          "type": "string"
+        },
+        "faultCause": {
+          "type": "string"
+        },
+        "faultCode": {
+          "type": "string"
+        },
+        "faultDesc": {
+          "type": "string"
+        },
+        "faultDiagnosticsConditionV1": {
+          "type": "string"
+        },
+        "faultDiagnosticsConditionV2": {
+          "type": "string"
+        },
+        "faultDiagnosticsConditionV3": {
+          "type": "string"
+        },
+        "faultDiagnosticsConfirmTimeV1": {
+          "type": "string"
+        },
+        "faultDiagnosticsConfirmTimeV2": {
+          "type": "string"
+        },
+        "faultDiagnosticsConfirmTimeV3": {
+          "type": "string"
+        },
+        "faultExistV1": {
+          "type": "string"
+        },
+        "faultExistV2": {
+          "type": "string"
+        },
+        "faultExistV3": {
+          "type": "string"
+        },
+        "faultInfluence": {
+          "type": "string"
+        },
+        "faultLevel": {
+          "type": "string"
+        },
+        "faultName": {
+          "type": "string"
+        },
+        "faultNameEn": {
+          "type": "string"
+        },
+        "faultNameTw": {
+          "type": "string"
+        },
+        "faultRecoverConditionV1": {
+          "type": "string"
+        },
+        "faultRecoverConditionV2": {
+          "type": "string"
+        },
+        "faultRecoverConditionV3": {
+          "type": "string"
+        },
+        "faultRecoverConfirmTimeV1": {
+          "type": "string"
+        },
+        "faultRecoverConfirmTimeV2": {
+          "type": "string"
+        },
+        "faultRecoverConfirmTimeV3": {
+          "type": "string"
+        },
+        "faultRepair": {
+          "type": "string"
+        },
+        "faultSource": {
+          "type": "string"
+        },
+        "fireHandleStrategy": {
+          "type": "string"
+        },
+        "gateStrategy": {
+          "type": "string"
+        },
+        "reportCloudStrategy": {
+          "type": "string"
+        },
+        "rollingDoorStrategy": {
+          "type": "string"
+        },
+        "singleCampChargeStrategy": {
+          "type": "string"
+        },
+        "singleCampDischargeStrategy": {
+          "type": "string"
+        },
+        "singleCampSwapStrategy": {
+          "type": "string"
+        },
+        "specialHandleStrategy": {
+          "type": "string"
+        },
+        "stationChangeStatusStrategy": {
+          "type": "string"
+        },
+        "stationChargeStrategy": {
+          "type": "string"
+        },
+        "swapChannelVoiceStrategy": {
+          "type": "string"
+        },
+        "swapFunctionStrategy": {
+          "type": "string"
+        }
+      },
+      "title": "FaultCodeDTO"
+    },
+    "FaultCodeImportRecordDTO": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fileBlob": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "title": "FaultCodeImportRecordDTO"
+    },
+    "FaultHistoryCleanupReqDTO": {
+      "type": "object",
+      "properties": {
+        "cleanupDayOffset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "FaultHistoryCleanupReqDTO"
+    },
+    "FaultImportReqDTO": {
+      "type": "object",
+      "properties": {
+        "faultCodeImportRecord": {
+          "$ref": "#/definitions/FaultCodeImportRecordDTO",
+          "originalRef": "FaultCodeImportRecordDTO"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "description": "故障编码列表",
+          "items": {
+            "$ref": "#/definitions/FaultCodeDTO",
+            "originalRef": "FaultCodeDTO"
+          }
+        }
+      },
+      "title": "FaultImportReqDTO"
+    },
+    "FaultManualClearReqDTO": {
+      "type": "object",
+      "required": [
+        "clearFaultTarget"
+      ],
+      "properties": {
+        "bmsClearType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "BMS故障清除类型 1-清除不存储NVM的故障 2-清除所有故障 (包含存储NVM和不存储NVM) "
+        },
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号：BMS故障清除需传"
+        },
+        "clearFaultTarget": {
+          "type": "string",
+          "description": "执行对象",
+          "enum": [
+            "数据字典：clearFaultTarget"
+          ]
+        },
+        "faultIds": {
+          "type": "array",
+          "description": "故障主键列表：本地站控诊断故障清除需传",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作人"
+        }
+      },
+      "title": "FaultManualClearReqDTO"
+    },
+    "FaultMatrixHandleReqDTO": {
+      "type": "object",
+      "properties": {
+        "campNos": {
+          "type": "array",
+          "description": "仓位号集合",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "设备简称"
+        },
+        "deviceFaultCode": {
+          "type": "string",
+          "description": "设备原始故障码"
+        },
+        "deviceNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备编号"
+        },
+        "faultCode": {
+          "type": "string",
+          "description": "故障码"
+        },
+        "faultId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "packMac": {
+          "type": "string",
+          "description": "电池包Mac"
+        },
+        "packSn": {
+          "type": "string",
+          "description": "电池包SN"
+        }
+      },
+      "title": "FaultMatrixHandleReqDTO"
+    },
+    "FaultRecoverReqDTO": {
+      "type": "object",
+      "required": [
+        "deviceCode",
+        "deviceNo",
+        "faultCode"
+      ],
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "设备编码（设备简称）",
+          "enum": [
+            "BSS_CAR",
+            "BSS_CDJI",
+            "BSS_CDQ",
+            "BSS_CLOUD",
+            "BSS_DB",
+            "BSS_FED",
+            "BSS_FJ",
+            "BSS_FZLD",
+            "BSS_HD",
+            "BSS_JRJI",
+            "BSS_PLC",
+            "BSS_PLCCW",
+            "BSS_SBLE",
+            "BSS_SBMU",
+            "BSS_SXT",
+            "BSS_ZPJ",
+            "CDJI",
+            "CDQ",
+            "DCCKT",
+            "ENV",
+            "FED",
+            "JRJI",
+            "JRQ",
+            "PLC_BZ1_3",
+            "PLC_HC1_3",
+            "PLC_SDDF",
+            "SBLE",
+            "SBMU",
+            "SXT",
+            "UPS_SND",
+            "UPS_ST",
+            "ZKSKT"
+          ]
+        },
+        "deviceNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备编号"
+        },
+        "faultCode": {
+          "type": "string",
+          "description": "故障码"
+        },
+        "oriFaultCode": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "电池包SN"
+        },
+        "userName": {
+          "type": "string",
+          "description": "操作人"
+        }
+      },
+      "title": "FaultRecoverReqDTO"
+    },
+    "FaultReportReqDTO": {
+      "type": "object",
+      "required": [
+        "deviceCode",
+        "deviceNo",
+        "faultCode"
+      ],
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "desc": {
+          "type": "string",
+          "description": "描述"
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "设备编码（设备简称）",
+          "enum": [
+            "BSS_CAR",
+            "BSS_CDJI",
+            "BSS_CDQ",
+            "BSS_CLOUD",
+            "BSS_DB",
+            "BSS_FED",
+            "BSS_FJ",
+            "BSS_FZLD",
+            "BSS_HD",
+            "BSS_JRJI",
+            "BSS_PLC",
+            "BSS_PLCCW",
+            "BSS_SBLE",
+            "BSS_SBMU",
+            "BSS_SXT",
+            "BSS_ZPJ",
+            "CDJI",
+            "CDQ",
+            "DCCKT",
+            "ENV",
+            "FED",
+            "JRJI",
+            "JRQ",
+            "PLC_BZ1_3",
+            "PLC_HC1_3",
+            "PLC_SDDF",
+            "SBLE",
+            "SBMU",
+            "SXT",
+            "UPS_SND",
+            "UPS_ST",
+            "ZKSKT"
+          ]
+        },
+        "deviceNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备编号"
+        },
+        "faultCode": {
+          "type": "string",
+          "description": "故障码"
+        },
+        "oriFaultCode": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "电池包SN"
+        }
+      },
+      "title": "FaultReportReqDTO"
+    },
+    "PageFaultCodeReqDTO": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "设备简称（数据字典：deviceCode）"
+        },
+        "faultCode": {
+          "type": "string",
+          "description": "故障码"
+        },
+        "faultSource": {
+          "type": "string",
+          "description": "故障来源（数据字典：faultSource）"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "PageFaultCodeReqDTO"
+    },
+    "PageHistoryFaultReqDTO": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "combinedFaultCode": {
+          "type": "string",
+          "description": "故障编码"
+        },
+        "createTimeEnd": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间-结束"
+        },
+        "createTimeStart": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间-开始"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "deviceCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "faultCode": {
+          "type": "string"
+        },
+        "faultName": {
+          "type": "string",
+          "description": "故障名称"
+        },
+        "faultSource": {
+          "type": "string",
+          "description": "故障来源（数据字典：faultSource）"
+        },
+        "idList": {
+          "type": "array",
+          "description": "id列表，用于批量导出",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "localCombinedFaultCode": {
+          "type": "string",
+          "description": "本地故障编码"
+        },
+        "oriFaultCode": {
+          "type": "string"
+        },
+        "recoverTimeEnd": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障恢复时间-结束"
+        },
+        "recoverTimeStart": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障恢复时间-开始"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "sn"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "PageHistoryFaultReqDTO"
+    },
+    "R«BasePageResp«历史故障»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/BasePageResp«历史故障»",
+          "originalRef": "BasePageResp«历史故障»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«BasePageResp«历史故障»»"
+    },
+    "R«BasePageResp«故障编码»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/BasePageResp«故障编码»",
+          "originalRef": "BasePageResp«故障编码»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«BasePageResp«故障编码»»"
+    },
+    "R«BasePageResp«汇总历史故障»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/BasePageResp«汇总历史故障»",
+          "originalRef": "BasePageResp«汇总历史故障»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«BasePageResp«汇总历史故障»»"
+    },
+    "R«FaultCodeImportRecordDTO»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/FaultCodeImportRecordDTO",
+          "originalRef": "FaultCodeImportRecordDTO"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«FaultCodeImportRecordDTO»"
+    },
+    "R«List«仓位或电池禁用记录»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/仓位或电池禁用记录",
+            "originalRef": "仓位或电池禁用记录"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«仓位或电池禁用记录»»"
+    },
+    "R«List«仓位电池筛选项»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/仓位电池筛选项",
+            "originalRef": "仓位电池筛选项"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«仓位电池筛选项»»"
+    },
+    "R«List«历史故障»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/历史故障",
+            "originalRef": "历史故障"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«历史故障»»"
+    },
+    "R«List«实时故障»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/实时故障",
+            "originalRef": "实时故障"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«实时故障»»"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "R«int»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«int»"
+    },
+    "R«仓位或电池的禁用及解禁-详情»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/仓位或电池的禁用及解禁-详情",
+          "originalRef": "仓位或电池的禁用及解禁-详情"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«仓位或电池的禁用及解禁-详情»"
+    },
+    "SnapshotFaultRecordTriggerSaveReqDTO": {
+      "type": "object",
+      "properties": {
+        "faultTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障时间"
+        },
+        "faultTimeEnd": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障结束时间"
+        },
+        "faultTimeStart": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障前置时间"
+        },
+        "snapshotPfk": {
+          "type": "string",
+          "description": "快照唯一键"
+        },
+        "snapshotType": {
+          "type": "string",
+          "description": "故障快照类型"
+        }
+      },
+      "title": "SnapshotFaultRecordTriggerSaveReqDTO"
+    },
+    "仓位或电池的禁用及解禁-详情": {
+      "type": "object",
+      "properties": {
+        "disableRecordList": {
+          "type": "array",
+          "description": "仓位或电池禁用记录",
+          "items": {
+            "$ref": "#/definitions/仓位或电池禁用记录",
+            "originalRef": "仓位或电池禁用记录"
+          }
+        },
+        "operationLogList": {
+          "description": "操作日志",
+          "$ref": "#/definitions/BasePageResp«仓位或电池的禁用和解禁操作日志»",
+          "originalRef": "BasePageResp«仓位或电池的禁用和解禁操作日志»"
+        }
+      },
+      "title": "仓位或电池的禁用及解禁-详情"
+    },
+    "仓位或电池的禁用和解禁操作日志": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "操作时间"
+        },
+        "createUserName": {
+          "type": "string",
+          "description": "操作用户名称"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "操作来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "操作类型",
+          "enum": [
+            "数据字典：disableType"
+          ]
+        },
+        "operationType": {
+          "type": "string",
+          "description": "禁用解禁类型",
+          "enum": [
+            "数据字典：operationType"
+          ]
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "targetNo": {
+          "type": "string",
+          "description": "操作编号：仓位号或电池SN"
+        }
+      },
+      "title": "仓位或电池的禁用和解禁操作日志"
+    },
+    "仓位或电池禁用记录": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "createUserName": {
+          "type": "string",
+          "description": "操作用户名称"
+        },
+        "disableReason": {
+          "type": "string",
+          "description": "禁用原因"
+        },
+        "disableSource": {
+          "type": "string",
+          "description": "禁用来源",
+          "enum": [
+            "数据字典：disableSource"
+          ]
+        },
+        "disableTarget": {
+          "type": "string",
+          "description": "禁用目标",
+          "enum": [
+            "数据字典：disableTarget"
+          ]
+        },
+        "disableType": {
+          "type": "string",
+          "description": "禁用类型",
+          "enum": [
+            "数据字典：disableType"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "业务主键"
+        },
+        "targetNo": {
+          "type": "string",
+          "description": "操作编号：仓位号或电池SN"
+        }
+      },
+      "title": "仓位或电池禁用记录"
+    },
+    "仓位电池筛选项": {
+      "type": "object",
+      "properties": {
+        "batterySn": {
+          "type": "string",
+          "description": "电池SN"
+        },
+        "campNo": {
+          "type": "string",
+          "description": "仓位号"
+        }
+      },
+      "title": "仓位电池筛选项"
+    },
+    "历史故障": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "combinedFaultCode": {
+          "type": "string",
+          "description": "故障编码"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间"
+        },
+        "deviceCode": {
+          "type": "string"
+        },
+        "deviceFaultCode": {
+          "type": "string",
+          "description": "设备原始故障码"
+        },
+        "deviceOriginalFaultCodeV1": {
+          "type": "string",
+          "description": "一代原始故障码"
+        },
+        "deviceOriginalFaultCodeV2": {
+          "type": "string",
+          "description": "二代原始故障码"
+        },
+        "deviceOriginalFaultCodeV3": {
+          "type": "string",
+          "description": "三代原始故障码"
+        },
+        "faultCause": {
+          "type": "string",
+          "description": "可能故障原因"
+        },
+        "faultCode": {
+          "type": "string"
+        },
+        "faultDesc": {
+          "type": "string"
+        },
+        "faultName": {
+          "type": "string",
+          "description": "故障名"
+        },
+        "faultNameEn": {
+          "type": "string"
+        },
+        "faultNameTw": {
+          "type": "string"
+        },
+        "faultRepair": {
+          "type": "string",
+          "description": "故障维修建议"
+        },
+        "faultSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障来源（数据字典：faultSource）"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "主键"
+        },
+        "localCombinedFaultCode": {
+          "type": "string"
+        },
+        "oriFaultCode": {
+          "type": "string"
+        },
+        "recoverTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障恢复时间"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "SN码"
+        }
+      },
+      "title": "历史故障"
+    },
+    "实时故障": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "combinedFaultCode": {
+          "type": "string",
+          "description": "故障编码"
+        },
+        "containCampNo": {
+          "type": "string",
+          "description": "关联仓位"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间"
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "设备编码"
+        },
+        "deviceFaultCode": {
+          "type": "string",
+          "description": "设备原始故障码"
+        },
+        "deviceNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceOriginalFaultCodeV1": {
+          "type": "string",
+          "description": "一代原始故障码"
+        },
+        "deviceOriginalFaultCodeV2": {
+          "type": "string",
+          "description": "二代原始故障码"
+        },
+        "deviceOriginalFaultCodeV3": {
+          "type": "string",
+          "description": "三代原始故障码"
+        },
+        "faultCause": {
+          "type": "string",
+          "description": "可能故障原因"
+        },
+        "faultCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "faultDesc": {
+          "type": "string"
+        },
+        "faultName": {
+          "type": "string",
+          "description": "故障名"
+        },
+        "faultNameEn": {
+          "type": "string"
+        },
+        "faultNameTw": {
+          "type": "string"
+        },
+        "faultRepair": {
+          "type": "string",
+          "description": "故障维修建议"
+        },
+        "faultSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障来源（数据字典：faultSource）"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "主键"
+        },
+        "localCombinedFaultCode": {
+          "type": "string"
+        },
+        "oriFaultCode": {
+          "type": "string"
+        },
+        "reportCloudStrategy": {
+          "type": "string"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "SN码"
+        }
+      },
+      "title": "实时故障"
+    },
+    "故障编码": {
+      "type": "object",
+      "properties": {
+        "deviceCode": {
+          "type": "string",
+          "description": "设备简称"
+        },
+        "deviceFaultCode": {
+          "type": "string",
+          "description": "设备原始故障码"
+        },
+        "faultCode": {
+          "type": "string",
+          "description": "故障码"
+        },
+        "faultName": {
+          "type": "string",
+          "description": "故障名"
+        },
+        "faultSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障来源（数据字典：faultSource）"
+        }
+      },
+      "title": "故障编码"
+    },
+    "汇总历史故障": {
+      "type": "object",
+      "properties": {
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "combinedFaultCode": {
+          "type": "string",
+          "description": "故障编码"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障发生时间"
+        },
+        "deviceCode": {
+          "type": "string"
+        },
+        "deviceFaultCode": {
+          "type": "string",
+          "description": "设备原始故障码"
+        },
+        "deviceOriginalFaultCodeV1": {
+          "type": "string",
+          "description": "一代原始故障码"
+        },
+        "deviceOriginalFaultCodeV2": {
+          "type": "string",
+          "description": "二代原始故障码"
+        },
+        "deviceOriginalFaultCodeV3": {
+          "type": "string",
+          "description": "三代原始故障码"
+        },
+        "faultCause": {
+          "type": "string",
+          "description": "可能故障原因"
+        },
+        "faultCode": {
+          "type": "string"
+        },
+        "faultDesc": {
+          "type": "string"
+        },
+        "faultName": {
+          "type": "string",
+          "description": "故障名"
+        },
+        "faultNameEn": {
+          "type": "string"
+        },
+        "faultNameTw": {
+          "type": "string"
+        },
+        "faultRepair": {
+          "type": "string",
+          "description": "故障维修建议"
+        },
+        "faultSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障来源（数据字典：faultSource）"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "主键"
+        },
+        "localCombinedFaultCode": {
+          "type": "string"
+        },
+        "num": {
+          "type": "integer",
+          "format": "int64",
+          "description": "发生次数"
+        },
+        "oriFaultCode": {
+          "type": "string"
+        },
+        "recoverTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "故障恢复时间"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "SN码"
+        }
+      },
+      "title": "汇总历史故障"
+    }
+  }
+}

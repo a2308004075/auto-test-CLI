@@ -1,0 +1,3544 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "EMU本地缓存记录",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "储能接口调用",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "模拟设备-测试云端通讯接口",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "站控平台---储能接口调用",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "设备管理",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/device/getAllDevice": {
+      "post": {
+        "tags": [
+          "设备管理"
+        ],
+        "summary": "获取所有设备列表",
+        "operationId": "getAllDeviceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«Device»»",
+              "originalRef": "R«List«Device»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/device/getEmuConfig": {
+      "post": {
+        "tags": [
+          "设备管理"
+        ],
+        "summary": "获取EMU配置",
+        "operationId": "getEmuConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«EmuConfig»",
+              "originalRef": "R«EmuConfig»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/device/getStationConfig": {
+      "post": {
+        "tags": [
+          "设备管理"
+        ],
+        "summary": "获取电站配置配置",
+        "operationId": "getStationConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«StationConfig»",
+              "originalRef": "R«StationConfig»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/clearCmdCache": {
+      "post": {
+        "tags": [
+          "EMU本地缓存记录"
+        ],
+        "summary": "清除设备命令缓存记录",
+        "operationId": "clearCmdCacheUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«ConcurrentHashMap»",
+              "originalRef": "R«ConcurrentHashMap»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/chargeCmd": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "充放电命令下发",
+        "operationId": "chargeCmdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备充放电命令控制参数",
+              "originalRef": "储能设备充放电命令控制参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«充放电命令控制结果返回VO»",
+              "originalRef": "R«充放电命令控制结果返回VO»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/getAllDevRealData": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "获取所有设备实时状态数据",
+        "operationId": "getAllDevRealDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«储能设备实时状态数据»»",
+              "originalRef": "R«List«储能设备实时状态数据»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/getDevInfo": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "获取储能设备基本信息",
+        "operationId": "getDevInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询参数",
+              "originalRef": "储能设备查询参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«储能设备基本信息»",
+              "originalRef": "R«储能设备基本信息»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/getDevParamConfig": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "获取设备参数配置",
+        "operationId": "getDevParamConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询参数",
+              "originalRef": "储能设备查询参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«储能设备参数配置»",
+              "originalRef": "R«储能设备参数配置»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/getDevRealData": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "获取指定设备实时状态数据",
+        "operationId": "getDevRealDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询参数",
+              "originalRef": "储能设备查询参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«储能设备实时状态数据»",
+              "originalRef": "R«储能设备实时状态数据»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/getEssCacheData": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "储能设备最后一帧遥测缓存数据",
+        "operationId": "getEssCacheDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询参数",
+              "originalRef": "储能设备查询参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«EssDataVo»",
+              "originalRef": "R«EssDataVo»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/history/getDevAlarmEvent": {
+      "post": {
+        "tags": [
+          "储能接口调用"
+        ],
+        "summary": "设备故障记录",
+        "operationId": "getDevAlarmEventUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询/操作参数",
+              "originalRef": "储能设备查询/操作参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«PageVo«系统事件/设备故障»»",
+              "originalRef": "R«PageVo«系统事件/设备故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/history/getDevChargeOrder": {
+      "post": {
+        "tags": [
+          "储能接口调用"
+        ],
+        "summary": "获取订单记录",
+        "operationId": "getDevChargeOrderUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询/操作参数",
+              "originalRef": "储能设备查询/操作参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«PageVo«充放电订单»»",
+              "originalRef": "R«PageVo«充放电订单»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/history/getDevOperateLog": {
+      "post": {
+        "tags": [
+          "储能接口调用"
+        ],
+        "summary": "获取命令操作记录",
+        "operationId": "getDevOperateLogUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询/操作参数",
+              "originalRef": "储能设备查询/操作参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«PageVo«操作记录»»",
+              "originalRef": "R«PageVo«操作记录»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/history/getDevSysEvent": {
+      "post": {
+        "tags": [
+          "储能接口调用"
+        ],
+        "summary": "设备系统事件记录",
+        "operationId": "getDevSysEventUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询/操作参数",
+              "originalRef": "储能设备查询/操作参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«PageVo«系统事件/设备故障»»",
+              "originalRef": "R«PageVo«系统事件/设备故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/ipConfig": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "储能设备IP配置",
+        "operationId": "ipConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dtoList",
+            "description": "dtoList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/储能设备IP配置",
+                "originalRef": "储能设备IP配置"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«string»",
+              "originalRef": "R«string»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/safetyAlert": {
+      "post": {
+        "tags": [
+          "储能接口调用"
+        ],
+        "summary": "设备安全预警通知",
+        "operationId": "safetyAlertUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询/操作参数0",
+              "originalRef": "储能设备查询/操作参数0"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«int»",
+              "originalRef": "R«int»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/syncTime": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "同步设备时间",
+        "operationId": "syncTimeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/储能设备查询参数",
+              "originalRef": "储能设备查询参数"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«string»",
+              "originalRef": "R«string»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/ess/updateParamConfig": {
+      "post": {
+        "tags": [
+          "站控平台---储能接口调用"
+        ],
+        "summary": "修改设备参数配置",
+        "operationId": "updateParamConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/设备参数配置修改",
+              "originalRef": "设备参数配置修改"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«储能设备参数配置»",
+              "originalRef": "R«储能设备参数配置»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/getCmdCache": {
+      "post": {
+        "tags": [
+          "EMU本地缓存记录"
+        ],
+        "summary": "获取设备命令缓存记录",
+        "operationId": "getCmdCacheUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«ConcurrentHashMap»",
+              "originalRef": "R«ConcurrentHashMap»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/emu/getDeviceSession": {
+      "post": {
+        "tags": [
+          "EMU本地缓存记录"
+        ],
+        "summary": "获取设备链接信息",
+        "operationId": "getDeviceSessionUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«EssNettyClientVo»»",
+              "originalRef": "R«List«EssNettyClientVo»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/test/cloud/reportChargePackData": {
+      "post": {
+        "tags": [
+          "模拟设备-测试云端通讯接口"
+        ],
+        "summary": "pack遥测数据上报",
+        "operationId": "reportChargePackDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EssPackDataVo",
+              "originalRef": "EssPackDataVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«EssPackDataVo»",
+              "originalRef": "R«EssPackDataVo»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/test/cloud/reportDevAlarmEvent": {
+      "post": {
+        "tags": [
+          "模拟设备-测试云端通讯接口"
+        ],
+        "summary": "模拟设备告警、系统事件上报",
+        "operationId": "reportDevAlarmEventUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "devAlarmEvents",
+            "description": "devAlarmEvents",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/系统事件/设备故障",
+                "originalRef": "系统事件/设备故障"
+              }
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«系统事件/设备故障»»",
+              "originalRef": "R«List«系统事件/设备故障»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/test/cloud/reportDevData": {
+      "post": {
+        "tags": [
+          "模拟设备-测试云端通讯接口"
+        ],
+        "summary": "储能柜全量遥测数据上报",
+        "operationId": "reportDevDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "essDataVo",
+            "description": "essDataVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EssDataVo",
+              "originalRef": "EssDataVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«EssDataVo»",
+              "originalRef": "R«EssDataVo»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/test/cloud/reportOnlineMsg": {
+      "post": {
+        "tags": [
+          "模拟设备-测试云端通讯接口"
+        ],
+        "summary": "设备上下线通知",
+        "operationId": "reportOnlineMsgUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«DevDetailVo»»",
+              "originalRef": "R«List«DevDetailVo»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BauBaseDataVo": {
+      "type": "object",
+      "properties": {
+        "aCurrent": {
+          "type": "number",
+          "format": "float"
+        },
+        "aVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "abVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "acBreakerStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "acVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "activePower": {
+          "type": "number",
+          "format": "float"
+        },
+        "alarmStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "apparentPower": {
+          "type": "number",
+          "format": "float"
+        },
+        "bCurrent": {
+          "type": "number",
+          "format": "float"
+        },
+        "bVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "bcVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "cCurrent": {
+          "type": "number",
+          "format": "float"
+        },
+        "cVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "chargeLeftTime": {
+          "type": "number",
+          "format": "float"
+        },
+        "dischargeLeftTime": {
+          "type": "number",
+          "format": "float"
+        },
+        "gridStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "powerFactor": {
+          "type": "number",
+          "format": "float"
+        },
+        "reactivePower": {
+          "type": "number",
+          "format": "float"
+        },
+        "soc": {
+          "type": "number",
+          "format": "float"
+        },
+        "soe": {
+          "type": "number",
+          "format": "float"
+        },
+        "soh": {
+          "type": "number",
+          "format": "float"
+        },
+        "sysCurrent": {
+          "type": "number",
+          "format": "float"
+        },
+        "sysVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "totalCharge": {
+          "type": "number",
+          "format": "float"
+        },
+        "totalDisCharge": {
+          "type": "number",
+          "format": "float"
+        },
+        "totalUseEnergy": {
+          "type": "number",
+          "format": "float"
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "BauBaseDataVo"
+    },
+    "BmuBaseDataVo": {
+      "type": "object",
+      "properties": {
+        "alarmCode": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "alarmStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "commStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceSn": {
+          "type": "string"
+        },
+        "fltLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "heatStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "insulationEnable": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mainNegCnctrStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mainPosCnctrStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "negativeInsulation": {
+          "type": "number",
+          "format": "float"
+        },
+        "positiveInsulation": {
+          "type": "number",
+          "format": "float"
+        },
+        "soc": {
+          "type": "number",
+          "format": "float"
+        },
+        "soh": {
+          "type": "number",
+          "format": "float"
+        },
+        "totalCharge": {
+          "type": "number",
+          "format": "float"
+        },
+        "totalDisCharge": {
+          "type": "number",
+          "format": "float"
+        },
+        "waterCoolingStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "BmuBaseDataVo"
+    },
+    "BmuCellCountVo": {
+      "type": "object",
+      "properties": {
+        "avgTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "avgVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxTempNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxVoltageCellNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "minTempNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "minVoltageCellNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tempDiff": {
+          "type": "number",
+          "format": "float"
+        },
+        "voltageDiff": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "BmuCellCountVo"
+    },
+    "BmuChargeDataVo": {
+      "type": "object",
+      "properties": {
+        "cellVoltageList": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "current": {
+          "type": "number",
+          "format": "float"
+        },
+        "tempList": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "voltage": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "BmuChargeDataVo"
+    },
+    "BmuVo": {
+      "type": "object",
+      "properties": {
+        "baseData": {
+          "$ref": "#/definitions/BmuBaseDataVo",
+          "originalRef": "BmuBaseDataVo"
+        },
+        "cellCount": {
+          "$ref": "#/definitions/BmuCellCountVo",
+          "originalRef": "BmuCellCountVo"
+        },
+        "chargeData": {
+          "$ref": "#/definitions/BmuChargeDataVo",
+          "originalRef": "BmuChargeDataVo"
+        }
+      },
+      "title": "BmuVo"
+    },
+    "CellCountVo": {
+      "type": "object",
+      "properties": {
+        "avgTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "avgVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxTempNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxTempPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxTempPackSn": {
+          "type": "string"
+        },
+        "maxVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxVoltageCellNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxVoltagePackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxVoltagePackSn": {
+          "type": "string"
+        },
+        "minTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "minTempNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minTempPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minTempPackSn": {
+          "type": "string"
+        },
+        "minVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "minVoltageCellNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minVoltagePackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minVoltagePackSN": {
+          "type": "string"
+        },
+        "tempDiff": {
+          "type": "number",
+          "format": "float"
+        },
+        "voltageDiff": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "CellCountVo"
+    },
+    "DehumidifierVo": {
+      "type": "object",
+      "properties": {
+        "alarmCode": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "alarmStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "commStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "humidity": {
+          "type": "number",
+          "format": "float"
+        },
+        "temp": {
+          "type": "number",
+          "format": "float"
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DehumidifierVo"
+    },
+    "DevDetailVo": {
+      "type": "object",
+      "properties": {
+        "bmsList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/电池包基本信息",
+            "originalRef": "电池包基本信息"
+          }
+        },
+        "createTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceName": {
+          "type": "string"
+        },
+        "deviceNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceSn": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "moduleVersion": {
+          "type": "string"
+        },
+        "offlineTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "onlineStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "onlineTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "productModel": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "updateTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "title": "DevDetailVo"
+    },
+    "Device": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "string"
+        },
+        "config": {
+          "type": "string"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceName": {
+          "type": "string"
+        },
+        "deviceSn": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hardwareVersion": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "moduleVersion": {
+          "type": "string"
+        },
+        "offlineTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "onlineStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "onlineTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "packList": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "productModel": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "title": "Device"
+    },
+    "EmuConfig": {
+      "type": "object",
+      "properties": {
+        "emuVersion": {
+          "type": "string"
+        }
+      },
+      "title": "EmuConfig"
+    },
+    "EssDataVo": {
+      "type": "object",
+      "properties": {
+        "baseData": {
+          "$ref": "#/definitions/BauBaseDataVo",
+          "originalRef": "BauBaseDataVo"
+        },
+        "bmu": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BmuVo",
+            "originalRef": "BmuVo"
+          }
+        },
+        "cellCount": {
+          "$ref": "#/definitions/CellCountVo",
+          "originalRef": "CellCountVo"
+        },
+        "dataId": {
+          "type": "string"
+        },
+        "dehumidifier": {
+          "$ref": "#/definitions/DehumidifierVo",
+          "originalRef": "DehumidifierVo"
+        },
+        "devTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "fireControlData": {
+          "$ref": "#/definitions/FireControlDataVo",
+          "originalRef": "FireControlDataVo"
+        },
+        "gridMeter": {
+          "$ref": "#/definitions/GridMeterVo",
+          "originalRef": "GridMeterVo"
+        },
+        "liquidCooling": {
+          "$ref": "#/definitions/LiquidCoolingVo",
+          "originalRef": "LiquidCoolingVo"
+        },
+        "otherData": {
+          "$ref": "#/definitions/OtherDataVo",
+          "originalRef": "OtherDataVo"
+        },
+        "packCount": {
+          "$ref": "#/definitions/PackCountVo",
+          "originalRef": "PackCountVo"
+        }
+      },
+      "title": "EssDataVo"
+    },
+    "EssNettyClientVo": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/储能设备参数配置",
+          "originalRef": "储能设备参数配置"
+        },
+        "connect": {
+          "type": "boolean"
+        },
+        "devInfoVo": {
+          "$ref": "#/definitions/储能设备基本信息",
+          "originalRef": "储能设备基本信息"
+        },
+        "deviceDb": {
+          "$ref": "#/definitions/Device",
+          "originalRef": "Device"
+        },
+        "essDataVo": {
+          "$ref": "#/definitions/EssDataVo",
+          "originalRef": "EssDataVo"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "loginSuccess": {
+          "type": "boolean"
+        },
+        "loginTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "syncTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "EssNettyClientVo"
+    },
+    "EssPackDataVo": {
+      "type": "object",
+      "properties": {
+        "bmu": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BmuVo",
+            "originalRef": "BmuVo"
+          }
+        },
+        "dataId": {
+          "type": "string"
+        },
+        "devTime": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "EssPackDataVo"
+    },
+    "FireControlDataVo": {
+      "type": "object",
+      "properties": {
+        "aerosolStatus": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "alarmCode": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "alarmStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "commStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fireFightingStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "smokeStatus": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "tempStatus": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "FireControlDataVo"
+    },
+    "GridMeterVo": {
+      "type": "object",
+      "properties": {
+        "commStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "gridPower": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "GridMeterVo"
+    },
+    "IpConfig": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deviceNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "IpConfig"
+    },
+    "LiquidCoolingVo": {
+      "type": "object",
+      "properties": {
+        "alarmCode": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "alarmStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "commStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "controlMode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pressure": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "temp": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "LiquidCoolingVo"
+    },
+    "OtherDataVo": {
+      "type": "object",
+      "properties": {
+        "dcdcList": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "doorStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fanList": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "humidityList": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "pcsList": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "tempList": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "upsStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "waterStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "OtherDataVo"
+    },
+    "PackCountVo": {
+      "type": "object",
+      "properties": {
+        "avgSoc": {
+          "type": "number",
+          "format": "float"
+        },
+        "avgTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "avgVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxSoc": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxSocPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxSocPackSn": {
+          "type": "string"
+        },
+        "maxTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxTempNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxTempPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxTempPackSn": {
+          "type": "string"
+        },
+        "maxVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "maxVoltagePackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxVoltagePackSn": {
+          "type": "string"
+        },
+        "minInsulation": {
+          "type": "number",
+          "format": "float"
+        },
+        "minInsulationPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minInsulationPackSn": {
+          "type": "string"
+        },
+        "minSoc": {
+          "type": "number",
+          "format": "float"
+        },
+        "minSocPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minSocPackSn": {
+          "type": "string"
+        },
+        "minTemp": {
+          "type": "number",
+          "format": "float"
+        },
+        "minTempNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minTempPackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minTempPackSn": {
+          "type": "string"
+        },
+        "minVoltage": {
+          "type": "number",
+          "format": "float"
+        },
+        "minVoltagePackNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minVoltagePackSn": {
+          "type": "string"
+        },
+        "socDiff": {
+          "type": "number",
+          "format": "float"
+        },
+        "tempDiff": {
+          "type": "number",
+          "format": "float"
+        },
+        "voltageDiff": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "title": "PackCountVo"
+    },
+    "PageVo«充放电订单»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/充放电订单",
+            "originalRef": "充放电订单"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageVo«充放电订单»"
+    },
+    "PageVo«操作记录»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/操作记录",
+            "originalRef": "操作记录"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageVo«操作记录»"
+    },
+    "PageVo«系统事件/设备故障»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/系统事件/设备故障",
+            "originalRef": "系统事件/设备故障"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageVo«系统事件/设备故障»"
+    },
+    "R«ConcurrentHashMap»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«ConcurrentHashMap»"
+    },
+    "R«EmuConfig»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/EmuConfig",
+          "originalRef": "EmuConfig"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«EmuConfig»"
+    },
+    "R«EssDataVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/EssDataVo",
+          "originalRef": "EssDataVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«EssDataVo»"
+    },
+    "R«EssPackDataVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/EssPackDataVo",
+          "originalRef": "EssPackDataVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«EssPackDataVo»"
+    },
+    "R«List«DevDetailVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DevDetailVo",
+            "originalRef": "DevDetailVo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«DevDetailVo»»"
+    },
+    "R«List«Device»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Device",
+            "originalRef": "Device"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«Device»»"
+    },
+    "R«List«EssNettyClientVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EssNettyClientVo",
+            "originalRef": "EssNettyClientVo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«EssNettyClientVo»»"
+    },
+    "R«List«储能设备实时状态数据»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/储能设备实时状态数据",
+            "originalRef": "储能设备实时状态数据"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«储能设备实时状态数据»»"
+    },
+    "R«List«系统事件/设备故障»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/系统事件/设备故障",
+            "originalRef": "系统事件/设备故障"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«系统事件/设备故障»»"
+    },
+    "R«PageVo«充放电订单»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/PageVo«充放电订单»",
+          "originalRef": "PageVo«充放电订单»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«PageVo«充放电订单»»"
+    },
+    "R«PageVo«操作记录»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/PageVo«操作记录»",
+          "originalRef": "PageVo«操作记录»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«PageVo«操作记录»»"
+    },
+    "R«PageVo«系统事件/设备故障»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/PageVo«系统事件/设备故障»",
+          "originalRef": "PageVo«系统事件/设备故障»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«PageVo«系统事件/设备故障»»"
+    },
+    "R«StationConfig»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/StationConfig",
+          "originalRef": "StationConfig"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«StationConfig»"
+    },
+    "R«int»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«int»"
+    },
+    "R«string»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«string»"
+    },
+    "R«储能设备参数配置»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/储能设备参数配置",
+          "originalRef": "储能设备参数配置"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«储能设备参数配置»"
+    },
+    "R«储能设备基本信息»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/储能设备基本信息",
+          "originalRef": "储能设备基本信息"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«储能设备基本信息»"
+    },
+    "R«储能设备实时状态数据»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/储能设备实时状态数据",
+          "originalRef": "储能设备实时状态数据"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«储能设备实时状态数据»"
+    },
+    "R«充放电命令控制结果返回VO»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/充放电命令控制结果返回VO",
+          "originalRef": "充放电命令控制结果返回VO"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«充放电命令控制结果返回VO»"
+    },
+    "StationConfig": {
+      "type": "object",
+      "properties": {
+        "essIpConfigList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IpConfig",
+            "originalRef": "IpConfig"
+          }
+        },
+        "essIpConfigMap": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/IpConfig",
+            "originalRef": "IpConfig"
+          }
+        },
+        "stationId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "StationConfig"
+    },
+    "bms充放电保护参数配置": {
+      "type": "object",
+      "properties": {
+        "allowDischargeSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "可放电soc"
+        },
+        "maxCellVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "充电单体电芯最大电压"
+        },
+        "maxChargeSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "充电截止最大soc"
+        },
+        "minCellVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "放电单体电芯最小电压"
+        },
+        "minDischargeSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "放电截止最小soc"
+        },
+        "undervoltageChargeEnd": {
+          "type": "number",
+          "format": "float",
+          "description": "欠压充电，电芯截止电压"
+        },
+        "undervoltageChargeStart": {
+          "type": "number",
+          "format": "float",
+          "description": "欠压充电 ，电芯电压告警值"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "bms充放电保护参数配置"
+    },
+    "仓位配置": {
+      "type": "object",
+      "properties": {
+        "packType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包类型  1：25#-LFP01-L  2：20#-LFP01-L  3：35#-LFP01-L   4：AD03-LFP"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 仓位配置"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 配置状态  0 关闭   1 开启"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "仓位配置"
+    },
+    "储能柜电池容量配置信息": {
+      "type": "object",
+      "properties": {
+        "capacity": {
+          "type": "number",
+          "format": "float",
+          "description": "装机容量 kWh"
+        },
+        "maxChargePower": {
+          "type": "number",
+          "format": "float",
+          "description": "最大充电能力/功率 kw"
+        },
+        "maxDischargePower": {
+          "type": "number",
+          "format": "float",
+          "description": "最大放电能力/功率 kw"
+        },
+        "packNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "配置电池包数量"
+        }
+      },
+      "title": "储能柜电池容量配置信息"
+    },
+    "储能设备IP配置": {
+      "type": "object",
+      "properties": {
+        "deviceNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备序号 1--5"
+        },
+        "ip": {
+          "type": "string",
+          "description": "ip地址"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 未配置   1 配置"
+        }
+      },
+      "title": "储能设备IP配置"
+    },
+    "储能设备充放电命令控制参数": {
+      "type": "object",
+      "properties": {
+        "adjustType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1：采用设备内部电池需求功率进行充电； 默认值  2：设置充/放电功率上限值"
+        },
+        "cmdScene": {
+          "type": "integer",
+          "format": "int32",
+          "description": "触发场景,原因,参考协议文档定义"
+        },
+        "cmdSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "触发来源 1.云端  2.站控   3.储能柜/设备本地  4.EMU"
+        },
+        "cmdType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "命令类型  0:停止充电 1:停止放电   2:充电开启    3:放电开启   4:充电功率调控  5:放电功率调控 "
+        },
+        "deviceId": {
+          "type": "string",
+          "description": "指定设备ID"
+        },
+        "endSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "停止soc  0--1"
+        },
+        "endTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 停止时间"
+        },
+        "maxPower": {
+          "type": "number",
+          "format": "float",
+          "description": "指定功率， adjustType=2 必须设置 ,大于1 kw"
+        }
+      },
+      "title": "储能设备充放电命令控制参数"
+    },
+    "储能设备参数配置": {
+      "type": "object",
+      "properties": {
+        "antiRefluxConfig": {
+          "description": "防逆流参数",
+          "$ref": "#/definitions/防逆流控制参数",
+          "originalRef": "防逆流控制参数"
+        },
+        "chargeConfig": {
+          "description": "充放电控制参数",
+          "$ref": "#/definitions/充放电控制参数",
+          "originalRef": "充放电控制参数"
+        },
+        "collectConfig": {
+          "description": "数据采集参数",
+          "$ref": "#/definitions/数据采集配置",
+          "originalRef": "数据采集配置"
+        },
+        "demandConfig": {
+          "description": "需量控制参数",
+          "$ref": "#/definitions/需量控制参数",
+          "originalRef": "需量控制参数"
+        },
+        "fanConfig": {
+          "description": "风机控制参数",
+          "$ref": "#/definitions/风机配置",
+          "originalRef": "风机配置"
+        },
+        "liquidCoolingConfig": {
+          "description": "液冷控制参数",
+          "$ref": "#/definitions/液冷配置",
+          "originalRef": "液冷配置"
+        },
+        "packPositionList": {
+          "type": "array",
+          "description": "仓位配置",
+          "items": {
+            "$ref": "#/definitions/仓位配置",
+            "originalRef": "仓位配置"
+          }
+        },
+        "protectConfig": {
+          "description": "电池包BMS保护参数",
+          "$ref": "#/definitions/bms充放电保护参数配置",
+          "originalRef": "bms充放电保护参数配置"
+        },
+        "teamConfig": {
+          "description": "多机协同参数",
+          "$ref": "#/definitions/多机协同配置",
+          "originalRef": "多机协同配置"
+        }
+      },
+      "title": "储能设备参数配置"
+    },
+    "储能设备基本信息": {
+      "type": "object",
+      "properties": {
+        "baseInfor": {
+          "description": "基础信息",
+          "$ref": "#/definitions/设备基本信息",
+          "originalRef": "设备基本信息"
+        },
+        "packCapacity": {
+          "description": "装机容量信息",
+          "$ref": "#/definitions/储能柜电池容量配置信息",
+          "originalRef": "储能柜电池容量配置信息"
+        },
+        "packList": {
+          "type": "array",
+          "description": "电池包列表基础信息",
+          "items": {
+            "$ref": "#/definitions/电池包基本信息",
+            "originalRef": "电池包基本信息"
+          }
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "从设备获取数据时间"
+        }
+      },
+      "title": "储能设备基本信息"
+    },
+    "储能设备实时状态数据": {
+      "type": "object",
+      "properties": {
+        "alarmStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "告警状态 0正常 1告警 2故障"
+        },
+        "chargeLeftTime": {
+          "type": "number",
+          "description": "剩余可充时长 min"
+        },
+        "commStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备与EMU通讯状态  0 未激活 1在线 2离线"
+        },
+        "deviceId": {
+          "type": "string",
+          "description": "设备ID"
+        },
+        "deviceNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备序号 1--5"
+        },
+        "deviceSn": {
+          "type": "string",
+          "description": "设备sn"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备类型 1EMU 2储能 3光伏"
+        },
+        "dischargeLeftTime": {
+          "type": "number",
+          "description": "剩余可放时长 min"
+        },
+        "gridStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "并网状态  1并网运行  2离网运行"
+        },
+        "ip": {
+          "type": "string",
+          "description": "设备IP"
+        },
+        "power": {
+          "type": "number",
+          "description": "系统功率 即充放电功率 充负放正"
+        },
+        "soc": {
+          "type": "number",
+          "description": "剩余电量 2位小数 0.00--1.00"
+        },
+        "soe": {
+          "type": "number",
+          "description": "剩余能量 kwh"
+        },
+        "soh": {
+          "type": "number",
+          "description": "设备健康值 2位小数 0.00--1.00"
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "工作状态 0待机  1充电 2放电"
+        }
+      },
+      "title": "储能设备实时状态数据"
+    },
+    "储能设备查询/操作参数": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceId": {
+          "type": "string",
+          "description": "根据设备ID获取设备信息 ,优先使用设备ID条件查询"
+        },
+        "endTime": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string",
+          "description": "根据IP获取设备信息"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "module": {
+          "type": "string"
+        },
+        "moduleSn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "string",
+          "description": "云端/站控发起请求消息唯一ID"
+        },
+        "reason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作原因 "
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "source": {
+          "type": "integer",
+          "format": "int32",
+          "description": "命令来源 1云端 2 站控"
+        },
+        "startTime": {
+          "type": "string"
+        }
+      },
+      "title": "储能设备查询/操作参数"
+    },
+    "储能设备查询/操作参数0": {
+      "type": "object",
+      "properties": {
+        "deviceId": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "eventId": {
+          "type": "string"
+        },
+        "eventName": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string",
+          "description": "根据IP获取设备信息"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "string",
+          "description": "云端/站控发起请求消息唯一ID"
+        },
+        "packNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packSn": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作原因 "
+        },
+        "remark": {
+          "type": "string"
+        },
+        "source": {
+          "type": "integer",
+          "format": "int32",
+          "description": "命令来源 1云端 2 站控"
+        },
+        "time": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "储能设备查询/操作参数0"
+    },
+    "储能设备查询参数": {
+      "type": "object",
+      "properties": {
+        "deviceId": {
+          "type": "string",
+          "description": "根据设备ID获取设备信息  ，优先使用设备ID条件查询"
+        },
+        "ip": {
+          "type": "string",
+          "description": "根据IP获取设备信息"
+        },
+        "type": {
+          "type": "string",
+          "description": "查询方式，emu 从EMU本地缓存查询，dev 发送命令给储能设备进行查询"
+        }
+      },
+      "title": "储能设备查询参数"
+    },
+    "充放电命令控制结果返回VO": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "失败原因代码"
+        },
+        "reasonDesc": {
+          "type": "string",
+          "description": "失败原因描述"
+        },
+        "remark": {
+          "type": "integer",
+          "format": "int32",
+          "description": "失败原因详细备注说明"
+        },
+        "result": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0成功  1失败    2拒绝  "
+        }
+      },
+      "title": "充放电命令控制结果返回VO"
+    },
+    "充放电控制参数": {
+      "type": "object",
+      "properties": {
+        "maxChargePower": {
+          "type": "number",
+          "format": "float",
+          "description": "最大充电功率"
+        },
+        "maxDischargePower": {
+          "type": "number",
+          "format": "float",
+          "description": "最大放电功率"
+        },
+        "powerControlEnable": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 关闭  1 开启"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "充放电控制参数"
+    },
+    "充放电订单": {
+      "type": "object",
+      "properties": {
+        "chargeType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1充 2放"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceSn": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "duration": {
+          "type": "integer",
+          "format": "int64",
+          "description": "持续时长 单位s"
+        },
+        "efficiency1": {
+          "type": "number",
+          "format": "float",
+          "description": "效率1"
+        },
+        "efficiency2": {
+          "type": "number",
+          "format": "float",
+          "description": "效率2"
+        },
+        "endSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "结束soc"
+        },
+        "endTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "结束时间"
+        },
+        "essChargeId": {
+          "type": "string",
+          "description": "整柜订单UUID"
+        },
+        "essOrderNum": {
+          "type": "string",
+          "description": "整柜订单编号"
+        },
+        "maxPower": {
+          "type": "number",
+          "format": "float",
+          "description": "指定最大执行功率   0表示额定功率 单位kW"
+        },
+        "packChargeId": {
+          "type": "string",
+          "description": "单包订单UUID"
+        },
+        "packNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包编号"
+        },
+        "packOrderNum": {
+          "type": "string",
+          "description": "单包订单编号"
+        },
+        "packSn": {
+          "type": "string",
+          "description": "电池包SN"
+        },
+        "startReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "启动原因"
+        },
+        "startSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "开始soc"
+        },
+        "startSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "启动命令来源"
+        },
+        "startTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "开始时间"
+        },
+        "stopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "停止原因"
+        },
+        "stopSource": {
+          "type": "integer",
+          "format": "int32",
+          "description": "停止命令来源"
+        },
+        "totalEnergy": {
+          "type": "number",
+          "format": "float",
+          "description": "充放电量 单位kWh"
+        }
+      },
+      "title": "充放电订单"
+    },
+    "多机协同配置": {
+      "type": "object",
+      "properties": {
+        "followerList": {
+          "type": "array",
+          "description": "从机信息",
+          "items": {
+            "$ref": "#/definitions/多机协同配置--设备链接信息",
+            "originalRef": "多机协同配置--设备链接信息"
+          }
+        },
+        "isLeader": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否主机  0 从机  1主机 ，默认1"
+        },
+        "leaderHost": {
+          "description": "主机信息",
+          "$ref": "#/definitions/多机协同配置--设备链接信息",
+          "originalRef": "多机协同配置--设备链接信息"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "多机协同配置"
+    },
+    "多机协同配置--设备链接信息": {
+      "type": "object",
+      "properties": {
+        "deviceSn": {
+          "type": "string",
+          "description": "设备SN"
+        },
+        "ip": {
+          "type": "string",
+          "description": "设备IP"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "通讯状态 0 未连接  1 已连接"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "多机协同配置--设备链接信息"
+    },
+    "操作记录": {
+      "type": "object",
+      "properties": {
+        "chargeId": {
+          "type": "string",
+          "description": "整柜/单包订单UUID"
+        },
+        "cmdType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "命令类型 参考充放电命令接口cmdType字段定义"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceSn": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "endSoc": {
+          "type": "number",
+          "format": "float",
+          "description": "截止soc"
+        },
+        "endTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "截止时刻"
+        },
+        "failReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "失败原因"
+        },
+        "maxPower": {
+          "type": "number",
+          "format": "float",
+          "description": "指定最大执行功率"
+        },
+        "operateId": {
+          "type": "string",
+          "description": "操作记录UUID"
+        },
+        "operateTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "操作时间"
+        },
+        "orderNum": {
+          "type": "string",
+          "description": "整柜/单包订单编号"
+        },
+        "packNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包编号"
+        },
+        "packSn": {
+          "type": "string",
+          "description": "电池包SN"
+        },
+        "reason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作原因"
+        },
+        "remark": {
+          "type": "string",
+          "description": "操作结果描述"
+        },
+        "result": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 操作结果 0成功  1失败    2拒绝"
+        },
+        "source": {
+          "type": "integer",
+          "format": "int32",
+          "description": "命令来源"
+        }
+      },
+      "title": "操作记录"
+    },
+    "数据采集配置": {
+      "type": "object",
+      "properties": {
+        "dataReportEnable": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否主动上报遥测数据   0 关闭  1 开启    默认开启"
+        },
+        "essDataCollect": {
+          "type": "integer",
+          "format": "int64",
+          "description": "全量数据采集频率 单位 ms"
+        },
+        "gridMeterCollect": {
+          "type": "integer",
+          "format": "int64",
+          "description": "箱变电表采集频率  单位 ms"
+        },
+        "packDataCollect": {
+          "type": "integer",
+          "format": "int64",
+          "description": "充电过程电池包采集频率 单位 ms"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "数据采集配置"
+    },
+    "液冷配置": {
+      "type": "object",
+      "properties": {
+        "coldCloseAvgTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制冷关闭平均电芯温度"
+        },
+        "coldCloseMaxTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制冷关闭最大电芯温度"
+        },
+        "coldOpenAvgTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制冷开启平均电芯温度"
+        },
+        "coldOpenMaxTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制冷开启最大电芯温度"
+        },
+        "hotCloseAvgTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制热关闭平均电芯温度"
+        },
+        "hotCloseMinTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制热关闭最小电芯温度"
+        },
+        "hotOpenAvgTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制热开启平均电芯温度"
+        },
+        "hotOpenMinTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "制热开启最小电芯温度"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "液冷配置"
+    },
+    "电池包基本信息": {
+      "type": "object",
+      "properties": {
+        "calibrationCap": {
+          "type": "number",
+          "format": "float",
+          "description": "电池箱额定容量（1/3C）,0.1Ah"
+        },
+        "cellRatedCapacityAh": {
+          "type": "number",
+          "format": "float",
+          "description": " 额定容量（1C的容量），精度：0.1Ah"
+        },
+        "cellType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池类型 1：铅酸电池；2：镍氢电池；3：磷酸铁锂电池；4：锰酸锂电池；5：钴酸锂电池；6：三元材料电池；7：聚合物锂电池； 8：钛酸锂电池；"
+        },
+        "numOfAllModulesTemp": {
+          "type": "integer",
+          "format": "int32",
+          "description": "温度检测点数量"
+        },
+        "numOfCellParalleling": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池并联数"
+        },
+        "numOfCellSeriesConnection": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池串联数"
+        },
+        "packNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "物理位置，仓位号"
+        },
+        "packSn": {
+          "type": "string",
+          "description": "电池包SN"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1: 25#-LFP 01-L 2: 20#-LFP 01-L  3:35#-LFP 01-L 4:AD03-LFP"
+        },
+        "ratedPackVolt": {
+          "type": "number",
+          "format": "float",
+          "description": "额定电压，精度：0.1V"
+        },
+        "sbmuAppVerson": {
+          "type": "string",
+          "description": "SBMU软件版本号"
+        },
+        "sbmuBootVerson": {
+          "type": "string",
+          "description": "SBMU_Boot版本号"
+        },
+        "sbmuHwVerson": {
+          "type": "string",
+          "description": "SBMU硬件版本号"
+        }
+      },
+      "title": "电池包基本信息"
+    },
+    "系统事件/设备故障": {
+      "type": "object",
+      "properties": {
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceSn": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "endTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "故障恢复时间"
+        },
+        "eventCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障/事件代码"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "故障唯一标识UUID"
+        },
+        "eventName": {
+          "type": "string",
+          "description": "故障/事件名称"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障等级  1级   2级  3级别"
+        },
+        "module": {
+          "type": "string",
+          "description": "模块代码"
+        },
+        "moduleNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模块序号"
+        },
+        "moduleSn": {
+          "type": "string",
+          "description": "模块编号/sn"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "startTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "故障/事件开始时间"
+        }
+      },
+      "title": "系统事件/设备故障"
+    },
+    "设备参数配置修改": {
+      "type": "object",
+      "properties": {
+        "antiRefluxConfig": {
+          "description": "防逆流参数",
+          "$ref": "#/definitions/防逆流控制参数",
+          "originalRef": "防逆流控制参数"
+        },
+        "chargeConfig": {
+          "description": "充放电控制",
+          "$ref": "#/definitions/充放电控制参数",
+          "originalRef": "充放电控制参数"
+        },
+        "collectConfig": {
+          "description": "数据采集配置",
+          "$ref": "#/definitions/数据采集配置",
+          "originalRef": "数据采集配置"
+        },
+        "demandConfig": {
+          "description": "需量控制参数",
+          "$ref": "#/definitions/需量控制参数",
+          "originalRef": "需量控制参数"
+        },
+        "deviceId": {
+          "type": "string",
+          "description": "根据设备ID获取设备信息 ,优先使用设备ID条件查询"
+        },
+        "ip": {
+          "type": "string",
+          "description": "根据IP获取设备信息"
+        },
+        "msgId": {
+          "type": "string",
+          "description": "云端/站控发起请求消息唯一ID"
+        },
+        "reason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作原因 "
+        },
+        "source": {
+          "type": "integer",
+          "format": "int32",
+          "description": "命令来源 1云端 2 站控"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1 充放电控制、防逆流参数、需量控制参数修改  2 数据采集配置修改  3 需量控制参数修改"
+        }
+      },
+      "title": "设备参数配置修改"
+    },
+    "设备基本信息": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "string",
+          "description": "电芯类型"
+        },
+        "commStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "设备与EMU通讯状态  0 未激活 1在线 2离线"
+        },
+        "deviceId": {
+          "type": "string",
+          "description": "设备UUID"
+        },
+        "deviceSn": {
+          "type": "string",
+          "description": "设备SN，出厂编号"
+        },
+        "hardwareVersion": {
+          "type": "string",
+          "description": "硬件版本信息"
+        },
+        "ip": {
+          "type": "string",
+          "description": "ip地址"
+        },
+        "moduleversion": {
+          "type": "string",
+          "description": "软件模块版本信息"
+        },
+        "productModel": {
+          "type": "string",
+          "description": "产品型号"
+        },
+        "productName": {
+          "type": "string",
+          "description": "产品型号名称"
+        },
+        "version": {
+          "type": "string",
+          "description": "软件主版本"
+        }
+      },
+      "title": "设备基本信息"
+    },
+    "防逆流控制参数": {
+      "type": "object",
+      "properties": {
+        "antiRefluxEnable": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 关闭防逆流  1 开启防逆流，默认开启"
+        },
+        "gridPower": {
+          "type": "number",
+          "format": "float",
+          "description": "防逆流市电功率监控限值，大于0"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "防逆流控制参数"
+    },
+    "需量控制参数": {
+      "type": "object",
+      "properties": {
+        "demandEnable": {
+          "type": "integer",
+          "format": "int32",
+          "description": "需量控制开启  0 关闭需量控制  1 开启需量控制，默认开启"
+        },
+        "demandVaule": {
+          "type": "number",
+          "format": "float",
+          "description": "需量值  kw"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "需量控制参数"
+    },
+    "风机配置": {
+      "type": "object",
+      "properties": {
+        "closeTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "关闭温度"
+        },
+        "closeTempDiff": {
+          "type": "number",
+          "format": "float",
+          "description": "关闭温差"
+        },
+        "openTemp": {
+          "type": "number",
+          "format": "float",
+          "description": "开启温度"
+        },
+        "openTempDiff": {
+          "type": "number",
+          "format": "float",
+          "description": "开启温差"
+        },
+        "updateDate": {
+          "type": "integer",
+          "format": "int64",
+          "description": "修改时间"
+        }
+      },
+      "title": "风机配置"
+    }
+  }
+}

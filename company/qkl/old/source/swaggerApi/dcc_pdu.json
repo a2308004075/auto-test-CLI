@@ -1,0 +1,545 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "swagger-bootstrap-ui",
+    "version": "1.0",
+    "title": "swagger-bootstrap-ui RESTful APIs",
+    "termsOfService": "http://localhost:9922/"
+  },
+  "host": "10.100.6.38",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "pdu-controller",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/dcc/pdu/offline/stop/charge": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "监控平台下发掉线停止充电",
+        "operationId": "offlineStopChargeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OfflineStopChargeDTO",
+              "originalRef": "OfflineStopChargeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/set/charge/rate": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "监控平台下发充电速率设置",
+        "operationId": "controlSetChargeRateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChargeRateDTO",
+              "originalRef": "ChargeRateDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/set/work/power": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "监控平台发送功率调节指令",
+        "operationId": "controlSetWorkPowerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WorkPowerDTO",
+              "originalRef": "WorkPowerDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/start/charge": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "远程启动充电",
+        "operationId": "controlStartChargingUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "chargingDTO",
+            "description": "chargingDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ControlStartChargingDTO",
+              "originalRef": "ControlStartChargingDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/stop/charge": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "远程停止充电",
+        "operationId": "controlStopChargingUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ControlStopChargingDTO",
+              "originalRef": "ControlStopChargingDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/tftp/charger/chargerTcuUpgrade": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "站级监控下发升级请求",
+        "operationId": "chargerTcuUpgradeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TCUUpgradePackDTO",
+                "originalRef": "TCUUpgradePackDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/tftp/charger/queryVersion": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "监控平台下发版本号查询",
+        "operationId": "queryVersionUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "chargeNo",
+            "in": "query",
+            "description": "chargeNo",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/tftp/charger/status": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "监控平台下发版本号查询",
+        "operationId": "statusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/dcc/pdu/tftp/charger/upgrade": {
+      "post": {
+        "tags": [
+          "pdu-controller"
+        ],
+        "summary": "站级监控升级请求下发",
+        "operationId": "tftpChargerUpgradeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TFTPUpgradeDTO",
+              "originalRef": "TFTPUpgradeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResultVO",
+              "originalRef": "ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "ChargeRateDTO": {
+      "type": "object",
+      "properties": {
+        "chargeNo": {
+          "type": "string"
+        },
+        "chargeRate": {
+          "type": "number",
+          "format": "float",
+          "description": "倍率，范围0.1到1"
+        }
+      },
+      "title": "ChargeRateDTO"
+    },
+    "ControlStartChargingDTO": {
+      "type": "object",
+      "properties": {
+        "chargeNo": {
+          "type": "string",
+          "description": "充电机编号"
+        },
+        "chargingPowerPercent": {
+          "type": "number",
+          "format": "float",
+          "description": "充电功率百分比 0到100"
+        },
+        "controlSource": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "powerParam": {
+          "type": "number",
+          "format": "float",
+          "description": "功率调节参数(启用功率百分比后此字段废弃)"
+        },
+        "soc": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ControlStartChargingDTO"
+    },
+    "ControlStopChargingDTO": {
+      "type": "object",
+      "properties": {
+        "chargeNo": {
+          "type": "string"
+        },
+        "controlSource": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stopReason": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ControlStopChargingDTO"
+    },
+    "OfflineStopChargeDTO": {
+      "type": "object",
+      "properties": {
+        "chargeNo": {
+          "type": "string",
+          "description": "充电机编号 充电桩"
+        },
+        "resultEnableFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0：不使能 1：使能"
+        }
+      },
+      "title": "OfflineStopChargeDTO"
+    },
+    "ResultVO": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "example": 200,
+          "description": "结果码"
+        },
+        "data": {
+          "type": "object",
+          "description": "返回数据"
+        },
+        "message": {
+          "type": "string",
+          "example": "成功",
+          "description": "提示信息"
+        }
+      },
+      "title": "ResultVO"
+    },
+    "TCUUpgradePackDTO": {
+      "type": "object",
+      "required": [
+        "chargeNo",
+        "filePath",
+        "upgradeId"
+      ],
+      "properties": {
+        "chargeNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机/电桩编号"
+        },
+        "filePath": {
+          "type": "string",
+          "description": "文件路径"
+        },
+        "upgradeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "升级记录ID"
+        }
+      },
+      "title": "TCUUpgradePackDTO"
+    },
+    "TFTPUpgradeDTO": {
+      "type": "object",
+      "required": [
+        "chargeNo",
+        "fileName",
+        "fileSize",
+        "maxRepeatCounts",
+        "timeoutInterval",
+        "verifyValue",
+        "version"
+      ],
+      "properties": {
+        "chargeNo": {
+          "type": "string",
+          "example": 10,
+          "description": "充电机/电桩编号"
+        },
+        "fileName": {
+          "type": "string",
+          "example": "例如：output.bin",
+          "description": "文件名"
+        },
+        "fileSize": {
+          "type": "integer",
+          "format": "int32",
+          "example": "例如：567",
+          "description": "文件大小"
+        },
+        "maxRepeatCounts": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1~50",
+          "description": "最大重传次数"
+        },
+        "timeoutInterval": {
+          "type": "integer",
+          "format": "int32",
+          "example": "秒（1~255）",
+          "description": "超时间隔"
+        },
+        "verifyValue": {
+          "type": "string",
+          "example": "例如：944cc15208157b1660363c10d8882ae1",
+          "description": "MD5校验值"
+        },
+        "version": {
+          "type": "string",
+          "example": "例如：V2.12 则输入 212",
+          "description": "版本号"
+        }
+      },
+      "title": "TFTPUpgradeDTO"
+    },
+    "WorkPowerDTO": {
+      "type": "object",
+      "properties": {
+        "chargeNo": {
+          "type": "string",
+          "description": "充电机编号 充电桩+枪组合"
+        },
+        "expectPower": {
+          "type": "number",
+          "format": "float",
+          "description": "期望功率（发送多少，充电机接收就是多少KW）"
+        }
+      },
+      "title": "WorkPowerDTO"
+    }
+  }
+}

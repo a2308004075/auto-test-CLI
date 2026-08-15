@@ -1,0 +1,4051 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "battery-mock-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "v-3-dcci-mock-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "一代电池信息模拟",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "三代车站信息模拟",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/batteryMock/feign/v1/batteryCodeInfo": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池mac和sn信息",
+        "operationId": "mockBatteryCodeInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包编码类信息",
+              "originalRef": "电池包编码类信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "6"
+      }
+    },
+    "/api/batteryMock/feign/v1/batteryDataInfo1": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池数据信息-能量、容量、soc、soh、soe",
+        "operationId": "mockBatteryInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息1",
+              "originalRef": "电池包数据信息1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "1"
+      }
+    },
+    "/api/batteryMock/feign/v1/batteryDataInfo2": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池数据信息-电压、电流、电阻",
+        "operationId": "mockBatteryInfo2UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息2",
+              "originalRef": "电池包数据信息2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2"
+      }
+    },
+    "/api/batteryMock/feign/v1/batteryDataInfo3": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池数据信息-温度、次数统计、位置",
+        "operationId": "mockBatteryInfo3UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息3",
+              "originalRef": "电池包数据信息3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "3"
+      }
+    },
+    "/api/batteryMock/feign/v1/batteryDataInfo4": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池数据信息-累计静置时间、无线通讯信号强度",
+        "operationId": "mockBatteryInfo4UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包数据信息4",
+              "originalRef": "电池包数据信息4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "4"
+      }
+    },
+    "/api/batteryMock/feign/v1/batterySignOrStateInfo": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池标志和状态信息",
+        "operationId": "mockBatterySignOrStateInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包标志和状态信息",
+              "originalRef": "电池包标志和状态信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "5"
+      }
+    },
+    "/api/batteryMock/feign/v1/mockCbmuSbmuVersion": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池包版本信息",
+        "operationId": "mockCbmuSbmuVersionUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池包版本信息",
+              "originalRef": "电池包版本信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "6"
+      }
+    },
+    "/api/batteryMock/feign/v1/swapInteractionInfo": {
+      "post": {
+        "tags": [
+          "一代电池信息模拟"
+        ],
+        "summary": "电池换电交互信息",
+        "operationId": "mockSwapInteractionInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电池换电交互信息",
+              "originalRef": "电池换电交互信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "7"
+      }
+    },
+    "/api/batteryMock/v3/feign/18F10980": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F10980 Pack基础信息3",
+        "operationId": "do0X18F10980UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F10980DTO",
+                "originalRef": "Msg0X18F10980DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/18F10C80": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F10C80 继电器状态",
+        "operationId": "do0X18F10C80UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F10C80DTO",
+                "originalRef": "Msg0X18F10C80DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/clearFaultResp": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "响应清除故障",
+        "operationId": "clearFaultRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clearFaultResDTO",
+            "description": "clearFaultResDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClearFaultResDTO",
+              "originalRef": "ClearFaultResDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X118F82380": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F82380 温度检测点极值统计",
+        "operationId": "start0X18F82380UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F82380DTO",
+                "originalRef": "Msg0X18F82380DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X1871F980": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "1871F980 电池箱充电中止信息",
+        "operationId": "start1871F980UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X1871F980DTO",
+                "originalRef": "Msg0X1871F980DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18A2F980": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18A2F980 信息清除请求结果反馈",
+        "operationId": "start0X18A2F980UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18A2F980DTO",
+                "originalRef": "Msg0X18A2F980DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F10180": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F10180 基础参数1",
+        "operationId": "do0X18F10180UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F10180DTO",
+                "originalRef": "Msg0X18F10180DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F10680": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F10680 电池包故障信息",
+        "operationId": "do0X18F10680UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F10680DTO",
+                "originalRef": "Msg0X18F10680DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F40180": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F40180",
+        "operationId": "start0X18F40180UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F40180DTO",
+                "originalRef": "Msg0X18F40180DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F40280": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F40280",
+        "operationId": "start0X18F40280UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F40280DTO",
+                "originalRef": "Msg0X18F40280DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F40480": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F40480",
+        "operationId": "start0X18F40480UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F40480DTO",
+                "originalRef": "Msg0X18F40480DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F40580": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F40580",
+        "operationId": "start0X18F40580UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F40580DTO",
+                "originalRef": "Msg0X18F40580DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F80180": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F80180 基础参数1",
+        "operationId": "do0X18F80180UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F80180DTO",
+                "originalRef": "Msg0X18F80180DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F80580": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "设置sn",
+        "operationId": "start0X18F80580UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BatterySnDTO",
+                "originalRef": "BatterySnDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F80680": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "设置BMS硬件版本",
+        "operationId": "start0X18F80680UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BatteryVersionDTO",
+                "originalRef": "BatteryVersionDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F80780": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "设置BMS软件版本",
+        "operationId": "start0X18F80780UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BatteryVersionDTO",
+                "originalRef": "BatteryVersionDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F81280": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F81280 电压电流SOC数据",
+        "operationId": "do0X18F81280UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F81280DTO",
+                "originalRef": "Msg0X18F81280DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F82280": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F82280 基础参数1",
+        "operationId": "do0X18F82280UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F82280DTO",
+                "originalRef": "Msg0X18F82280DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F82580": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F82580 输入电能量数据",
+        "operationId": "start0X18F82580UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F82580DTO",
+                "originalRef": "Msg0X18F82580DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F82680": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F82680",
+        "operationId": "start0X18F82680UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F82680DTO",
+                "originalRef": "Msg0X18F82680DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do0X18F82780": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F82780 输入容量数据",
+        "operationId": "start0X18F82780UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F82780DTO",
+                "originalRef": "Msg0X18F82780DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do18F10880": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F10880 Pack基础信息2",
+        "operationId": "do18F10880UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F10880DTO",
+                "originalRef": "Msg0X18F10880DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do18F10D80": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F10D80 绝缘信息",
+        "operationId": "do18F10D80UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F10D80DTO",
+                "originalRef": "Msg0X18F10D80DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do18F20180": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F20180 Pack详细电压信息1",
+        "operationId": "do18F20180UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProtoMsg0X18F20180DTO",
+                "originalRef": "ProtoMsg0X18F20180DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do18F30180": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F30180 Pack详细温度信息1",
+        "operationId": "do18F30180UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProtoMsg0X18F30180DTO",
+                "originalRef": "ProtoMsg0X18F30180DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/do18F82480": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "18F82480 输出电能量数据",
+        "operationId": "start0X18F82480UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "datas",
+            "description": "datas",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Msg0X18F82480DTO",
+                "originalRef": "Msg0X18F82480DTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/batteryMock/v3/feign/sendMsg": {
+      "post": {
+        "tags": [
+          "三代车站信息模拟"
+        ],
+        "summary": "数据周期发送",
+        "operationId": "sendMsgUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "protoMsgDTOs",
+            "description": "protoMsgDTOs",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProtoMsgDTO",
+                "originalRef": "ProtoMsgDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/get0X10E": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "get0X10E",
+        "operationId": "get0X10EUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«Battery0X10EMockDTO»»",
+              "originalRef": "R«List«Battery0X10EMockDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/get0X26": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "get0X26",
+        "operationId": "get0X26UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«Battery0X26MockDTO»»",
+              "originalRef": "R«List«Battery0X26MockDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/getBatteryDetail": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "getBatteryDetail",
+        "operationId": "getBatteryDetailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«BatteryDetailInfoMockDTO»»",
+              "originalRef": "R«List«BatteryDetailInfoMockDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/getCampDetail": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "getCampDetail",
+        "operationId": "getCampDetailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "position",
+            "in": "query",
+            "description": "position",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«BatteryDetailInfoMockDTO»",
+              "originalRef": "R«BatteryDetailInfoMockDTO»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/initBatteryInfo": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "initBatteryInfo",
+        "operationId": "initBatteryInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "batteryDetailInfoMockDTOS",
+            "description": "batteryDetailInfoMockDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BatteryDetailInfoMockDTO",
+                "originalRef": "BatteryDetailInfoMockDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/protoMsg0X26Result": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "protoMsg0X26Result",
+        "operationId": "protoMsg0X26ResultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Battery0X26MockReqDTO",
+              "originalRef": "Battery0X26MockReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/update0X26": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "updateControlResponse",
+        "operationId": "updateControlResponseUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "detailList",
+            "description": "detailList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Battery0X26MockDTO",
+                "originalRef": "Battery0X26MockDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/updateBatteryDetail": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "updateBatteryDetail",
+        "operationId": "updateBatteryDetailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "detailList",
+            "description": "detailList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BatteryDetailInfoMockDTO",
+                "originalRef": "BatteryDetailInfoMockDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerMock/feign/updateCampDetail": {
+      "post": {
+        "tags": [
+          "battery-mock-controller"
+        ],
+        "summary": "updateCampDetail",
+        "operationId": "updateCampDetailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "detail",
+            "description": "detail",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BatteryDetailInfoMockDTO",
+              "originalRef": "BatteryDetailInfoMockDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/dcciMock/feign/send4534": {
+      "post": {
+        "tags": [
+          "v-3-dcci-mock-controller"
+        ],
+        "summary": "充电设备响应升级请求4534",
+        "operationId": "send4534UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "v3MockProtoMsg4534",
+            "description": "v3MockProtoMsg4534",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PduMockProtoMsg4534",
+              "originalRef": "PduMockProtoMsg4534"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/dcciMock/feign/send4535": {
+      "post": {
+        "tags": [
+          "v-3-dcci-mock-controller"
+        ],
+        "summary": "充电设备上送升级状态4535",
+        "operationId": "send4535UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "v3MockProtoMsg4535",
+            "description": "v3MockProtoMsg4535",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PduMockProtoMsg4535",
+              "originalRef": "PduMockProtoMsg4535"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/dcciMock/feign/send4537": {
+      "post": {
+        "tags": [
+          "v-3-dcci-mock-controller"
+        ],
+        "summary": "充电设备上送BMS种子(4537)",
+        "operationId": "send4537UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "v3MockProtoMsg4537",
+            "description": "v3MockProtoMsg4537",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PduMockProtoMsg4537",
+              "originalRef": "PduMockProtoMsg4537"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "Battery0X10EMockDTO": {
+      "type": "object",
+      "properties": {
+        "batInstatMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包站内模式 0 \"默认值\" 1 \"站内模式\" 2 \"中转模式\""
+        },
+        "battyOutStaRuquest": {
+          "type": "integer",
+          "format": "int32",
+          "description": "请求电池包出仓 0 \"默认值\" 1 \"请求\""
+        },
+        "bollingID": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1即为控制编号1的电池包，2即为控制编号2的电池包，3极为控制编号为3的电池包，以此类推"
+        },
+        "fltClearingRuquest": {
+          "type": "integer",
+          "format": "int32",
+          "description": "请求故障清除 0 \"默认值\" 1 \"清除不存储NVM的故障\" 2 \"清除所有故障 (包含存储NVM和不存储NVM) \""
+        },
+        "packhvopenRuquest": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "statRQ_Reserve1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预留"
+        },
+        "statRQ_Reserve2": {
+          "type": "integer",
+          "format": "int64",
+          "description": "预留"
+        },
+        "stionCtrler_AlIV": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站控生命信号, 0~15循环"
+        },
+        "subInfoIntClrRuquest": {
+          "type": "integer",
+          "format": "int32",
+          "description": "请求站内小计信息清除 0 \"默认值\" 1 \"请求\""
+        },
+        "subInfoOutClrRuquest": {
+          "type": "integer",
+          "format": "int32",
+          "description": "请求站外小计信息清除 0 \"默认值\" 1 \"请求\""
+        }
+      },
+      "title": "Battery0X10EMockDTO"
+    },
+    "Battery0X26MockDTO": {
+      "type": "object",
+      "properties": {
+        "battyOutStaRuquest_Feedback": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收到电池包出仓请求 0 \"未收到\" 1 \"收到\""
+        },
+        "battyOutStaSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "反馈电池包出仓请求结果 0 \"默认\" 1 \"Ready\""
+        },
+        "fbforBatSwapStat_Reserve1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fbforBatSwapStat_Reserve2": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "fltClearingRuquest_Feedback": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收到故障清除请求 0 \"未收到\" 1 \"收到\""
+        },
+        "fltClearingSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障清除结果 0 \"默认\" 1 \"失败\" 2 \"成功\""
+        },
+        "packhvopenRuquest_Feedback": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packhvopenSts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "subInfoInClrRuquest_Feedback": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收到站内小计信息清除请求 0 \"未收到\" 1 \"收到\""
+        },
+        "subInfoInClrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站内小计信息清除结果 0 \"默认\" 1 \"失败\" 2 \"成功\""
+        },
+        "subInfoOutClrRuquest_Feedback": {
+          "type": "integer",
+          "format": "int32",
+          "description": "收到站外小计信息清除请求 0 \"未收到\" 1 \"收到\""
+        },
+        "subInfoOutClrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站外小计信息清除结果 0 \"默认\" 1 \"失败\" 2 \"成功\""
+        }
+      },
+      "title": "Battery0X26MockDTO"
+    },
+    "Battery0X26MockReqDTO": {
+      "type": "object",
+      "properties": {
+        "batteryOut": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池出仓结果 1-失败 2-成功"
+        },
+        "clearFault": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障清除结果 1-失败 2-成功"
+        },
+        "clearInStationSubtotal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站外小计清除结果 1-失败 2-成功"
+        },
+        "clearOutStationSubtotal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站外小计清除结果 1-失败 2-成功"
+        },
+        "closeHVContactor": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池下高压结果 1-失败 2-成功"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        }
+      },
+      "title": "Battery0X26MockReqDTO"
+    },
+    "BatteryBasicMockDTO": {
+      "type": "object",
+      "properties": {
+        "cellType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电芯类型"
+        },
+        "ratedCapacity": {
+          "type": "number",
+          "description": "电池包额定能量 单位kwh 精度0.1KWh"
+        },
+        "sbmuBootVersion": {
+          "type": "string",
+          "description": "SBMU的BOOT版本"
+        },
+        "sbmuCommunicationProtocolVersion": {
+          "type": "string",
+          "description": "SBMU的通讯协议版本"
+        },
+        "sbmuHardwareVersion": {
+          "type": "string",
+          "description": "SBMU的硬件版本"
+        },
+        "sbmuSoftwareVersion": {
+          "type": "string",
+          "description": "SBMU的软件版本"
+        },
+        "serialNum": {
+          "type": "string",
+          "description": "电池包SN、24位国标码"
+        }
+      },
+      "title": "BatteryBasicMockDTO"
+    },
+    "BatteryCellStatisticsMockDTO": {
+      "type": "object",
+      "properties": {
+        "cellBalRemainTime": {
+          "type": "number"
+        },
+        "cellId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cellTotalBalCap": {
+          "type": "number"
+        }
+      },
+      "title": "BatteryCellStatisticsMockDTO"
+    },
+    "BatteryCodeInfo": {
+      "type": "object",
+      "properties": {
+        "mac": {
+          "type": "string",
+          "description": "电池包mac(408)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sn": {
+          "type": "string",
+          "description": "电池包sn(407)"
+        }
+      },
+      "title": "BatteryCodeInfo"
+    },
+    "BatteryDetailInfoMockDTO": {
+      "type": "object",
+      "properties": {
+        "basic": {
+          "description": "电池基础信息",
+          "$ref": "#/definitions/BatteryBasicMockDTO",
+          "originalRef": "BatteryBasicMockDTO"
+        },
+        "historicalSafety": {
+          "description": "电池历史安全数据",
+          "$ref": "#/definitions/BatteryHistoricalSafetyMockDTO",
+          "originalRef": "BatteryHistoricalSafetyMockDTO"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包所在仓位号"
+        },
+        "statistic": {
+          "description": "电池统计信息",
+          "$ref": "#/definitions/BatteryStatisticMockDTO",
+          "originalRef": "BatteryStatisticMockDTO"
+        },
+        "status": {
+          "description": "电池动态数据",
+          "$ref": "#/definitions/BatteryStatusMockDTO",
+          "originalRef": "BatteryStatusMockDTO"
+        }
+      },
+      "title": "BatteryDetailInfoMockDTO"
+    },
+    "BatteryHistoricalSafetyMockDTO": {
+      "type": "object",
+      "properties": {
+        "lowerOfRetireSoc": {
+          "type": "number",
+          "description": "荣休SOC下限，精度0.001"
+        },
+        "upperOfRetireSoc": {
+          "type": "number",
+          "description": "荣休SOC上限，精度0.001"
+        }
+      },
+      "title": "BatteryHistoricalSafetyMockDTO"
+    },
+    "BatterySignOrState": {
+      "type": "object",
+      "properties": {
+        "hvIL1State": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压互锁状态：0-Close，1-Open(401)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s2C_BMSChrgAllowFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "允许充电标志： 0-不允许，1-允许(401)"
+        },
+        "sbMU_ChargeSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU充电状态(410)"
+        },
+        "sbMU_FullChrgOneWeekRqstFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "满充一周维护一次请求标志位(406)"
+        },
+        "sbMU_ThermalSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU热管理状态(410)"
+        },
+        "soCUnavailableFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SOC不可信标志(404)"
+        }
+      },
+      "title": "BatterySignOrState"
+    },
+    "BatterySnDTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sn": {
+          "type": "string",
+          "description": "24位sn"
+        }
+      },
+      "title": "BatterySnDTO"
+    },
+    "BatteryStatisticMockDTO": {
+      "type": "object",
+      "properties": {
+        "cellStatisticsMockDTOS": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryCellStatisticsMockDTO",
+            "originalRef": "BatteryCellStatisticsMockDTO"
+          }
+        },
+        "chargedCapacityThisTime": {
+          "type": "number",
+          "description": "电池包本次充电容量 单位Ah，精度0.1"
+        },
+        "totalChargedCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计充电总Cycle"
+        },
+        "totalChargedPower": {
+          "type": "number",
+          "description": "电池包累计充电能量 单位kwh，精度0.1"
+        },
+        "totalChargedPowerInStation": {
+          "type": "number",
+          "description": "电池包累计站内充电能量 单位kwh，精度0.1"
+        },
+        "totalDischargedCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计放电总Cycle"
+        },
+        "totalDischargedPower": {
+          "type": "number",
+          "description": "电池包累计放电能量 单位kwh，精度0.1"
+        },
+        "totalDischargedPowerInStation": {
+          "type": "number",
+          "description": "电池包累计站内放电能量 单位kwh，精度0.1"
+        },
+        "tripChargedPowerInStation": {
+          "type": "number",
+          "description": "电池包小计站内充电能量 单位kwh，精度0.1"
+        },
+        "tripDischargedPowerInStation": {
+          "type": "number",
+          "description": "电池包小计站内放电能量 单位kwh，精度0.1"
+        }
+      },
+      "title": "BatteryStatisticMockDTO"
+    },
+    "BatteryStatusMockDTO": {
+      "type": "object",
+      "properties": {
+        "avgCellVot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包平均单体电压 单位mV，精度1"
+        },
+        "avgModuleTemp": {
+          "type": "number",
+          "description": "电池包平均模组温度 单位摄氏度，精度0.5"
+        },
+        "cellSummaryVolt": {
+          "type": "number",
+          "description": "电池包电芯累加和（实时）"
+        },
+        "chargeAllowFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包充电允许标志位 0 \"不允许充电\" 1 \"允许充电\""
+        },
+        "chargeDCR": {
+          "type": "number",
+          "description": "充电DCR"
+        },
+        "chargeState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包充电状态 0 \"默认\" 1 \"物理连接完成\" 2 \"低压辅助上电完成\" 3 \"收到CRM 00\" 4 \"握手完成\" 5 \"收到CML\" 6 \"BMS准备就绪\" 7 \"参数配置完成\" 8 \"充电中\" 9 \"充电完成\" 10 \"充电故障\" 11 \"预加热或保温中\""
+        },
+        "chrgRemainTime": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电剩余时间"
+        },
+        "current": {
+          "type": "number",
+          "description": "电池包电流(实时) 单位A，精度0.1"
+        },
+        "currentSync": {
+          "type": "number",
+          "description": "电池包电流(同步)"
+        },
+        "disChargeDCR": {
+          "type": "number",
+          "description": "放电DCR"
+        },
+        "displaySoc": {
+          "type": "number",
+          "description": "电池包显示soc 单位%"
+        },
+        "faultCodeList": {
+          "type": "array",
+          "description": "电池包故障码",
+          "items": {
+            "type": "string"
+          }
+        },
+        "highVoltState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包高压状态"
+        },
+        "hvilState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包高压互锁状态(实时状态) 0 \"OK\" 1 \"Open\""
+        },
+        "innerTotalVolt": {
+          "type": "number",
+          "description": "电池包内部总电压 单位V, 精度0.1"
+        },
+        "innerTotalVoltSync": {
+          "type": "number",
+          "description": "电池包内部总电压（同步）"
+        },
+        "labelUnavailableFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包编码不可信标志 2 \"No Alarm\" 1 \"Alarm\""
+        },
+        "mainNegativeConcatenateCircleState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包主负接触器线圈状态 \"断开\" 1\"闭合\" 2\"粘连故障\" 3\"开路故障\""
+        },
+        "mainPositiveConcatenateCircleState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包主正接触器线圈状态 0\"断开\" 1\"闭合\" 2\"粘连故障\" 3\"开路故障\""
+        },
+        "maxCellVolt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高单体电压 单位mV，精度1"
+        },
+        "maxCellVoltPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高单体电压位置"
+        },
+        "maxModuleTemp": {
+          "type": "number",
+          "description": "电池包最高模组温度 单位摄氏度，精度0.5"
+        },
+        "maxModuleTempPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高模组温度位置"
+        },
+        "maxRealSoc": {
+          "type": "number",
+          "description": "电池包最大真实soc 单位%"
+        },
+        "minCellVolt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最低单体电压 单位mV，精度1"
+        },
+        "minCellVoltPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最低单体电压位置"
+        },
+        "minModuleTemp": {
+          "type": "number",
+          "description": "电池包最低模组温度 单位摄氏度，精度0.5"
+        },
+        "minModuleTempPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最低模组温度位置"
+        },
+        "minRealSoc": {
+          "type": "number",
+          "description": "电池包最小真实soc 单位%"
+        },
+        "mostCriticalFaultCode": {
+          "type": "string",
+          "description": "电池包最高等级故障码"
+        },
+        "mostCriticalFaultLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高故障等级"
+        },
+        "negativeInsulationValue": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包负极绝缘值 单位kΩ,精度1"
+        },
+        "outerTotalVolt": {
+          "type": "number",
+          "description": "电池包外部总电压 单位V, 精度0.1"
+        },
+        "positiveInsulationValue": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包正极绝缘值 单位kΩ,精度1"
+        },
+        "realSoc": {
+          "type": "number",
+          "description": "电池包真实soc 单位%"
+        },
+        "socAvailableFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包soc可信位标志"
+        },
+        "soe": {
+          "type": "number",
+          "description": "电池包soe 单位kwh，精度0.0025"
+        },
+        "soh": {
+          "type": "number",
+          "description": "电池包soh 单位%"
+        }
+      },
+      "title": "BatteryStatusMockDTO"
+    },
+    "BatteryVersionDTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "version": {
+          "type": "string",
+          "description": "24位版本号"
+        }
+      },
+      "title": "BatteryVersionDTO"
+    },
+    "BatteryVersionInfo": {
+      "type": "object",
+      "properties": {
+        "appBootVersion": {
+          "type": "string",
+          "description": "app boot版本号"
+        },
+        "appSoftVersion": {
+          "type": "string",
+          "description": "app软件版本号"
+        },
+        "bleSoftwareVersion": {
+          "type": "string",
+          "description": "蓝牙软件版本号"
+        },
+        "hardwareVersion": {
+          "type": "string",
+          "description": "硬件版本号"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        }
+      },
+      "title": "BatteryVersionInfo"
+    },
+    "CapacityInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_RatedCapacity": {
+          "type": "number",
+          "description": "标称容量(40D)"
+        },
+        "sbMU_TotalChargeCap": {
+          "type": "number",
+          "description": "累计充电容量(40B)"
+        },
+        "sbMU_TotalDisChargeCap": {
+          "type": "number",
+          "description": "累计放电容量(40B)"
+        },
+        "subTotalChrgCapInstation": {
+          "type": "number",
+          "description": "小计站内充电容量（40F)"
+        },
+        "subTotalChrgCapOutstation": {
+          "type": "number",
+          "description": "小计站外充电容量(40F)"
+        },
+        "sysChrgCapCurrentAh": {
+          "type": "number",
+          "description": "本次充电容量(412)"
+        }
+      },
+      "title": "CapacityInfo"
+    },
+    "ClearFaultResDTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "resaon": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原因"
+        },
+        "result": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果 1:失败 2:成功"
+        }
+      },
+      "title": "ClearFaultResDTO"
+    },
+    "CountInfo": {
+      "type": "object",
+      "properties": {
+        "hisAccumChargeCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计充电总Cycle(414)"
+        },
+        "hisAccumDisChargeCycle": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包累计放电总Cycle(414)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_MainNegCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器断开次数(40D)"
+        },
+        "sbMU_MainPosCnctrOpenCnt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器断开次数(40D)"
+        },
+        "subTotalChrgTimeOutstation": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小计站外充电次数(40A)"
+        }
+      },
+      "title": "CountInfo"
+    },
+    "CurrentInfo": {
+      "type": "object",
+      "properties": {
+        "chargerCurrenr_Output": {
+          "type": "number",
+          "description": "ACDC输出电流(405)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_BattChrgReqCurr": {
+          "type": "number",
+          "description": "SBMU充电请求电流(410)"
+        },
+        "sbMU_BattCurr": {
+          "type": "number",
+          "description": "SBMU母线电流(410)"
+        }
+      },
+      "title": "CurrentInfo"
+    },
+    "EnergyInfo": {
+      "type": "object",
+      "properties": {
+        "hisAccumChrgEngy": {
+          "type": "number",
+          "description": "电池包累计充电总能量(411)"
+        },
+        "hisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "电池包累计放电总能量(411)"
+        },
+        "instationHisAccumChrgEngy": {
+          "type": "number",
+          "description": "累计换电站内充电能量(413)"
+        },
+        "instationHisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "累计换电站内放电能量(413)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "subTotalChrgEnergyInstation": {
+          "type": "number",
+          "description": "小计站内充电电量(40A)"
+        },
+        "subTotalChrgEnergyOutstation": {
+          "type": "number",
+          "description": "小计站外充电电量(40A)"
+        },
+        "thisTimeInDCEngyWh": {
+          "type": "number",
+          "description": "本次小计换电站内充电能量(412)"
+        },
+        "thisTimeInstationDischrgEngyWh": {
+          "type": "number",
+          "description": "本次小计换电站内放电能量(412)"
+        }
+      },
+      "title": "EnergyInfo"
+    },
+    "Msg0X1871F980DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_BMSChrgStopErrReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电错误原因"
+        },
+        "s_BMSChrgStopFltReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电故障原因"
+        },
+        "s_BMSChrgStopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电原因"
+        }
+      },
+      "title": "Msg0X1871F980DTO"
+    },
+    "Msg0X18A2F980DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_FltClearingSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障清除控制执行结果"
+        },
+        "s_SubInfoInClrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站内小计信息清除控制执行结果"
+        },
+        "s_SubInfoOutClrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站外小计信息清除控制执行结果"
+        }
+      },
+      "title": "Msg0X18A2F980DTO"
+    },
+    "Msg0X18F10180DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_PACKFaultID_N1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_PACKFaultID_N2": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_PACKFaultID_N3": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_PACKFault_FrameNo": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Msg0X18F10180DTO"
+    },
+    "Msg0X18F10680DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_BMSMostCriticalFltID": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内最高故障等级ID"
+        },
+        "s_BMSMostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内最高故障等级"
+        },
+        "s_FltInfo2_SBMU_AlIV": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU生命信号"
+        },
+        "s_ThermalRunawayFltReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "热失控故障原因"
+        }
+      },
+      "title": "Msg0X18F10680DTO"
+    },
+    "Msg0X18F10880DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "packType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包类型识别码"
+        },
+        "s_AvgCellVolt": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电芯平均电压 mV"
+        },
+        "s_HVIL1State": {
+          "type": "integer",
+          "format": "int32",
+          "description": "高压互锁状态"
+        },
+        "s_KL30Volt": {
+          "type": "number",
+          "description": "KL30电压值 V"
+        },
+        "s_KL30VoltVldBySafety": {
+          "type": "integer",
+          "format": "int32",
+          "description": "KL30电压有效性"
+        },
+        "s_TotalSumVoltV": {
+          "type": "number",
+          "description": "包内单体累加和电压 V"
+        },
+        "s_TotalSumVoltVld": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内单体累加和电压有效性"
+        }
+      },
+      "title": "Msg0X18F10880DTO"
+    },
+    "Msg0X18F10980DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_ForSOCUnavailableFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包真实SOC不可信标志位"
+        },
+        "s_PackAvailEngyKwh": {
+          "type": "number",
+          "description": "SOE"
+        },
+        "s_PackRealSOCPct": {
+          "type": "number",
+          "description": "电池包真实SOC"
+        },
+        "s_SysMaxSOCPct": {
+          "type": "number",
+          "description": "电池包最大真实SOC"
+        },
+        "s_SysMinSOCPct": {
+          "type": "number",
+          "description": "电池包最小真实SOC"
+        }
+      },
+      "title": "Msg0X18F10980DTO"
+    },
+    "Msg0X18F10C80DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_HeatRelayState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热继电器状态"
+        },
+        "s_MainCnctrCtrlState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "包内主回路高压状态"
+        },
+        "s_MainNegCnctrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器状态"
+        },
+        "s_MainPosCnctrSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器状态"
+        },
+        "s_PreChgRelayState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预充继电器状态"
+        }
+      },
+      "title": "Msg0X18F10C80DTO"
+    },
+    "Msg0X18F10D80DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_ExtIsoMeasNegResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "负对地绝缘阻值 kΩ"
+        },
+        "s_ExtIsoMeasPosResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "正对地绝缘阻值 kΩ"
+        },
+        "s_IsoMeasEnFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘检测标志"
+        },
+        "s_IsoMeasResVldBySafety": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘阻值有效性"
+        },
+        "s_IsoMeasStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绝缘检测状态"
+        }
+      },
+      "title": "Msg0X18F10D80DTO"
+    },
+    "Msg0X18F40180DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_HISTInstatHisAccumDisChrgEngy": {
+          "type": "number",
+          "description": "累计站内放电能量"
+        },
+        "s_HisStaOutDisChrgEngy": {
+          "type": "number",
+          "description": "累计换电站外放电能量"
+        }
+      },
+      "title": "Msg0X18F40180DTO"
+    },
+    "Msg0X18F40280DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_HISTInstatHisAccumChrgEngy": {
+          "type": "number",
+          "description": "累计站内充电能量"
+        },
+        "s_HisStaOutChrgEngy": {
+          "type": "number",
+          "description": "电池包累计站外充电能量"
+        }
+      },
+      "title": "Msg0X18F40280DTO"
+    },
+    "Msg0X18F40480DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_BMSTripMilKm": {
+          "type": "number",
+          "description": "电池箱小计里程"
+        },
+        "s_HisStaOutDisChrgEngyWh": {
+          "type": "number",
+          "description": "小计换电站外放电能量"
+        },
+        "s_ThisTimeInstatDischrgEngyWh": {
+          "type": "number",
+          "description": "小计站内放电能量"
+        }
+      },
+      "title": "Msg0X18F40480DTO"
+    },
+    "Msg0X18F40580DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_BMSOffStationChargingEnergy": {
+          "type": "number",
+          "description": "小计换电站外插枪充电输入能量"
+        },
+        "s_HisStaOutReChrgEngyWh": {
+          "type": "number",
+          "description": "小计换电站外回充充电能量"
+        },
+        "s_ThisTimeInDCEngyWh": {
+          "type": "number",
+          "description": "小计站内充电输入能量"
+        }
+      },
+      "title": "Msg0X18F40580DTO"
+    },
+    "Msg0X18F80180DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_CellRatedCapacityAh": {
+          "type": "number",
+          "description": "额定容量（1C的容量） Ah"
+        },
+        "s_CellType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池类型"
+        },
+        "s_NumOfAllModulesTemp": {
+          "type": "integer",
+          "format": "int32",
+          "description": "温度检测点数量"
+        },
+        "s_NumOfCellParalleling": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池并联数"
+        },
+        "s_NumOfCellSeriesConnection": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池串联数"
+        },
+        "s_RatedPackVOLT": {
+          "type": "number",
+          "description": "额定电压"
+        }
+      },
+      "title": "Msg0X18F80180DTO"
+    },
+    "Msg0X18F81280DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_BatteryToG0VoltRelTim": {
+          "type": "number",
+          "description": "Pack电压"
+        },
+        "s_DischrgCurrRelTim": {
+          "type": "number",
+          "description": "Pack电流"
+        },
+        "s_DispSOHCPct": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示SOH"
+        },
+        "s_PackReportedSOCPct": {
+          "type": "number",
+          "description": "显示SOC"
+        }
+      },
+      "title": "Msg0X18F81280DTO"
+    },
+    "Msg0X18F82280DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_MaxCellVoltMv": {
+          "type": "number"
+        },
+        "s_MaxCellVoltPstn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MinCellVoltMv": {
+          "type": "number"
+        },
+        "s_MinCellVoltPstn": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Msg0X18F82280DTO"
+    },
+    "Msg0X18F82380DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_AvgModuleTempDegC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MaxConnectorPosTempDegC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MaxConnectorPosTempPstn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MaxModuleTempDegC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MaxModuleTempPstn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MinConnectorNegTempDegC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MinConnectorNegTempPstn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MinModuleTempDegC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_MinModuleTempPstn": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Msg0X18F82380DTO"
+    },
+    "Msg0X18F82480DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_HisAccumDisChrgEngyWh": {
+          "type": "number",
+          "description": "累计放电电能量值"
+        },
+        "s_HisThisTimDisChrgEngyWh": {
+          "type": "number",
+          "description": "本次放电能量值"
+        }
+      },
+      "title": "Msg0X18F82480DTO"
+    },
+    "Msg0X18F82580DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_HisAccumChrgEngyWh": {
+          "type": "number",
+          "description": "累计充电电能量值"
+        },
+        "s_HisAccumChrgTimes": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池累计充电cycle"
+        },
+        "s_HisThisTimChrgEngyWh": {
+          "type": "number",
+          "description": "本次充电能量值"
+        }
+      },
+      "title": "Msg0X18F82580DTO"
+    },
+    "Msg0X18F82680DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_HisAccumDisChrgCap": {
+          "type": "number",
+          "description": "累计充电容量值"
+        },
+        "s_HisThisTimDisChrgCap": {
+          "type": "number",
+          "description": "本次放电容量值"
+        }
+      },
+      "title": "Msg0X18F82680DTO"
+    },
+    "Msg0X18F82780DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_CalibrationCap": {
+          "type": "number",
+          "description": "电池箱额定容量"
+        },
+        "s_HisAccumChrgCap": {
+          "type": "number",
+          "description": "累计充电容量值"
+        },
+        "s_HisThisTimChrgCap": {
+          "type": "number",
+          "description": "本次充电容量值"
+        }
+      },
+      "title": "Msg0X18F82780DTO"
+    },
+    "OtherInfo": {
+      "type": "object",
+      "properties": {
+        "chargerStopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电停止原因(405)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s2C_BMSChrgAllowFlg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "允许充电标志(401)"
+        },
+        "sbMU_FaultNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "故障码(406)"
+        },
+        "sbMU_FullChrgDeltaSOCError": {
+          "type": "integer",
+          "format": "int32",
+          "description": "满充SOC差异过大故障(406)"
+        },
+        "sbMU_MostCriticalFltLvl": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池包最高故障等级(406)"
+        },
+        "sbMU_TotalStaticTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计静置时间(40C)"
+        },
+        "wirelessSignalStrength": {
+          "type": "integer",
+          "format": "int32",
+          "description": "无线通讯信号强度(401)"
+        }
+      },
+      "title": "OtherInfo"
+    },
+    "PduMockProtoMsg4534": {
+      "type": "object",
+      "properties": {
+        "chargerNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机编号"
+        },
+        "failedReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "失败原因"
+        },
+        "gunNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电枪编号（1~12）"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "result": {
+          "type": "integer",
+          "format": "int32",
+          "description": "应答结果"
+        }
+      },
+      "title": "PduMockProtoMsg4534"
+    },
+    "PduMockProtoMsg4535": {
+      "type": "object",
+      "properties": {
+        "chargerNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机编号"
+        },
+        "downLoadFailedReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "下载失败原因"
+        },
+        "fileUrl": {
+          "type": "string",
+          "description": "文件URL"
+        },
+        "gunNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电枪编号（1~12）"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "upgradeStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "升级状态"
+        },
+        "upgradeType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "升级类型"
+        }
+      },
+      "title": "PduMockProtoMsg4535"
+    },
+    "PduMockProtoMsg4537": {
+      "type": "object",
+      "properties": {
+        "chargerNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机编号"
+        },
+        "gunNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电枪编号（1~12）"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "seed": {
+          "type": "string",
+          "description": "bms种子"
+        }
+      },
+      "title": "PduMockProtoMsg4537"
+    },
+    "PositionInfo": {
+      "type": "object",
+      "properties": {
+        "maxModuleTempPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最高模组温度位置(403)"
+        },
+        "minModuleTempPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最低模组温度位置(403)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_MaxCellVoltPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU最大电芯电压位置(402)"
+        },
+        "sbMU_MinCellVoltPos": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU最大电芯温度位置(402)"
+        }
+      },
+      "title": "PositionInfo"
+    },
+    "ProtoMsg0X18F20180DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_CellVoltMv_N1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+1电池单体电压"
+        },
+        "s_CellVoltMv_N2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+2电池单体电压"
+        },
+        "s_CellVoltMv_N3": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+3电池单体电压"
+        },
+        "s_CellVoltMv_N4": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+4电池单体电压"
+        },
+        "s_CellVoltVld_N1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+1电池单体电压有效性"
+        },
+        "s_CellVoltVld_N2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+2电池单体电压有效性"
+        },
+        "s_CellVoltVld_N3": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+3电池单体电压有效性"
+        },
+        "s_CellVoltVld_N4": {
+          "type": "integer",
+          "format": "int32",
+          "description": "N+4电池单体电压有效性"
+        },
+        "s_volt_FrameNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "单体电压帧序号N，N从0开始，N最大到28"
+        }
+      },
+      "title": "ProtoMsg0X18F20180DTO"
+    },
+    "ProtoMsg0X18F30180DTO": {
+      "type": "object",
+      "properties": {
+        "batteryPosition": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "s_ModuleTempDegCBranch_N1": {
+          "type": "number"
+        },
+        "s_ModuleTempDegCBranch_N2": {
+          "type": "number"
+        },
+        "s_ModuleTempDegCBranch_N3": {
+          "type": "number"
+        },
+        "s_ModuleTempDegCBranch_N4": {
+          "type": "number"
+        },
+        "s_ModuleTempDegCBranch_N5": {
+          "type": "number"
+        },
+        "s_ModuleTempVldBranch_N1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_ModuleTempVldBranch_N2": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_ModuleTempVldBranch_N3": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_ModuleTempVldBranch_N4": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_ModuleTempVldBranch_N5": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_ModuleTemp_FrameNo": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ProtoMsg0X18F30180DTO"
+    },
+    "ProtoMsgDTO": {
+      "type": "object",
+      "properties": {
+        "chrgMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电模式 1:恒压模式 2:恒流模式"
+        },
+        "s_BMSChrgStopErrReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电错误原因"
+        },
+        "s_BMSChrgStopFltReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电故障原因"
+        },
+        "s_BMSChrgStopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱 BMS 中止充电原因"
+        },
+        "s_BMSLVPowStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "s_CellBalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "均衡状态0： =关闭， 1： =开启2： =故障，3： =不可用"
+        },
+        "s_DCChargeTimesWrite": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "s_DischrgPwrLimContinueKw": {
+          "type": "number",
+          "description": "持续放电功率限值 Kw"
+        },
+        "s_DischrgPwrLimLongKw": {
+          "type": "number",
+          "description": "长时放电功率限值 Kw"
+        },
+        "s_DischrgPwrLimShortKw": {
+          "type": "number",
+          "description": "瞬时放电功率限值 Kw"
+        },
+        "s_FanState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱风扇状态0： =关闭，  1： =开启 2： =故障， 3： =不可用"
+        },
+        "s_FltLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "报警级别：0： 正常 1： 1级报警 3： 3级报警， 5： 5级报警； 其余为保留"
+        },
+        "s_HVCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "内部高压继电器状态0： =分开，  1： =预充 2： =闭合， 3： =不可用"
+        },
+        "s_HeatRelayExternalVolt": {
+          "type": "number",
+          "description": "加热膜继电器外侧对主负内侧"
+        },
+        "s_HeatRelayExternalVoltVld": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热膜继电器外侧对主负内侧电压有效性"
+        },
+        "s_HeatState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "加热状态0： =关闭 1： =开 2： =故障  3： =不可用"
+        },
+        "s_HisStaOutAccumChrgerEngy": {
+          "type": "number"
+        },
+        "s_HisStaOutReChrgEngy": {
+          "type": "number"
+        },
+        "s_MainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱内部主负高压继电器状态0：分开，1:闭合"
+        },
+        "s_MainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱内部主正高压继电器状态0：分开，1:闭合"
+        },
+        "s_OnboardACChrgTimesOnceBatSwap": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "s_PACK_ALLW_MAX_CHRG_CURRENT": {
+          "type": "number",
+          "description": "电池箱能承受最大反馈电流值"
+        },
+        "s_PACK_ALLW_MAX_DISCHRG_CURRENT": {
+          "type": "number",
+          "description": "电池箱能输出的最大电流值"
+        },
+        "s_PackExternalVolt": {
+          "type": "number",
+          "description": "LINk电压"
+        },
+        "s_PackExternalVoltVld": {
+          "type": "integer",
+          "format": "int32",
+          "description": "LINk电压有效性"
+        },
+        "s_PackInternalVolt": {
+          "type": "number",
+          "description": "Pack内测电压"
+        },
+        "s_PackInternalVoltVld": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Pack内测电压有效性"
+        },
+        "s_PackPlaceNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱所在位置编号"
+        },
+        "s_PackWorkState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电池箱工作模式状态0： =未定义；1： =监控模式；2： =充电模式； 3： =储能模式；4： =换电准备模式；<5～7>： =预留；"
+        },
+        "s_PosExternalVolt": {
+          "type": "number",
+          "description": "主正外侧对主负内侧电压"
+        },
+        "s_PosExternalVoltVld": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正外侧对主负内侧电压有效性"
+        },
+        "s_SynchroBatteryCurrentA": {
+          "type": "number",
+          "description": "与详细电压同步电流"
+        },
+        "s_SynchroBatteryToG0Volt": {
+          "type": "number",
+          "description": "与详细电压同步电池包内侧电压"
+        },
+        "vehiChrgCurrentReq": {
+          "type": "number",
+          "description": "车辆充电电流需求"
+        },
+        "vehiChrgVoltReq": {
+          "type": "number",
+          "description": "车辆充电电压需求"
+        }
+      },
+      "title": "ProtoMsgDTO"
+    },
+    "ResistanceInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_IsoMeasNegResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "负极对地绝缘阻值(40E)"
+        },
+        "sbMU_IsoMeasPosResKOhm": {
+          "type": "integer",
+          "format": "int32",
+          "description": "正极对地绝缘阻值(40E)"
+        },
+        "sbMU_PackDCR": {
+          "type": "number",
+          "description": "电池包DCR(406)"
+        }
+      },
+      "title": "ResistanceInfo"
+    },
+    "R«BatteryDetailInfoMockDTO»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/BatteryDetailInfoMockDTO",
+          "originalRef": "BatteryDetailInfoMockDTO"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«BatteryDetailInfoMockDTO»"
+    },
+    "R«List«Battery0X10EMockDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Battery0X10EMockDTO",
+            "originalRef": "Battery0X10EMockDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«Battery0X10EMockDTO»»"
+    },
+    "R«List«Battery0X26MockDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Battery0X26MockDTO",
+            "originalRef": "Battery0X26MockDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«Battery0X26MockDTO»»"
+    },
+    "R«List«BatteryDetailInfoMockDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryDetailInfoMockDTO",
+            "originalRef": "BatteryDetailInfoMockDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«BatteryDetailInfoMockDTO»»"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "SocSohSoeInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_DisplaySOC": {
+          "type": "number",
+          "description": "SBMU 显示SOC(404)"
+        },
+        "sbMU_LCMSOCMax": {
+          "type": "number",
+          "description": "LCM SOC上限(40C)"
+        },
+        "sbMU_LCMSOCMin": {
+          "type": "number",
+          "description": "LCM SOC下限(40C)"
+        },
+        "sbMU_RemainEnergy": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU SOE(406)"
+        },
+        "sbMU_SOCMax": {
+          "type": "number",
+          "description": "SBMU 最大SOC(404)"
+        },
+        "sbMU_SOCMin": {
+          "type": "number",
+          "description": "SBMU 最小SOC(404)"
+        },
+        "sbMU_SOH": {
+          "type": "number",
+          "description": "SBMU SOH(404)"
+        }
+      },
+      "title": "SocSohSoeInfo"
+    },
+    "SwapInteractionInfo": {
+      "type": "object",
+      "properties": {
+        "c2S_WLDSts": {
+          "type": "integer",
+          "format": "int32",
+          "description": "蓝牙状态信息： 0-断开， 1-连接(401)"
+        },
+        "charge_WorkingMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机运行状态：0-空闲 1-参数配置中 2-充电中 3-停止充电 4-故障(405)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_MainNegCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主负继电器状态(406)"
+        },
+        "sbMU_MainPosCnctrState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主正继电器状态(406)"
+        },
+        "sbMU_MostCriticalFltID": {
+          "type": "integer",
+          "format": "int32",
+          "description": "bms最严重故障码(406)"
+        },
+        "sbMU_RealSOC": {
+          "type": "number",
+          "description": "SBMU 真实SOC(404)"
+        },
+        "sbMU_SumCellVolt": {
+          "type": "number",
+          "description": "电芯电压累加和(403)"
+        }
+      },
+      "title": "SwapInteractionInfo"
+    },
+    "TemperatureInfo": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_BatTmp_Avg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组平均温度(403)"
+        },
+        "sbMU_ModTmp_Max": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组最高温度(403)"
+        },
+        "sbMU_ModTmp_Min": {
+          "type": "integer",
+          "format": "int32",
+          "description": "模组最低温度(403)"
+        }
+      },
+      "title": "TemperatureInfo"
+    },
+    "VoltageInfo": {
+      "type": "object",
+      "properties": {
+        "chargerVoltage_Output": {
+          "type": "number",
+          "description": "ACDC输出电压(405)"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "sbMU_BattChrgReqVolt": {
+          "type": "number",
+          "description": "SBMU充电请求电压(410)"
+        },
+        "sbMU_CellVolt_Avg": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU 平均电芯电压(402)"
+        },
+        "sbMU_CellVolt_Max": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU 最大电芯电压(402)"
+        },
+        "sbMU_CellVolt_Min": {
+          "type": "integer",
+          "format": "int32",
+          "description": "SBMU 最小电芯电压(402)"
+        }
+      },
+      "title": "VoltageInfo"
+    },
+    "电池包数据信息1": {
+      "type": "object",
+      "properties": {
+        "capacityInfo": {
+          "type": "array",
+          "description": "电池包容量信息",
+          "items": {
+            "$ref": "#/definitions/CapacityInfo",
+            "originalRef": "CapacityInfo"
+          }
+        },
+        "energyInfo": {
+          "type": "array",
+          "description": "电池包能量信息",
+          "items": {
+            "$ref": "#/definitions/EnergyInfo",
+            "originalRef": "EnergyInfo"
+          }
+        },
+        "socSohSoeInfo": {
+          "type": "array",
+          "description": "电池包SocSohSoe信息",
+          "items": {
+            "$ref": "#/definitions/SocSohSoeInfo",
+            "originalRef": "SocSohSoeInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息1"
+    },
+    "电池包数据信息2": {
+      "type": "object",
+      "properties": {
+        "currentInfo": {
+          "type": "array",
+          "description": "电池包电流信息",
+          "items": {
+            "$ref": "#/definitions/CurrentInfo",
+            "originalRef": "CurrentInfo"
+          }
+        },
+        "resistanceInfo": {
+          "type": "array",
+          "description": "电池包电阻信息",
+          "items": {
+            "$ref": "#/definitions/ResistanceInfo",
+            "originalRef": "ResistanceInfo"
+          }
+        },
+        "voltageInfo": {
+          "type": "array",
+          "description": "电池包电压信息",
+          "items": {
+            "$ref": "#/definitions/VoltageInfo",
+            "originalRef": "VoltageInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息2"
+    },
+    "电池包数据信息3": {
+      "type": "object",
+      "properties": {
+        "countInfo": {
+          "type": "array",
+          "description": "电池包次数统计信息",
+          "items": {
+            "$ref": "#/definitions/CountInfo",
+            "originalRef": "CountInfo"
+          }
+        },
+        "positionInfo": {
+          "type": "array",
+          "description": "电池包位置信息",
+          "items": {
+            "$ref": "#/definitions/PositionInfo",
+            "originalRef": "PositionInfo"
+          }
+        },
+        "temperatureInfo": {
+          "type": "array",
+          "description": "电池包温度信息",
+          "items": {
+            "$ref": "#/definitions/TemperatureInfo",
+            "originalRef": "TemperatureInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息3"
+    },
+    "电池包数据信息4": {
+      "type": "object",
+      "properties": {
+        "otherInfo": {
+          "type": "array",
+          "description": "电池包其他信息",
+          "items": {
+            "$ref": "#/definitions/OtherInfo",
+            "originalRef": "OtherInfo"
+          }
+        }
+      },
+      "title": "电池包数据信息4"
+    },
+    "电池包标志和状态信息": {
+      "type": "object",
+      "properties": {
+        "batterySignOrStateInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatterySignOrState",
+            "originalRef": "BatterySignOrState"
+          }
+        }
+      },
+      "title": "电池包标志和状态信息"
+    },
+    "电池包版本信息": {
+      "type": "object",
+      "properties": {
+        "batteryVersionInfoList": {
+          "type": "array",
+          "description": "电池包版本信息",
+          "items": {
+            "$ref": "#/definitions/BatteryVersionInfo",
+            "originalRef": "BatteryVersionInfo"
+          }
+        }
+      },
+      "title": "电池包版本信息"
+    },
+    "电池包编码类信息": {
+      "type": "object",
+      "properties": {
+        "batteryCodeInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BatteryCodeInfo",
+            "originalRef": "BatteryCodeInfo"
+          }
+        }
+      },
+      "title": "电池包编码类信息"
+    },
+    "电池换电交互信息": {
+      "type": "object",
+      "properties": {
+        "swapInteractionInfo": {
+          "type": "array",
+          "description": "仓内换电交互信息",
+          "items": {
+            "$ref": "#/definitions/SwapInteractionInfo",
+            "originalRef": "SwapInteractionInfo"
+          }
+        }
+      },
+      "title": "电池换电交互信息"
+    }
+  }
+}

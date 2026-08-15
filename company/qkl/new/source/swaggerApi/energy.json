@@ -1,0 +1,2183 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "virtual-mqtt-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "能源模块",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "能源配置模块",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "超充接口",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/chargerDcco/startCharge": {
+      "post": {
+        "tags": [
+          "超充接口"
+        ],
+        "summary": "startCharge",
+        "operationId": "startChargeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StartChargeReqDTO",
+              "originalRef": "StartChargeReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/chargerDcco/stopCharge": {
+      "post": {
+        "tags": [
+          "超充接口"
+        ],
+        "summary": "stopCharge",
+        "operationId": "stopChargeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTO",
+            "description": "reqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StopChargeReqDTO",
+              "originalRef": "StopChargeReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/energy/energyJudge": {
+      "post": {
+        "tags": [
+          "能源模块"
+        ],
+        "summary": "需求功率判断",
+        "operationId": "energyJudgeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reqDTOS",
+            "description": "reqDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EnergyJudgeReqDTO",
+                "originalRef": "EnergyJudgeReqDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«List«EnergyJudgeRespDTO»»",
+              "originalRef": "R«List«EnergyJudgeRespDTO»»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/energy/feign/config/getStorageStrategy": {
+      "post": {
+        "tags": [
+          "能源配置模块"
+        ],
+        "summary": "getStorageStrategy",
+        "operationId": "getStorageStrategyUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«StorageStrategyDTO»",
+              "originalRef": "R«StorageStrategyDTO»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/energy/feign/config/saveStorageStrategy": {
+      "post": {
+        "tags": [
+          "能源配置模块"
+        ],
+        "summary": "saveStorageStrategy",
+        "operationId": "saveStorageStrategyUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "strategyDTO",
+            "description": "strategyDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StorageStrategyDTO",
+              "originalRef": "StorageStrategyDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«Void»",
+              "originalRef": "R«Void»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/energy/feign/config/saveTransformerBox": {
+      "post": {
+        "tags": [
+          "能源配置模块"
+        ],
+        "summary": "saveTransformerBox",
+        "operationId": "saveTransformerBoxUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "transformerBoxs",
+            "description": "transformerBoxs",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransformerBoxDTO",
+                "originalRef": "TransformerBoxDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«Void»",
+              "originalRef": "R«Void»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/chargeRecord": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "chargeRecord",
+        "operationId": "chargeRecordUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reportChargeRecordMqDTO",
+            "description": "reportChargeRecordMqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReportChargeRecordMqDTO",
+              "originalRef": "ReportChargeRecordMqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/chargeRecordResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "chargeRecordResp",
+        "operationId": "chargeRecordRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "chargeRecordResp",
+            "description": "chargeRecordResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChargeRecordResp",
+              "originalRef": "ChargeRecordResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/del": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileHeartBeat",
+        "operationId": "pileHeartBeatUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "msg",
+            "in": "query",
+            "description": "msg",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/mock4200": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "mock4200",
+        "operationId": "mock4200UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "reportChargeRecordMqDTO",
+            "description": "reportChargeRecordMqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReportChargeRecordMqDTO",
+              "originalRef": "ReportChargeRecordMqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/mock4501": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "mock4501",
+        "operationId": "mock4501UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "msg",
+            "in": "query",
+            "description": "msg",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/mock4511": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "mock4511",
+        "operationId": "mock4511UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "msg",
+            "in": "query",
+            "description": "msg",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/mock4900": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "mock4900",
+        "operationId": "mock4900UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "startChargeCallbackMqDTO",
+            "description": "startChargeCallbackMqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StartChargeCallbackMqDTO",
+              "originalRef": "StartChargeCallbackMqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileEquipInfo": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileEquipInfo",
+        "operationId": "pileEquipInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileEquipInfo",
+            "description": "pileEquipInfo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileEquipInfo",
+              "originalRef": "PileEquipInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileEquipInfoResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileEquipInfoResp",
+        "operationId": "pileEquipInfoRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileEquipInfoResp",
+            "description": "pileEquipInfoResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileEquipInfoResp",
+              "originalRef": "PileEquipInfoResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileEventInfo": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileEventInfo",
+        "operationId": "pileEventInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileEventInfo",
+            "description": "pileEventInfo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileEventInfo",
+              "originalRef": "PileEventInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileEventInfoResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileEventInfoResp",
+        "operationId": "pileEventInfoRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileEventInfoResp",
+            "description": "pileEventInfoResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileEventInfoResp",
+              "originalRef": "PileEventInfoResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileHeartBeat": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileHeartBeat",
+        "operationId": "pileHeartBeatUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileHeartBeat",
+            "description": "pileHeartBeat",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileHeartBeat",
+              "originalRef": "PileHeartBeat"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileHeartBeatResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileHeartBeatResp",
+        "operationId": "pileHeartBeatRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileHeartBeatResp",
+            "description": "pileHeartBeatResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileHeartBeatResp",
+              "originalRef": "PileHeartBeatResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileSignIn": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileSignIn",
+        "operationId": "pileSignInUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileSignIn",
+            "description": "pileSignIn",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileSignIn",
+              "originalRef": "PileSignIn"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/pileSignInResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "pileSignInResp",
+        "operationId": "pileSignInRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileSignInResp",
+            "description": "pileSignInResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileSignInResp",
+              "originalRef": "PileSignInResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/sendMsg": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "sendMsg",
+        "operationId": "sendMsgUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileSendCloudMsgReqDTO",
+            "description": "pileSendCloudMsgReqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileSendCloudMsgReqDTO",
+              "originalRef": "PileSendCloudMsgReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/sendMsgWithRetry": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "sendMsgWithRetry",
+        "operationId": "sendMsgWithRetryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pileSendCloudMsgReqDTO",
+            "description": "pileSendCloudMsgReqDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PileSendCloudMsgReqDTO",
+              "originalRef": "PileSendCloudMsgReqDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/startCharge": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "startCharge",
+        "operationId": "startChargeUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "startCharge",
+            "description": "startCharge",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StartCharge",
+              "originalRef": "StartCharge"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/startChargeResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "startChargeResp",
+        "operationId": "startChargeRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "startChargeResp",
+            "description": "startChargeResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StartChargeResp",
+              "originalRef": "StartChargeResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/stopCharge": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "stopCharge",
+        "operationId": "stopChargeUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stopCharge",
+            "description": "stopCharge",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StopCharge",
+              "originalRef": "StopCharge"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/virtualMqtt/stopChargeResp": {
+      "post": {
+        "tags": [
+          "virtual-mqtt-controller"
+        ],
+        "summary": "stopChargeResp",
+        "operationId": "stopChargeRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stopChargeResp",
+            "description": "stopChargeResp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StopChargeResp",
+              "originalRef": "StopChargeResp"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "ChargeRecordPeriod": {
+      "type": "object",
+      "properties": {
+        "chargePower": {
+          "type": "number"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "periodIdentity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startTime": {
+          "type": "string"
+        }
+      },
+      "title": "ChargeRecordPeriod"
+    },
+    "ChargeRecordResp": {
+      "type": "object",
+      "properties": {
+        "chargeCardNo": {
+          "type": "string"
+        },
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ChargeRecordResp"
+    },
+    "ChargeTransformerBoxDTO": {
+      "type": "object",
+      "properties": {
+        "no": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电机编号"
+        },
+        "powerLimit": {
+          "type": "number",
+          "description": "功率限制"
+        }
+      },
+      "title": "ChargeTransformerBoxDTO"
+    },
+    "EmuTransformerBoxDTO": {
+      "type": "object",
+      "properties": {
+        "no": {
+          "type": "integer",
+          "format": "int32",
+          "description": "EMU编号"
+        }
+      },
+      "title": "EmuTransformerBoxDTO"
+    },
+    "EnergyJudgeReqDTO": {
+      "type": "object",
+      "properties": {
+        "demandPower": {
+          "type": "number",
+          "description": "需求功率"
+        },
+        "transformerBoxNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "箱变号"
+        }
+      },
+      "title": "EnergyJudgeReqDTO"
+    },
+    "EnergyJudgeRespDTO": {
+      "type": "object",
+      "properties": {
+        "allowAddChargingPower": {
+          "type": "number",
+          "description": "允许新增充电功率"
+        },
+        "essAlarmStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "储能告警状态"
+        },
+        "essDeviceId": {
+          "type": "string",
+          "description": "Emu设备id"
+        },
+        "essSoc": {
+          "type": "number",
+          "description": "储能SOC"
+        },
+        "essWorkStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "储能工作状态"
+        },
+        "predictTotalDemandPower": {
+          "type": "number",
+          "description": "预测需求总功率"
+        },
+        "realTimeTotalDemandPower": {
+          "type": "number",
+          "description": "实时需求总功率"
+        },
+        "storedEnergyPower": {
+          "type": "number",
+          "description": "储能实时功率"
+        },
+        "transformerBoxElectricMeter": {
+          "type": "integer",
+          "format": "int32",
+          "description": "箱变输出侧实时功率"
+        },
+        "transformerBoxNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "箱变号"
+        },
+        "transformerBoxPowerLimitVal": {
+          "type": "number",
+          "description": "箱变功率限制值"
+        }
+      },
+      "title": "EnergyJudgeRespDTO"
+    },
+    "PileEquipInfo": {
+      "type": "object",
+      "properties": {
+        "acurrent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "airInletTem": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "airOutTem": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "avoltage": {
+          "type": "number"
+        },
+        "bcurrent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmsChargeMode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bmsCurrent": {
+          "type": "number"
+        },
+        "bmsVoltage": {
+          "type": "number"
+        },
+        "bookFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bvoltage": {
+          "type": "number"
+        },
+        "cardAmount": {
+          "type": "number"
+        },
+        "ccurrent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeCapacity": {
+          "type": "number"
+        },
+        "chargeCase": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeCost": {
+          "type": "number"
+        },
+        "chargeDuration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeGunNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeGunType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeMeterReading": {
+          "type": "number"
+        },
+        "chargeMode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "chargeParam": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "chargePower": {
+          "type": "number"
+        },
+        "chargeStartType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "connectStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "connectVoltage": {
+          "type": "number"
+        },
+        "currentMeterReading": {
+          "type": "number"
+        },
+        "cvoltage": {
+          "type": "number"
+        },
+        "dcCurrent": {
+          "type": "number"
+        },
+        "dcVoltage": {
+          "type": "number"
+        },
+        "dischargeCurrent": {
+          "type": "number"
+        },
+        "dischargeMeterReading": {
+          "type": "number"
+        },
+        "moduleMaxTem": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "moduleMinTem": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "moduleNum": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderNo": {
+          "type": "string"
+        },
+        "overTime": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pileCode": {
+          "type": "string"
+        },
+        "pileTem": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "portTemDeep": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "portTemPlus": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "remainChargingTime": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved3": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "soc": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startChargeTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "warnStatus": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "workStatus": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PileEquipInfo"
+    },
+    "PileEquipInfoResp": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "boostChargeStatus": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeCardNo": {
+          "type": "string"
+        },
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isEnough": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PileEquipInfoResp"
+    },
+    "PileEventInfo": {
+      "type": "object",
+      "properties": {
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "eventCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "eventParam": {
+          "type": "string"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderNo": {
+          "type": "string"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PileEventInfo"
+    },
+    "PileEventInfoResp": {
+      "type": "object",
+      "properties": {
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "eventName": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pileCode": {
+          "type": "string"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PileEventInfoResp"
+    },
+    "PileHeartBeat": {
+      "type": "object",
+      "properties": {
+        "heartNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pileCode": {
+          "type": "string"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PileHeartBeat"
+    },
+    "PileHeartBeatResp": {
+      "type": "object",
+      "properties": {
+        "heartNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PileHeartBeatResp"
+    },
+    "PileSendCloudMsgReqDTO": {
+      "type": "object",
+      "properties": {
+        "chargeEventKeyCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "云协议事件Code"
+        },
+        "sendMsgJson": {
+          "type": "string",
+          "description": "云协议事件对应json数据"
+        }
+      },
+      "title": "PileSendCloudMsgReqDTO"
+    },
+    "PileSignIn": {
+      "type": "object",
+      "properties": {
+        "bootCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "启动次数，终端每次启动计数保存"
+        },
+        "ccu2SoftwareVersion": {
+          "type": "string",
+          "format": "byte",
+          "description": "充电桩CCU2软件版本，0x00010000代表版本0.1.0.0"
+        },
+        "ccuSoftwareVersion": {
+          "type": "string",
+          "format": "byte",
+          "description": "充电桩CCU软件版本，0x00010000代表版本0.1.0.0"
+        },
+        "chargeRecordCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "充电记录数量"
+        },
+        "gunCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电枪个数"
+        },
+        "heartBeatPeriod": {
+          "type": "integer",
+          "format": "int32",
+          "description": "心跳上报周期，单位：秒"
+        },
+        "heartBeatTimeoutCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "心跳包检测超时次数"
+        },
+        "lastBootTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "最近一次启动时间，标准时间"
+        },
+        "lastChargeTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "最近一次充电时间，标准时间"
+        },
+        "macOrImei": {
+          "type": "string",
+          "description": "充电桩Mac地址或者IMEI码，ASCII编码，以'\\0'结束"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "offlineChargeSetting": {
+          "type": "integer",
+          "format": "int32",
+          "description": "离线/在线允许充电设置，默认值0x01，高位0表示在线允许充电，低位1表示离线禁止充电"
+        },
+        "pcuSoftwareVersion": {
+          "type": "string",
+          "format": "byte",
+          "description": "充电桩PCU软件版本，0x00010000代表版本0.1.0.0"
+        },
+        "pileCode": {
+          "type": "string",
+          "description": "充电桩编码，ASCII编码"
+        },
+        "pileType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电桩类型：0x00-直流，0x01-交流，0x02-混合"
+        },
+        "signInInterval": {
+          "type": "integer",
+          "format": "int32",
+          "description": "签到间隔时间，单位：分钟，默认15分钟"
+        },
+        "signInPassword": {
+          "type": "string",
+          "description": "签到密码（保留），ASCII编码，以'\\0'结束"
+        },
+        "softwareVersion": {
+          "type": "string",
+          "format": "byte",
+          "description": "TCU充电桩软件版本原始数值，如65536对应0x00010000，版本0.1.0.0"
+        },
+        "systemTime": {
+          "type": "string",
+          "format": "byte",
+          "description": "当前充电桩系统时间，标准时间"
+        },
+        "tcuFlag": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小桔TCU标识：0-sdk，1-tcu"
+        },
+        "totalPower": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电桩电源模块总功率大小，单位：kW"
+        },
+        "totalPowerModuleCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "该充电桩总共电源模块数"
+        },
+        "uploadMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "数据上传模式（保留）：1-应答模式，2-主动上报模式"
+        }
+      },
+      "title": "PileSignIn"
+    },
+    "PileSignInResp": {
+      "type": "object",
+      "properties": {
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预留1"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32",
+          "description": "预留2"
+        },
+        "serverTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "标准时钟时间"
+        }
+      },
+      "title": "PileSignInResp"
+    },
+    "ReportChargeRecordMqDTO": {
+      "type": "object",
+      "properties": {
+        "averageElectricQuantity": {
+          "type": "number"
+        },
+        "batterySn": {
+          "type": "string"
+        },
+        "campTotalChargeTime": {
+          "type": "number"
+        },
+        "cardBalanceAfterCharge": {
+          "type": "number"
+        },
+        "cardBalanceBeforeCharge": {
+          "type": "number"
+        },
+        "chargeAmount": {
+          "type": "number"
+        },
+        "chargeEndTime": {
+          "type": "string"
+        },
+        "chargePeriodCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargePower": {
+          "type": "number"
+        },
+        "chargeStartTime": {
+          "type": "string"
+        },
+        "chargerNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cloudFlowNo": {
+          "type": "string"
+        },
+        "controlParam": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "controlType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "direction": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "electricMeterAfterCharge": {
+          "type": "number"
+        },
+        "electricMeterBeforeCharge": {
+          "type": "number"
+        },
+        "factoryStopReason": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "flowNo": {
+          "type": "string"
+        },
+        "gunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "peakElectricQuantity": {
+          "type": "number"
+        },
+        "periodList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChargeRecordPeriod",
+            "originalRef": "ChargeRecordPeriod"
+          }
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "socAfterCharge": {
+          "type": "number"
+        },
+        "socBeforeCharge": {
+          "type": "number"
+        },
+        "startupMethod": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stopReason": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "stopResult": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "timePeriodChargingAmount": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "tipCharge": {
+          "type": "number"
+        },
+        "totalDeepValleyCharge": {
+          "type": "number"
+        },
+        "totalFlatCharge": {
+          "type": "number"
+        },
+        "totalPeakCharge": {
+          "type": "number"
+        },
+        "totalSharpCharge": {
+          "type": "number"
+        },
+        "totalValleyCharge": {
+          "type": "number"
+        },
+        "valleyElectricity": {
+          "type": "number"
+        },
+        "vin": {
+          "type": "string"
+        }
+      },
+      "title": "ReportChargeRecordMqDTO"
+    },
+    "R«List«EnergyJudgeRespDTO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnergyJudgeRespDTO",
+            "originalRef": "EnergyJudgeRespDTO"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«List«EnergyJudgeRespDTO»»"
+    },
+    "R«StorageStrategyDTO»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/StorageStrategyDTO",
+          "originalRef": "StorageStrategyDTO"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«StorageStrategyDTO»"
+    },
+    "R«Void»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«Void»"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    },
+    "StartCharge": {
+      "type": "object",
+      "properties": {
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderNo": {
+          "type": "string"
+        },
+        "pileCode": {
+          "type": "string"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "runResult": {
+          "type": "string"
+        }
+      },
+      "title": "StartCharge"
+    },
+    "StartChargeCallbackMqDTO": {
+      "type": "object",
+      "properties": {
+        "chargerNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cloudFlowNo": {
+          "type": "string"
+        },
+        "failedReason": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "failedReasonDetail": {
+          "type": "string"
+        },
+        "flowNo": {
+          "type": "string"
+        },
+        "gunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "StartChargeCallbackMqDTO"
+    },
+    "StartChargeReqDTO": {
+      "type": "object",
+      "properties": {
+        "adjustParam": {
+          "type": "number",
+          "description": "功率调节参数 功率调节指令为1时，不做限制; 功率调节指令为2时，Factor：0.1 单位：kW； 功率调节指令为3时执行，Factor：1; 单位：%； 功率调节指令为4时执行，Factor：0.1 单位：A；"
+        },
+        "adjustType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "功率调节指令类型 1:采用BMS充电Map进行功率控制 2:执行功率调节，设置充电功率上限值 3:采用充电map比列调节 4:执行最大电流限制"
+        },
+        "campNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电仓位号"
+        },
+        "chargeModel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电来源"
+        },
+        "chargerNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电桩号"
+        },
+        "cloudFlowNo": {
+          "type": "string",
+          "description": "云端流水号"
+        },
+        "controlParam": {
+          "type": "integer",
+          "format": "int64",
+          "description": "控制参数"
+        },
+        "controlType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "控制类型"
+        },
+        "direction": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电方向 0:充电 1:放电 字典：chargeDirection"
+        },
+        "endSoc": {
+          "type": "number",
+          "description": "停充SOC"
+        },
+        "gunNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "充电枪号"
+        }
+      },
+      "title": "StartChargeReqDTO"
+    },
+    "StartChargeResp": {
+      "type": "object",
+      "properties": {
+        "chargeFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "chargeStrategy": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "chargeStrategyParam": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "chargeType": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "delayFeeFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "delayFeeWaitTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "offLineChargePower": {
+          "type": "number"
+        },
+        "orderNo": {
+          "type": "string"
+        },
+        "overTime": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reserved2": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "scheduleStartTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userPhoneSuffix": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "StartChargeResp"
+    },
+    "StopCharge": {
+      "type": "object",
+      "properties": {
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderNo": {
+          "type": "string"
+        },
+        "pileCode": {
+          "type": "string"
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "StopCharge"
+    },
+    "StopChargeReqDTO": {
+      "type": "object",
+      "properties": {
+        "cloudFlowNo": {
+          "type": "string",
+          "description": "云端流水号"
+        },
+        "flowNo": {
+          "type": "string",
+          "description": "充电机交互流水号"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "description": "仓位号"
+        },
+        "stopReason": {
+          "type": "integer",
+          "format": "int32",
+          "description": "1.停止原因 0正常充满停机 1服务器发现桩异常,强制停机 2 账号校验失败 3APP主动停机 4 账号欠费 5无可用模块"
+        }
+      },
+      "title": "StopChargeReqDTO"
+    },
+    "StopChargeResp": {
+      "type": "object",
+      "properties": {
+        "chargeGunNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderNo": {
+          "type": "string"
+        },
+        "pileCode": {
+          "type": "string"
+        }
+      },
+      "title": "StopChargeResp"
+    },
+    "StorageStrategyDTO": {
+      "type": "object",
+      "properties": {
+        "antiBackFlowCurrentPower": {
+          "type": "number",
+          "description": "防逆流 实时需求总功率"
+        },
+        "antiBackFlowTransformerPower": {
+          "type": "number",
+          "description": "防逆流 箱变输出侧实时功率"
+        },
+        "chargePower": {
+          "type": "number",
+          "description": "储能充电 功率限制"
+        },
+        "chargeTm": {
+          "type": "number",
+          "description": "储能充电 持续时间"
+        },
+        "dischargeSoc": {
+          "type": "number",
+          "description": "储能放电 允许放电soc"
+        },
+        "dischargeStartPower": {
+          "type": "number",
+          "description": "储能放电 放电启动条件 功率限制"
+        },
+        "dischargeStopPower": {
+          "type": "number",
+          "description": "储能放电 放电停止条件 功率限制"
+        },
+        "enable": {
+          "type": "boolean",
+          "description": "策略启动状态"
+        },
+        "powerDif": {
+          "type": "number",
+          "description": "通用配置 本次功率和上次功率差值"
+        }
+      },
+      "title": "StorageStrategyDTO"
+    },
+    "TransformerBoxDTO": {
+      "type": "object",
+      "properties": {
+        "chargers": {
+          "type": "array",
+          "description": "充电机列表",
+          "items": {
+            "$ref": "#/definitions/ChargeTransformerBoxDTO",
+            "originalRef": "ChargeTransformerBoxDTO"
+          }
+        },
+        "containOther": {
+          "type": "boolean",
+          "description": "是否包含其他设备"
+        },
+        "emus": {
+          "type": "array",
+          "description": "EMU列表",
+          "items": {
+            "$ref": "#/definitions/EmuTransformerBoxDTO",
+            "originalRef": "EmuTransformerBoxDTO"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "powerLimit": {
+          "type": "number",
+          "description": "功率限制"
+        }
+      },
+      "title": "TransformerBoxDTO"
+    }
+  }
+}

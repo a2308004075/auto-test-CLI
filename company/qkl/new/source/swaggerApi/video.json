@@ -1,0 +1,277 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "时代电服-乘用车换电站-站控服务接口文档",
+    "version": "1.0.0",
+    "title": "时代电服-乘用车换电站-接口文档",
+    "contact": {
+      "name": "MyIreland",
+      "url": "http://localhost:8080",
+      "email": "chenxq12@catl.com"
+    }
+  },
+  "host": "127.0.0.1",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "video-control-feign-impl",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/video/control/addPlayer": {
+      "post": {
+        "tags": [
+          "video-control-feign-impl"
+        ],
+        "summary": "添加播放语音",
+        "operationId": "addPlayerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "list",
+            "description": "list",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ClipPlayerDTO",
+                "originalRef": "ClipPlayerDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/video/control/pauseSinglePlayer": {
+      "post": {
+        "tags": [
+          "video-control-feign-impl"
+        ],
+        "summary": "暂停播放（单例）",
+        "operationId": "pauseSinglePlayerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clipPlayerDTO",
+            "description": "clipPlayerDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClipPlayerCodeDTO",
+              "originalRef": "ClipPlayerCodeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/video/control/resumeSinglePlayer": {
+      "post": {
+        "tags": [
+          "video-control-feign-impl"
+        ],
+        "summary": "恢复播放（单例）",
+        "operationId": "resumeSinglePlayerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clipPlayerDTO",
+            "description": "clipPlayerDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClipPlayerCodeDTO",
+              "originalRef": "ClipPlayerCodeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/video/control/startSinglePlayer": {
+      "post": {
+        "tags": [
+          "video-control-feign-impl"
+        ],
+        "summary": "开启播放（单例）",
+        "operationId": "startSinglePlayerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clipPlayerDTO",
+            "description": "clipPlayerDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClipPlayerDTO",
+              "originalRef": "ClipPlayerDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/api/video/control/stopSinglePlayer": {
+      "post": {
+        "tags": [
+          "video-control-feign-impl"
+        ],
+        "summary": "停止播放（单例）",
+        "operationId": "stopSinglePlayerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "clipPlayerDTO",
+            "description": "clipPlayerDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClipPlayerCodeDTO",
+              "originalRef": "ClipPlayerCodeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R«boolean»",
+              "originalRef": "R«boolean»"
+            }
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "ClipPlayerCodeDTO": {
+      "type": "object",
+      "properties": {
+        "mp3Code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "mp3编码"
+        }
+      },
+      "title": "ClipPlayerCodeDTO"
+    },
+    "ClipPlayerDTO": {
+      "type": "object",
+      "properties": {
+        "desc": {
+          "type": "string",
+          "description": "描述"
+        },
+        "duplicateRemoval": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否去重 1：是 0：否"
+        },
+        "levelCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "语音等级 0~5"
+        },
+        "mp3Code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "mp3编码"
+        },
+        "vol": {
+          "type": "integer",
+          "format": "int32",
+          "description": "音量（0~100）"
+        }
+      },
+      "title": "ClipPlayerDTO"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "R«boolean»"
+    }
+  }
+}

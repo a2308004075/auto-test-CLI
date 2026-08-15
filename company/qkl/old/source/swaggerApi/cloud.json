@@ -1,0 +1,678 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "接口文档",
+    "version": "1.0",
+    "title": "站控云端交互管理接口",
+    "termsOfService": "http://localhost:9910/"
+  },
+  "host": "pdd-station-supercharge-test01.catles.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "report-event-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "test-controller",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/batteryPhotographyUpload": {
+      "post": {
+        "tags": [
+          "report-event-controller"
+        ],
+        "summary": "电池底部拍照上传",
+        "operationId": "batteryPhotographyUploadUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "originalRef": "BatteryPhotographyUploadDTO",
+              "$ref": "#/definitions/BatteryPhotographyUploadDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/getOssToken": {
+      "post": {
+        "tags": [
+          "report-event-controller"
+        ],
+        "summary": "请求获取电池拍照ossToken",
+        "operationId": "reportEventLogUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "originalRef": "GetOssTokenRequestDTO",
+              "$ref": "#/definitions/GetOssTokenRequestDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/reportStationBaseInfo": {
+      "post": {
+        "tags": [
+          "report-event-controller"
+        ],
+        "summary": "上报站控基本信息",
+        "operationId": "reportStationBaseInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stationInfoVO",
+            "description": "stationInfoVO",
+            "required": true,
+            "schema": {
+              "originalRef": "StationInfoVO",
+              "$ref": "#/definitions/StationInfoVO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/test/batteryLabelRequest": {
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "batteryLabelRequest",
+        "operationId": "batteryLabelRequestUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "barcodeList",
+            "description": "barcodeList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/test/handleClearBmsFault": {
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "handleClearBmsFault",
+        "operationId": "handleClearBmsFaultUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cloudClearBmsFaultDTO",
+            "description": "cloudClearBmsFaultDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CloudClearBmsFaultDTO",
+              "$ref": "#/definitions/CloudClearBmsFaultDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/test/handleOtaControl": {
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "handleOtaControl",
+        "operationId": "handleOtaControlUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cloudOtaControlDTO",
+            "description": "cloudOtaControlDTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CloudOtaControlDTO",
+              "$ref": "#/definitions/CloudOtaControlDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/test/handlerStationLabelResp": {
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "handlerStationLabelResp",
+        "operationId": "handlerStationLabelRespUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stationInfoVO",
+            "description": "stationInfoVO",
+            "required": true,
+            "schema": {
+              "originalRef": "StationInfoVO",
+              "$ref": "#/definitions/StationInfoVO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/test/queryStationLable": {
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "queryStationLable",
+        "operationId": "queryStationLableUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    },
+    "/test/swapAuthentication": {
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "swapAuthentication",
+        "operationId": "swapAuthenticationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "originalRef": "InPassCarInfoDTO",
+              "$ref": "#/definitions/InPassCarInfoDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResultVO",
+              "$ref": "#/definitions/ResultVO"
+            }
+          }
+        },
+        "deprecated": false,
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BatteryPhotoInfoDTO": {
+      "type": "object",
+      "properties": {
+        "batteryLocation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "packMac": {
+          "type": "string"
+        },
+        "packSn": {
+          "type": "string"
+        },
+        "photoUrls": {
+          "type": "string"
+        }
+      },
+      "title": "BatteryPhotoInfoDTO",
+      "description": "电池照片详细信息"
+    },
+    "BatteryPhotographyUploadDTO": {
+      "type": "object",
+      "properties": {
+        "batteryInfoList": {
+          "type": "array",
+          "items": {
+            "originalRef": "BatteryPhotoInfoDTO",
+            "$ref": "#/definitions/BatteryPhotoInfoDTO"
+          }
+        },
+        "carNo": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "string"
+        },
+        "vin": {
+          "type": "string"
+        }
+      },
+      "title": "BatteryPhotographyUploadDTO"
+    },
+    "CloudClearBmsFaultDTO": {
+      "type": "object",
+      "properties": {
+        "clear": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "deviceCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CloudClearBmsFaultDTO"
+    },
+    "CloudOtaControlDTO": {
+      "type": "object",
+      "properties": {
+        "deviceCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deviceType": {
+          "type": "string"
+        },
+        "driveVersion": {
+          "type": "string"
+        },
+        "driveVersionPack": {
+          "type": "string"
+        },
+        "firmwareVersion": {
+          "type": "string"
+        },
+        "firmwareVersionPack": {
+          "type": "string"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "systemVersions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "upgradeType": {
+          "type": "string"
+        }
+      },
+      "title": "CloudOtaControlDTO"
+    },
+    "GetOssTokenRequestDTO": {
+      "type": "object",
+      "properties": {
+        "upType": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "GetOssTokenRequestDTO"
+    },
+    "InPassCarInfoDTO": {
+      "type": "object",
+      "properties": {
+        "plateNo": {
+          "type": "string",
+          "description": "车牌号"
+        }
+      },
+      "title": "InPassCarInfoDTO"
+    },
+    "ResultVO": {
+      "type": "object",
+      "required": [
+        "code",
+        "data",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "example": 200,
+          "description": "结果码"
+        },
+        "data": {
+          "type": "object",
+          "description": "返回数据"
+        },
+        "message": {
+          "type": "string",
+          "example": "成功",
+          "description": "提示信息"
+        }
+      },
+      "title": "ResultVO"
+    },
+    "StationInfoVO": {
+      "type": "object",
+      "properties": {
+        "areaCity": {
+          "type": "string",
+          "description": "市"
+        },
+        "areaDistrict": {
+          "type": "string",
+          "description": "区"
+        },
+        "areaLocation": {
+          "type": "string",
+          "description": "具体地理位置（换电站地点）"
+        },
+        "areaProvince": {
+          "type": "string",
+          "description": "省"
+        },
+        "belongCompany": {
+          "type": "string",
+          "description": "换电站运营公司"
+        },
+        "channelNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "通道类型(1.左单通道；2.右单通道；3.双通道)"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "developmentType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "版本类型： 1.试验站 2.批量站"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isRemote": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "纬度"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "经度"
+        },
+        "maintainCompany": {
+          "type": "string",
+          "description": "换电站维保公司"
+        },
+        "maintainPhone": {
+          "type": "string",
+          "description": "换电站维保联系方式"
+        },
+        "manager": {
+          "type": "string",
+          "description": "换电站负责人"
+        },
+        "manufactureCompany": {
+          "type": "string",
+          "description": "换电站制造公司"
+        },
+        "manufacturePhone": {
+          "type": "string",
+          "description": "换电站运营联系方式"
+        },
+        "msgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "parameterConfig": {
+          "type": "string",
+          "description": "换电站参数"
+        },
+        "path": {
+          "type": "string",
+          "description": "云端地址"
+        },
+        "picture": {
+          "type": "string",
+          "description": "图片名称"
+        },
+        "platformKey": {
+          "type": "string",
+          "description": "平台标识码"
+        },
+        "providerCode": {
+          "type": "string",
+          "description": "供应商代码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "retryCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "runEndTime": {
+          "type": "string",
+          "description": "运营结束时间"
+        },
+        "runStartTime": {
+          "type": "string",
+          "description": "运营开始时间"
+        },
+        "secret": {
+          "type": "string",
+          "description": "云端密钥"
+        },
+        "serverNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站控服务数"
+        },
+        "socialCid": {
+          "type": "string",
+          "description": "社会信用代码"
+        },
+        "stationCode": {
+          "type": "string",
+          "description": "换电站编号"
+        },
+        "stationEnv": {
+          "type": "integer",
+          "format": "int32",
+          "description": "站控环境(1:预发环境；2:正式环境)"
+        },
+        "stationName": {
+          "type": "string",
+          "description": "换电站名称"
+        },
+        "stationStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "运营状态 0:正常1:歇业2:维修"
+        },
+        "stationType": {
+          "type": "string",
+          "description": "站类型"
+        },
+        "swapMethod": {
+          "type": "boolean",
+          "description": "换电模式,0:在线换电、1:离线换电"
+        },
+        "telNumber": {
+          "type": "string",
+          "description": "换电站负责人联系方式"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "versionId": {
+          "type": "string",
+          "description": "站控主机版本号"
+        },
+        "versionPublicStr": {
+          "type": "string",
+          "description": "版本公共匹配串"
+        }
+      },
+      "title": "StationInfoVO"
+    }
+  }
+}
