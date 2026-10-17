@@ -1,4 +1,4 @@
-# scs-postman-tool 项目文档
+# auto-test-CLI 项目文档
 
 > 换电站自动化测试工具 | Python 3.6.8 | Git: refact-1.1
 
@@ -8,7 +8,7 @@
 
 ### 1.1 简介
 
-scs-postman-tool 是面向乘用车换电站站控系统的自动化测试工具，服务于"时代电服"（CATL旗下）。项目核心能力包括：
+auto-test-CLI 是面向乘用车换电站站控系统的自动化测试工具，服务于"时代电服"（CATL旗下）。项目核心能力包括：
 
 1. **Swagger → API 客户端自动生成**：从 Swagger 2.0 JSON 文档生成 Python HTTP 客户端代码
 2. **关键字字典自动生成**：将业务源文件（WSS/ACT/API/NCS/TC）通过 AST 解析转换为可复用的关键字字典
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 python convertAllFile.py
 ```
 
-> **注意**：项目必须位于名为 `scs-postman-tool` 的目录中，`GetProject.get_project_path()` 通过向上查找该目录名定位项目根路径。
+> **注意**：项目必须位于名为 `auto-test-CLI` 的目录中，`GetProject.get_project_path()` 通过向上查找该目录名定位项目根路径。
 
 ### 1.4 环境配置
 
@@ -66,7 +66,7 @@ python convertAllFile.py
 ### 2.1 分层架构
 
 ```
-scs-postman-tool/
+auto-test-CLI/
 ├── .venv/                     # 虚拟环境（Python 3.6.8）
 ├── convertAllFile.py          # 入口脚本（6个转换任务）
 ├── env.json                    # 多环境配置
@@ -254,7 +254,7 @@ HttpRq.req(path, method, data, other_authorization=None)
 | handlerFile.py | HandlerFile | create_dir() / read_json() / get_env_path() |
 | handlerAssert.py | HandlerAssert | equal / not_equal / include / not_include / true / not_true |
 | logConfig.py | LogConfig | 日志配置，loguru 输出到控制台 + 文件（logs/{日期}.log） |
-| getProject.py | GetProject | get_project_path() — 向上查找 'scs-postman-tool' 目录 |
+| getProject.py | GetProject | get_project_path() — 向上查找 'auto-test-CLI' 目录 |
 | tools/handlerDataType.py | HandlerDataType | float_to_2shorts / uint16_to_2shorts / uint16_to_short / uint32_to_2shorts |
 | tools/handlerEncrypt.py | HandlerEncrypt | md5_encrypt(text) |
 | tools/handlerTime.py | HandlerTime | time_now_timestamp / time_now_time / get_now_date |
