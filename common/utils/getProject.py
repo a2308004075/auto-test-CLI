@@ -5,12 +5,12 @@ from typing import Optional
 class GetProject:
     @staticmethod
     def get_project_path() -> Optional[str]:
-        _PROJECT_NAME = 'scs-postman-tool'
+        _PROJECT_NAME = 'auto-test-CLI'
         """
         获取项目路径
 
         Args:
-            project_name: 项目名称，默认为'postman-tool'
+            project_name: 项目名称，默认为'auto-test-CLI'
 
         Returns:
             项目根路径，失败返回None
