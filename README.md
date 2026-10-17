@@ -1,6 +1,6 @@
 # auto-test-CLI 项目文档
 
-> 换电站自动化测试工具 | Python 3.6.8 | Git: refact-1.1
+> 换电站自动化测试工具 | Python 3.13 | Git: feature-1.1
 
 ---
 
@@ -30,13 +30,13 @@ auto-test-CLI 是面向乘用车换电站站控系统的自动化测试工具，
 ### 1.3 快速开始
 
 ```bash
-# 创建虚拟环境（Python 3.6.8）
+# 创建虚拟环境（Python 3.13+）
 python -m venv .venv
 
 # 激活虚拟环境
 .venv\Scripts\activate
 
-# 安装依赖
+# 安装依赖（内网环境可参考 documents/pip 配置 pip 源）
 pip install -r requirements.txt
 
 # 执行所有转换任务（Swagger + 5类关键字）
@@ -67,7 +67,7 @@ python convertAllFile.py
 
 ```
 auto-test-CLI/
-├── .venv/                     # 虚拟环境（Python 3.6.8）
+├── .venv/                     # 虚拟环境（Python 3.13）
 ├── convertAllFile.py          # 入口脚本（6个转换任务）
 ├── env.json                    # 多环境配置
 ├── requirements.txt            # 依赖声明
@@ -77,18 +77,21 @@ auto-test-CLI/
 │   ├── http/                   #   HTTP 请求封装
 │   └── utils/                  #   工具函数库
 ├── company/
-│   ├── qkl/new/                # 新站业务（v3 微服务架构）
-│   │   ├── common/             #   API/NCS/WSS/SH/Utils 共享层
-│   │   ├── kw/                 #   WSS 关键字字典
-│   │   ├── source/swaggerApi/ #   Swagger JSON 源文件
-│   │   └── version/v3/        #   业务版本层（act/dao/ts/kw）
-│   ├── qkl/old/                # 旧站业务（v1 单体架构）
-│   │   ├── common/             #   API/WSS/Utils 共享层
-│   │   ├── kw/                 #   WSS 关键字字典
-│   │   ├── source/swaggerApi/ #   Swagger JSON 源文件
-│   │   └── version/v1/        #   业务版本层（act/dao/ts/kw）
-│   └── qj/                     # 另一家公司占位（仅 __init__.py）
+│   └── qkl/
+│       ├── new/                # 新站业务（v3 微服务架构）
+│       │   ├── common/         #   API/NCS/WSS/SH/Utils 共享层
+│       │   ├── kw/             #   WSS 关键字字典
+│       │   ├── source/swaggerApi/ # Swagger JSON 源文件
+│       │   └── version/v3/     #   业务版本层（act/dao/ts/kw）
+│       └── old/                # 旧站业务（v1 单体架构）
+│           ├── common/         #   API/WSS/Utils 共享层
+│           ├── kw/             #   WSS 关键字字典
+│           ├── source/swaggerApi/ # Swagger JSON 源文件
+│           └── version/v1/     #   业务版本层（act/dao/ts/kw）
 └── documents/                  # 项目文档
+    ├── init.sql                #   测试服务数据库初始化脚本
+    ├── pip                     #   pip 内网源配置
+    └── 测试服务使用文档.md      #   远程测试服务使用说明
 ```
 
 ### 2.2 四层业务模型（version 层内）
@@ -556,3 +559,12 @@ def method_name(param1, param2):
 | Nacos | /nacos/v1/cs/configs | 配置读写 |
 | 新站 WSS | /ws | WebSocket 实时消息 |
 | 旧站 WSS | /manager/webSocketOfManager, /manager/newWebSocket, /rbc/webSocket | 旧站 WebSocket |
+
+### 8.4 documents/ 目录
+
+| 文件 | 说明 |
+|---|---|
+| init.sql | 远程测试服务（caes_autotest 库）的 test_shell / test_sql 表初始化数据，为 /autotest 服务提供预定义 Shell 命令与 SQL 查询 |
+| pip | pip 配置文件（内网 JFrog 源 + 阿里云镜像，trusted-host 配置） |
+| 测试服务使用文档.md | 远程测试服务的部署与使用说明 |
+
